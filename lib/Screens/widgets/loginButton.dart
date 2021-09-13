@@ -10,8 +10,11 @@ class loginButton extends StatefulWidget {
 class _loginButtonState extends State<loginButton> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Column(
+      children: <Widget>[
+        ElevatedButton(onPressed: null, child: Text('Entrar'))
+      ],
     );
+    
   }
 }
