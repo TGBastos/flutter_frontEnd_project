@@ -9,17 +9,13 @@ class tabletLoginScreen extends StatefulWidget {
 }
 
 class _tabletLoginScreenState extends State<tabletLoginScreen> {
-  final _formKey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return PreferredSize(
       preferredSize: Size(screenSize.width, screenSize.height),
       child: Scaffold(
-          body: Form(
-        key: _formKey,
-        child: Center(
+        body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -31,7 +27,7 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
                       child: LoginForms())),
               loginButton()
             ])),
-      )),
+      ),
     );
   }
 }

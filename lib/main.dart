@@ -1,11 +1,9 @@
-
 import 'package:flutter/material.dart';
-
 
 import 'Screens/LoginScreens/desktopLoginScreen.dart';
 import 'Screens/LoginScreens/mobileLoginScreen.dart';
 import 'Screens/LoginScreens/tabletLoginScreen.dart';
-import 'commun/responsiveController.dart';
+import 'Screens/commun/responsiveController.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,15 +18,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-       
         primarySwatch: Colors.blue,
       ),
       home: resonsiveController(
-        mobile: mobileLoginScreen(),
-        desktop: desktopLoginScreen(),
-        tablet: tabletLoginScreen()
-      ),
+          mobile: mobileLoginScreen(),
+          desktop: desktopLoginScreen(),
+          tablet: tabletLoginScreen()),
     );
   }
-  
 }
