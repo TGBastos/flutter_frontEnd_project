@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/widgets/loginButton.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/responsiveAppBar.dart';
+import 'package:rio_das_pedras_front_end/utils/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
 
 class desktopLoginScreen extends StatefulWidget {
@@ -16,6 +17,7 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, screenSize.height),
       child: Scaffold(
+        appBar: AppBar(),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -24,11 +26,29 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                   padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
                   child: ConstrainedBox(
                       constraints:
-                          BoxConstraints(maxWidth: screenSize.width / 4),
+                          BoxConstraints(maxWidth: screenSize.width / 6),
                       child: LoginForms())),
-              loginButton()
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: defaultButton(
+                  btnText: 'Entrar',
+                  callback: testEntrar,
+                ),
+              ),
+              defaultButton(
+                btnText: 'cadastrar',
+                callback: testCadastro,
+              )
             ])),
       ),
     );
+  }
+
+  testEntrar() {
+    print("Ola");
+  }
+
+  testCadastro() {
+    print("Cadastrado");
   }
 }

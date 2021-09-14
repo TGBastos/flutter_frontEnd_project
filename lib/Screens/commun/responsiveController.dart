@@ -15,9 +15,10 @@ class responsiveController extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth >= 800) {
+        if (constraints.maxWidth >= 1024) {
           return desktop;
-        } else if (constraints.maxWidth <= 800 && constraints.maxWidth >= 768) {
+        } else if (constraints.maxWidth <= 1024 &&
+            constraints.maxWidth >= 768) {
           return tablet;
         } else {
           return mobile;

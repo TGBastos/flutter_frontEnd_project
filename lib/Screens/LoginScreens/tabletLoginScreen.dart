@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:rio_das_pedras_front_end/Screens/widgets/loginButton.dart';
+import 'package:rio_das_pedras_front_end/utils/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
 
 class tabletLoginScreen extends StatefulWidget {
@@ -23,11 +23,18 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
                   padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
                   child: ConstrainedBox(
                       constraints:
-                          BoxConstraints(maxWidth: screenSize.width / 2.5),
+                          BoxConstraints(maxWidth: screenSize.width / 2),
                       child: LoginForms())),
-              loginButton()
+              defaultButton(
+                btnText: 'Entrar',
+                callback: test,
+              )
             ])),
       ),
     );
+  }
+
+  void test() {
+    print("Ola");
   }
 }
