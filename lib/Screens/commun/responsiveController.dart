@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class resonsiveController extends StatelessWidget {
+class responsiveController extends StatelessWidget {
   final Widget desktop;
   final Widget tablet;
   final Widget mobile;
 
-  const resonsiveController(
+  const responsiveController(
       {Key? key,
       required this.desktop,
       required this.tablet,
