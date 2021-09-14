@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/utils/defaultButton.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
 
 class mobileLoginScreen extends StatefulWidget {
@@ -14,6 +15,7 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    buttonFuctions bttnFuctions = buttonFuctions();
     final screenSize = MediaQuery.of(context).size;
     return PreferredSize(
       preferredSize: Size(screenSize.width, screenSize.height),
@@ -30,14 +32,10 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
                       child: LoginForms())),
               defaultButton(
                 btnText: 'Entrar',
-                callback: test,
+                onPressed: bttnFuctions.entrar,
               )
             ])),
       ),
     );
-  }
-
-  void test() {
-    print("Ola");
   }
 }

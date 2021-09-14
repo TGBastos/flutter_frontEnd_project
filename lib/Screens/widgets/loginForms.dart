@@ -21,7 +21,7 @@ class _LoginFormsState extends State<LoginForms> {
           // constraints: BoxConstraints(maxWidth: screenSize.width/2.5)   ,
           hintText: "Email",
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(36.0),
           ),
         ),
       )),
@@ -32,7 +32,7 @@ class _LoginFormsState extends State<LoginForms> {
           // constraints: BoxConstraints(maxWidth: screenSize.width/2.5)   ,
           hintText: "Senha",
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10.0),
+            borderRadius: BorderRadius.circular(36.0),
           ),
         ),
       )),
