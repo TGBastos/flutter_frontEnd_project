@@ -23,50 +23,60 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
     return PreferredSize(
         preferredSize: Size(screenSize.width, screenSize.height),
         child: Scaffold(
-          appBar: AppBar(),
+          appBar: PreferredSize(
+              preferredSize: Size.fromHeight(screenSize.height / 6),
+              child: AppBar(
+                backgroundColor: Colors.green,
+                bottom: PreferredSize(
+                    child: Container(
+                      color: Colors.orange,
+                      height: screenSize.height/25,
+                    ),
+                    preferredSize: Size.fromHeight(0)),
+              )),
           body: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Row(children: <Widget>[
-                  //left Side row
-                  Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                      Text("Login", style: myTextStyle.loginHeader),
-                        Padding(
-                            padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
-                            child: ConstrainedBox(
-                                constraints: BoxConstraints(
-                                    maxWidth: screenSize.width / 4),
-                                child: LoginForms())),
-                        Padding(
-                            padding: const EdgeInsets.all(5),
-                            child: defaultButton(
-                              btnText: 'Entrar',
-                              onPressed: bttnFuctions.entrar,
-                            ))
-                      ]),
-                ]),
-                Row(
-                    //rigth side row
+                //left Side row
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                        Container(
-                          padding: EdgeInsets.all(10),
-                        child: Text("Cadastro" , style: myTextStyle.loginHeader),),
-                       Container(
-                          padding: EdgeInsets.all(10),
-                        child: Text("Registre-se para continuar o acesso e recebe"+
-                        "\ninformações exclusivas, além de outras possibilidades" , textAlign: TextAlign.center ,),),
-                        Padding(
-                            padding: const EdgeInsets.all(5),
-                            child: defaultButton(
-                              btnText: 'cadastrar',
-                              onPressed: bttnFuctions.cadastrar,
-                            ))
-                      ])
+                      Text("Login", style: myTextStyle.loginHeader),
+                      Padding(
+                          padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
+                          child: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                  maxWidth: screenSize.width / 4),
+                              child: LoginForms())),
+                      Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: defaultButton(
+                            btnText: 'Entrar',
+                            onPressed: bttnFuctions.entrar,
+                          ))
+                    ]),
+                Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Text("Cadastro", style: myTextStyle.loginHeader),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        child: Text(
+                          "Registre-se para continuar o acesso e recebe informações" +
+                              "\nexclusivas, além de outras possibilidades",
+                          textAlign: TextAlign.justify,
+                          style: myTextStyle.loginBody,
+                        ),
+                      ),
+                      Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: defaultButton(
+                            btnText: 'cadastrar',
+                            onPressed: bttnFuctions.cadastrar,
+                          ))
                     ])
               ]),
         ) //

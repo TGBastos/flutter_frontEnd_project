@@ -16,7 +16,7 @@ class defaultButton extends StatelessWidget {
           onPressed: () => onPressed(),
           child: Text(btnText),
           style: ElevatedButton.styleFrom(
-            primary: Palette.kToDark[100],
+            primary: Palette.projectCollors[300],
           )),
     );
   }

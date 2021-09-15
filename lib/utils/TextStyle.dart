@@ -6,10 +6,10 @@ abstract class myTextStyle{
 static TextStyle loginHeader = TextStyle(
   fontWeight: FontWeight.bold,
   fontSize: 20,
-  fontFamily: 'Schyler'
+  fontFamily: 'Helvetica'
 );
 
 static TextStyle loginBody = TextStyle(
-
+  fontFamily: 'Helvetica'
 );
 }
