@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultAppBar.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
 
@@ -20,16 +21,14 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, screenSize.height),
       child: Scaffold(
+        appBar: DefaultAppBar(DeviceHeight: screenSize.height/5, DeviceWidth: screenSize.width),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
               Padding(
                   padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
-                  child: ConstrainedBox(
-                      constraints:
-                          BoxConstraints(maxWidth: screenSize.width / 1.5),
-                      child: LoginForms())),
+                  child: LoginForms()),
               defaultButton(
                 btnText: 'Entrar',
                 onPressed: bttnFuctions.entrar,
