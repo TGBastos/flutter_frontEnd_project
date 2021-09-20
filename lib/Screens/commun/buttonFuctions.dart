@@ -1,12 +1,14 @@
-
-class buttonFuctions{
-
-  void entrar(){
+class buttonFuctions {
+  void entrar() {
     print("Entrou");
   }
 
-  void cadastrar(){
+  void cadastrar() {
     print("Cadastrado");
+  }
+
+  void forgotPassword() {
+    print("Nova senha");
   }
 
 }

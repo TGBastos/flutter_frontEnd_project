@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/LoginScreens/LargeDesktopLoginScreen.dart';
 
 import 'Screens/LoginScreens/desktopLoginScreen.dart';
 import 'Screens/LoginScreens/mobileLoginScreen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       home: responsiveController(
           mobile: mobileLoginScreen(),
+          largeDesktop: largeDesktopLoginScreen(),
           desktop: desktopLoginScreen(),
           tablet: tabletLoginScreen()),
     );

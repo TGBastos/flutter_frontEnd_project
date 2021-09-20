@@ -21,17 +21,18 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, screenSize.height),
       child: Scaffold(
-        appBar: DefaultAppBar(DeviceHeight: screenSize.height/5, DeviceWidth: screenSize.width),
+        appBar: DefaultAppBar(
+            DeviceHeight: screenSize.height / 5, DeviceWidth: screenSize.width),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
               Padding(
                   padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
-                  child: LoginForms()),
+                  child: LoginForms(formFontSize: 20, formWidth: 20,)),
               defaultButton(
                 btnText: 'Entrar',
-                onPressed: bttnFuctions.entrar,
+                onPressed: bttnFuctions.entrar, buttonHeight: null, buttonWidth: null,
               )
             ])),
       ),

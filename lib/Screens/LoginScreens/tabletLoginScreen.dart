@@ -18,7 +18,8 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
     return PreferredSize(
       preferredSize: Size(screenSize.width, screenSize.height),
       child: Scaffold(
-        appBar: DefaultAppBar(DeviceHeight: screenSize.height/4, DeviceWidth: screenSize.width),
+        appBar: DefaultAppBar(
+            DeviceHeight: screenSize.height / 4, DeviceWidth: screenSize.width),
         body: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -28,10 +29,10 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
                   child: ConstrainedBox(
                       constraints:
                           BoxConstraints(maxWidth: screenSize.width / 2),
-                      child: LoginForms())),
+                      child: LoginForms(formFontSize: 20, formWidth: 20,))),
               defaultButton(
                 btnText: 'Entrar',
-                onPressed: bttnFuctions.entrar,
+                onPressed: bttnFuctions.entrar, buttonHeight: null, buttonWidth: null,
               )
             ])),
       ),

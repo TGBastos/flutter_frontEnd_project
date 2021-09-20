@@ -5,19 +5,31 @@ import 'package:rio_das_pedras_front_end/utils/colorPalette.dart';
 class defaultButton extends StatelessWidget {
   final String btnText;
   final void Function() onPressed;
-  const defaultButton(
-      {Key? key, required String this.btnText, required this.onPressed})
-      : super(key: key);
+  final double? buttonWidth;
+  final double? buttonHeight;
+  const defaultButton({
+    Key? key,
+    required String this.btnText,
+    required this.onPressed,
+    required this.buttonWidth,
+    required this.buttonHeight,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
+      width: buttonWidth,
+      height: buttonHeight,
       child: ElevatedButton(
           onPressed: () => onPressed(),
           child: Text(btnText),
-          style: ElevatedButton.styleFrom(
-            primary: Palette.projectCollors[300],
-          )),
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color?>(
+                  Palette.projectCollors[300]),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(18.0),
+              )))),
     );
   }
 

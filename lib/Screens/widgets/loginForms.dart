@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/responsiveController.dart';
 
 class LoginForms extends StatefulWidget {
-  const LoginForms({Key? key}) : super(key: key);
+  final double formFontSize;
+  final double formWidth;
+  const LoginForms(
+      {Key? key, required this.formFontSize, required this.formWidth})
+      : super(key: key);
 
   @override
   _LoginFormsState createState() => _LoginFormsState();
@@ -11,29 +15,29 @@ class LoginForms extends StatefulWidget {
 class _LoginFormsState extends State<LoginForms> {
   @override
   Widget build(BuildContext context) {
-    final screenSize = MediaQuery.of(context).size;
+    var formWidth = this.widget.formWidth;
+    var formFontSize = this.widget.formFontSize;
     return Container(
         child: SizedBox(
-            width: screenSize.width <= 1024 ||
-                    screenSize.width <= 1024 && screenSize.width >= 768
-                ? screenSize.width / 2
-                : screenSize.width / 4,
-            
+            width: formWidth,
             child: Column(children: <Widget>[
               Padding(
-                  padding: EdgeInsets.fromLTRB(0, 0, 0, 5),
+                  padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                   child: TextFormField(
+                    style: TextStyle(),
                     decoration: InputDecoration(
-                      hintText: "Email",
+                      labelText: "Email",
+                      labelStyle: TextStyle(fontSize: formFontSize),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(36.0),
                       ),
                     ),
                   )),
               TextFormField(
+                style: TextStyle(),
                 decoration: InputDecoration(
-                  // constraints: BoxConstraints(maxWidth: screenSize.width/2.5)   ,
-                  hintText: "Senha",
+                  labelText: "Senha",
+                  labelStyle: TextStyle(fontSize: formFontSize),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(36.0),
                   ),
