@@ -24,6 +24,7 @@ class defaultButton extends StatelessWidget {
           onPressed: () => onPressed(),
           child: Text(btnText),
           style: ButtonStyle(
+            textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)),
               backgroundColor: MaterialStateProperty.all<Color?>(
                   Palette.projectCollors[300]),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

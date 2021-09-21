@@ -3,12 +3,13 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultAppBar.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultCheckBox.dart';
+import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+import 'package:rio_das_pedras_front_end/commun/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultAppBar.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultButton.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultCheckBox.dart';
+
 import 'package:rio_das_pedras_front_end/utils/TextStyle.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultButton.dart';
-import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
 
 class desktopLoginScreen extends StatefulWidget {
   @override
@@ -30,17 +31,18 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
             //coluna de login
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                child: Text(
-                  "Login",
-                  style: myTextStyle.desktopLoginHeader,
-                ),
-              ),
               SizedBox(
-                  height: screenSize.height / 2 + 100,
+                  height: screenSize.height / 1.5,
                   child: Column(
                     children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(
+                            0, screenSize.width / 20, 0, screenSize.width / 40),
+                        child: Text(
+                          "Login",
+                          style: myTextStyle.desktopLoginHeader,
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 0, 30),
                         child: Text("Acesse seu cadastro com CPF e senha",
@@ -54,7 +56,8 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                             formWidth: 400,
                           )),
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(250, 10, 0, 10),
+                        padding: EdgeInsets.fromLTRB(
+                            screenSize.width / 20, 10, 0, 10),
                         child: SizedBox(
                             height: 20,
                             child: TextButton(
@@ -63,7 +66,9 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                               child: Text("Esqueceu sua senha?"),
                             )),
                       ),
-                      defaultCheckBox(),
+                      defaultCheckBox(
+                        fontSize: 20,
+                      ),
                       Padding(
                           padding: const EdgeInsets.all(5),
                           child: new defaultButton(
@@ -76,12 +81,16 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                   )),
             ]),
         Container(
-          //Detalhe de divisão das colunas
-          margin: EdgeInsets.fromLTRB(200, 0, 200, 20),
-          width: 1,
-          height: 400,
-          color: Colors.black,
-        ),
+            //Detalhe de divisão das colunas
+            margin: EdgeInsets.fromLTRB(
+              screenSize.width / 14,
+              0,
+              screenSize.width / 14,
+              20,
+            ),
+            width: 1,
+            height: 400,
+            color: Colors.black),
         Column(
             //Coluna de cadastro
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -89,7 +98,8 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
               Flexible(
                   flex: 2,
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                    padding: EdgeInsets.fromLTRB(
+                        0, screenSize.width / 20, 0, screenSize.width / 40),
                     child: Column(children: <Widget>[
                       Text(
                         "Cadastro",

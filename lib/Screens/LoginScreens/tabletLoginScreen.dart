@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultAppBar.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultButton.dart';
-import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
+import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+
+import 'package:rio_das_pedras_front_end/commun/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultAppBar.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultButton.dart';
 
 class tabletLoginScreen extends StatefulWidget {
   @override
@@ -21,20 +22,24 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
         appBar: DefaultAppBar(
             DeviceHeight: screenSize.height / 4, DeviceWidth: screenSize.width),
         body: Center(
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-              Padding(
-                  padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
-                  child: ConstrainedBox(
-                      constraints:
-                          BoxConstraints(maxWidth: screenSize.width / 2),
-                      child: LoginForms(formFontSize: 20, formWidth: 20,))),
-              defaultButton(
-                btnText: 'Entrar',
-                onPressed: bttnFuctions.entrar, buttonHeight: null, buttonWidth: null,
-              )
-            ])),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+                    Widget>[
+          Padding(
+              padding: const EdgeInsets.fromLTRB(5, 5, 5, 20),
+              child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: screenSize.width / 2),
+                  child: LoginForms(
+                    formFontSize: 20,
+                    formWidth: 20,
+                  ))),
+          defaultButton(
+            btnText: 'Entrar',
+            onPressed: bttnFuctions.entrar,
+            buttonHeight: null,
+            buttonWidth: null,
+          )
+        ])),
       ),
     );
   }

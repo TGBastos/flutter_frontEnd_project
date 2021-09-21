@@ -2,11 +2,13 @@ import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultAppBar.dart';
+import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+
+import 'package:rio_das_pedras_front_end/commun/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultAppBar.dart';
+import 'package:rio_das_pedras_front_end/commun/widgets/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/utils/TextStyle.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultButton.dart';
-import 'package:rio_das_pedras_front_end/Screens/widgets/loginForms.dart';
+
 
 class largeDesktopLoginScreen extends StatefulWidget {
   @override
@@ -45,7 +47,10 @@ class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
                         child: ConstrainedBox(
                             constraints:
                                 BoxConstraints(maxWidth: screenSize.width / 4),
-                            child: LoginForms(formFontSize: 20, formWidth: 20,))),
+                            child: LoginForms(
+                              formFontSize: 20,
+                              formWidth: 20,
+                            ))),
                     Padding(
                         padding: const EdgeInsets.all(5),
                         child: defaultButton(

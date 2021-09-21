@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/responsiveController.dart';
+
 
 class LoginForms extends StatefulWidget {
   final double formFontSize;
@@ -29,6 +29,7 @@ class _LoginFormsState extends State<LoginForms> {
                       labelText: "Email",
                       labelStyle: TextStyle(fontSize: formFontSize),
                       border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.blue),
                         borderRadius: BorderRadius.circular(36.0),
                       ),
                     ),

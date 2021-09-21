@@ -4,7 +4,8 @@ import 'package:rio_das_pedras_front_end/Screens/LoginScreens/LargeDesktopLoginS
 import 'Screens/LoginScreens/desktopLoginScreen.dart';
 import 'Screens/LoginScreens/mobileLoginScreen.dart';
 import 'Screens/LoginScreens/tabletLoginScreen.dart';
-import 'Screens/commun/responsiveController.dart';
+
+import 'commun/responsiveController.dart';
 
 void main() {
   runApp(const MyApp());
