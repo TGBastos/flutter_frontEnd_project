@@ -1,4 +1,3 @@
-import 'dart:html';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,6 @@ class largeDesktopLoginScreen extends StatefulWidget {
 }
 
 class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
-  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {

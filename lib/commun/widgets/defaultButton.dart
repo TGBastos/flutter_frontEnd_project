@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktopLoginScreen.dart';
 import 'package:rio_das_pedras_front_end/utils/colorPalette.dart';
 
 class defaultButton extends StatelessWidget {
