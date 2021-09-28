@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/utils/colorPalette.dart';
+import '../../utils/colorPalette.dart';
 
 class defaultButton extends StatelessWidget {
   final String btnText;
@@ -23,7 +23,8 @@ class defaultButton extends StatelessWidget {
           onPressed: () => onPressed(),
           child: Text(btnText),
           style: ButtonStyle(
-            textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)),
+              textStyle:
+                  MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)),
               backgroundColor: MaterialStateProperty.all<Color?>(
                   Palette.projectCollors[300]),
               shape: MaterialStateProperty.all<RoundedRectangleBorder>(

@@ -1,13 +1,11 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
-import 'package:rio_das_pedras_front_end/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultAppBar.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultButton.dart';
-import 'package:rio_das_pedras_front_end/utils/TextStyle.dart';
-
+import '../commun/buttonFuctions.dart';
+import '../commun/widgets/defaultAppBar.dart';
+import '../commun/widgets/defaultButton.dart';
+import '../utils/TextStyle.dart';
 
 class largeDesktopLoginScreen extends StatefulWidget {
   @override
@@ -16,7 +14,6 @@ class largeDesktopLoginScreen extends StatefulWidget {
 }
 
 class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
-
   @override
   Widget build(BuildContext context) {
     buttonFuctions bttnFuctions = buttonFuctions();
@@ -46,17 +43,10 @@ class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
                             constraints:
                                 BoxConstraints(maxWidth: screenSize.width / 4),
                             child: LoginForms(
-                              formFontSize: 20,
-                              formWidth: 20,
+                              null,
+                              20,
+                              20,
                             ))),
-                    Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: defaultButton(
-                          btnText: 'Entrar',
-                          onPressed: bttnFuctions.entrar,
-                          buttonHeight: 72,
-                          buttonWidth: 206,
-                        ))
                   ]),
 
               Column(

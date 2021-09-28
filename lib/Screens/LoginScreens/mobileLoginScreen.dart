@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
-import 'package:rio_das_pedras_front_end/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultAppBar.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultButton.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultCheckBox.dart';
-import 'package:rio_das_pedras_front_end/utils/TextStyle.dart';
+import '../../Screens/LoginScreens/widgets/loginForms.dart';
+import '../commun/buttonFuctions.dart';
+import '../commun/widgets/defaultAppBar.dart';
+import '../commun/widgets/defaultButton.dart';
+import '../commun/widgets/defaultCheckBox.dart';
+import '../utils/TextStyle.dart';
 
 class mobileLoginScreen extends StatefulWidget {
   const mobileLoginScreen({Key? key}) : super(key: key);
@@ -49,8 +49,9 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
                     ),
                   ),
                   LoginForms(
-                    formFontSize: 20,
-                    formWidth: 300,
+                    null,
+                    20,
+                    300,
                   ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(
@@ -72,19 +73,10 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
                     ),
                   ),
                   Padding(
-                      padding: EdgeInsets.fromLTRB(
-                          0, screenSize.height / 40, 0, screenSize.height / 40),
-                      child: new defaultButton(
-                        btnText: 'Entrar',
-                        onPressed: bttnFuctions.entrar,
-                        buttonHeight: 54,
-                        buttonWidth: 155,
-                      )),
-                  Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                       child: new defaultButton(
                         btnText: 'Cadastre-se',
-                        onPressed: bttnFuctions.entrar,
+                        onPressed: bttnFuctions.cadastrar,
                         buttonHeight: 54,
                         buttonWidth: 155,
                       )),

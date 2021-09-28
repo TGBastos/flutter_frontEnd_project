@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/LargeDesktopLoginScreen.dart';
+import '../Screens/LoginScreens/LargeDesktopLoginScreen.dart';
+import '../Screens/commun/responsiveController.dart';
 
 import 'Screens/LoginScreens/desktopLoginScreen.dart';
 import 'Screens/LoginScreens/mobileLoginScreen.dart';
 import 'Screens/LoginScreens/tabletLoginScreen.dart';
-
-import 'commun/responsiveController.dart';
 
 void main() {
   runApp(const MyApp());

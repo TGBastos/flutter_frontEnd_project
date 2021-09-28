@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/utils/colorPalette.dart';
+import '../../utils/colorPalette.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double DeviceHeight;
@@ -34,7 +34,9 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
             child: Container(
               height: DeviceHeight / 1.4,
-              width: DeviceWidth <= 768 || DeviceWidth >= 768 ? DeviceWidth/ 2 : DeviceWidth/2 ,
+              width: DeviceWidth <= 768 || DeviceWidth >= 768
+                  ? DeviceWidth / 2
+                  : DeviceWidth / 2,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(10),

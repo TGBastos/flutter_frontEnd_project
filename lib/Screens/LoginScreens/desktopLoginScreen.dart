@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
-import 'package:rio_das_pedras_front_end/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultAppBar.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultButton.dart';
-import 'package:rio_das_pedras_front_end/commun/widgets/defaultCheckBox.dart';
+import '../commun/buttonFuctions.dart';
+import '../commun/widgets/defaultAppBar.dart';
+import '../commun/widgets/defaultButton.dart';
+import '../commun/widgets/defaultCheckBox.dart';
 
-import 'package:rio_das_pedras_front_end/utils/TextStyle.dart';
+import '../utils/TextStyle.dart';
 
 class desktopLoginScreen extends StatefulWidget {
   @override
@@ -50,8 +50,9 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                             constraints:
                                 BoxConstraints(maxWidth: screenSize.width / 4),
                             child: LoginForms(
-                              formFontSize: 16.5,
-                              formWidth: 400,
+                              null,
+                              16.5,
+                              400,
                             )),
                         Padding(
                           padding: EdgeInsets.fromLTRB(
@@ -74,15 +75,6 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                             fontSize: 18,
                           ),
                         ),
-                        Padding(
-                            padding: EdgeInsets.fromLTRB(
-                                0, screenSize.height / 20, 0, 0),
-                            child: new defaultButton(
-                              btnText: 'Entrar',
-                              onPressed: bttnFuctions.entrar,
-                              buttonHeight: 54,
-                              buttonWidth: 155,
-                            ))
                       ],
                     ),
                   )),
@@ -123,7 +115,7 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                                 0, screenSize.height / 20, 0, 0),
                             child: new defaultButton(
                               btnText: 'Cadastrar',
-                              onPressed: bttnFuctions.entrar,
+                              onPressed: bttnFuctions.cadastrar,
                               buttonHeight: 54,
                               buttonWidth: 155,
                             ))
