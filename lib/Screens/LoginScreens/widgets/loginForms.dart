@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktopLoginScreen.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/defaultButton.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/core/entities/cpf.dart';
 
 class LoginForms extends StatefulWidget {
@@ -26,7 +26,7 @@ class _LoginFormsState extends State<LoginForms> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    buttonFuctions bttnFuctions = buttonFuctions();
+    buttonFuctions bttnFuctions = buttonFuctions(context);
     var formWidth = this.widget.formWidth;
     var formFontSize = this.widget.formFontSize;
     return Container(
@@ -77,11 +77,11 @@ class _LoginFormsState extends State<LoginForms> {
                   btnText: 'Entrar',
                   onPressed: () async {
                     if (_formKey.currentState!.validate())
-                      dynamic result = bttnFuctions.entrar(_CPF, context);
+                      dynamic result = bttnFuctions.entrar(_CPF);
                   },
                   buttonHeight: 54,
                   buttonWidth: 155,
-                ))
+                )),
           ])),
     ));
   }

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import '../../utils/colorPalette.dart';
+import '../../../utils/colorPalette.dart';
 
 class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double DeviceHeight;

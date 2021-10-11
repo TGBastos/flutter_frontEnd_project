@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/defaultAppBar.dart';
-import '../commun/widgets/defaultButton.dart';
-import '../commun/widgets/defaultCheckBox.dart';
+import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/defaultButton.dart';
+import '../commun/widgets/Defaults/defaultCheckBox.dart';
 
 import '../utils/TextStyle.dart';
 
@@ -16,7 +16,7 @@ class desktopLoginScreen extends StatefulWidget {
 class _desktopLoginScreenState extends State<desktopLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions();
+    buttonFuctions bttnFuctions = buttonFuctions(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: DefaultAppBar(

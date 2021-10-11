@@ -5,9 +5,9 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/defaultAppBar.dart';
-import '../commun/widgets/defaultButton.dart';
-import '../commun/widgets/defaultCheckBox.dart';
+import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/defaultButton.dart';
+import '../commun/widgets/Defaults/defaultCheckBox.dart';
 import '../utils/TextStyle.dart';
 
 class mobileLoginScreen extends StatefulWidget {
@@ -20,7 +20,7 @@ class mobileLoginScreen extends StatefulWidget {
 class _mobileLoginScreenState extends State<mobileLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions();
+    buttonFuctions bttnFuctions = buttonFuctions(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: DefaultAppBar(
@@ -72,14 +72,6 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
                       fontSize: 20,
                     ),
                   ),
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      child: new defaultButton(
-                        btnText: 'Cadastre-se',
-                        onPressed: bttnFuctions.cadastrar,
-                        buttonHeight: 54,
-                        buttonWidth: 155,
-                      )),
                 ],
               ),
             ]),

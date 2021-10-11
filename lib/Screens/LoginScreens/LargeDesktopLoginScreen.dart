@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/defaultAppBar.dart';
-import '../commun/widgets/defaultButton.dart';
+import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/defaultButton.dart';
 import '../utils/TextStyle.dart';
 
 class largeDesktopLoginScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class largeDesktopLoginScreen extends StatefulWidget {
 class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions();
+    buttonFuctions bttnFuctions = buttonFuctions(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: DefaultAppBar(

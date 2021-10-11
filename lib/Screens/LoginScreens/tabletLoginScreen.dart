@@ -3,9 +3,9 @@ import 'package:flutter/rendering.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/defaultAppBar.dart';
-import '../commun/widgets/defaultButton.dart';
-import '../commun/widgets/defaultCheckBox.dart';
+import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/defaultButton.dart';
+import '../commun/widgets/Defaults/defaultCheckBox.dart';
 import '../utils/TextStyle.dart';
 
 class tabletLoginScreen extends StatefulWidget {
@@ -16,7 +16,7 @@ class tabletLoginScreen extends StatefulWidget {
 class _tabletLoginScreenState extends State<tabletLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions();
+    buttonFuctions bttnFuctions = buttonFuctions(context);
 
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
