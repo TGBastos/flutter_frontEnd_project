@@ -77,7 +77,7 @@ class _LoginFormsState extends State<LoginForms> {
                   btnText: 'Entrar',
                   onPressed: () async {
                     if (_formKey.currentState!.validate())
-                      dynamic result = bttnFuctions.entrar(_CPF);
+                      dynamic result = bttnFuctions.entrar(_CPF, context);
                   },
                   buttonHeight: 54,
                   buttonWidth: 155,

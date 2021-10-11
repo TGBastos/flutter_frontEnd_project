@@ -9,7 +9,7 @@ class CPF implements Login {
 
   CPF(String ClientCPF) {
     this._rawData = ClientCPF;
-    if (!CPFValidator.isValid(_rawData)) throw (InvalidCPF());
+    // if (!CPFValidator.isValid(_rawData)) throw (InvalidCPF());
   }
 
   String formatedToString() => CPFValidator.format(_rawData!);
