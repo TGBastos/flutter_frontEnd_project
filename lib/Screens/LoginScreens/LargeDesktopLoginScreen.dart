@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../utils/TextStyle.dart';
 
@@ -19,7 +19,7 @@ class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
     buttonFuctions bttnFuctions = buttonFuctions(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: DefaultAppBar(
+      appBar: InicialAppBar(
           DeviceHeight: screenSize.height / 4, DeviceWidth: screenSize.width),
       body: SizedBox(
         height: screenSize.height / 2,

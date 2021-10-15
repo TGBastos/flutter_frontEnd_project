@@ -3,10 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import '../../../utils/colorPalette.dart';
 
-class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
+class InicialAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double DeviceHeight;
   final double DeviceWidth;
-  const DefaultAppBar(
+  const InicialAppBar(
       {Key? key, required this.DeviceHeight, required this.DeviceWidth})
       : super(key: key);
 

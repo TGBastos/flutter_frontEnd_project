@@ -3,7 +3,7 @@ import 'package:flutter/rendering.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../commun/widgets/Defaults/defaultCheckBox.dart';
 import '../utils/TextStyle.dart';
@@ -20,7 +20,7 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
 
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: DefaultAppBar(
+      appBar: InicialAppBar(
           DeviceHeight: screenSize.height > 702
               ? screenSize.width / 3
               : screenSize.width / 4.5,

@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialSliverAppBar.dart';
 import '../commun/buttonFuctions.dart';
-import '../commun/widgets/Defaults/defaultAppBar.dart';
+import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../commun/widgets/Defaults/defaultCheckBox.dart';
 
@@ -19,12 +20,12 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
     buttonFuctions bttnFuctions = buttonFuctions(context);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: DefaultAppBar(
+      appBar: InicialAppBar(
           DeviceHeight: screenSize.height / 3, DeviceWidth: screenSize.width),
       body: Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
         Column(
             //coluna de login
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
                   height: screenSize.height / 1.5,
@@ -51,35 +52,19 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                                 BoxConstraints(maxWidth: screenSize.width / 4),
                             child: LoginForms(
                               null,
-                              16.5,
+                              25,
                               400,
                             )),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(
-                              screenSize.width / 7, 10, 0, 10),
-                          child: SizedBox(
-                              height: 20,
-                              child: TextButton(
-                                style: ButtonStyle(),
-                                onPressed: bttnFuctions.forgotPassword,
-                                child: Text(
-                                  "Esqueceu sua senha?",
-                                  style: myTextStyle.loginBody,
-                                ),
-                              )),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(
-                              0, 0, screenSize.width / 10, 0),
-                          child: defaultCheckBox(
-                            fontSize: 18,
-                          ),
-                        ),
                       ],
                     ),
                   )),
             ]),
-        SizedBox(child: VerticalDivider(thickness: 1, color: Colors.black)),
+        Align(
+          alignment: Alignment.topCenter,
+          child: SizedBox(
+              height: screenSize.height / 1.5,
+              child: VerticalDivider(thickness: 1, color: Colors.black)),
+        ),
         Column(
             //coluna de login
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

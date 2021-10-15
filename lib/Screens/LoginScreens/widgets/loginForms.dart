@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktopLoginScreen.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultButton.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultCheckBox.dart';
 import 'package:rio_das_pedras_front_end/core/entities/cpf.dart';
 
 class LoginForms extends StatefulWidget {
@@ -48,6 +49,8 @@ class _LoginFormsState extends State<LoginForms> {
                   },
                   style: TextStyle(),
                   decoration: InputDecoration(
+                    constraints: BoxConstraints(maxHeight: 33),
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
                     labelText: "CPF",
                     labelStyle: TextStyle(fontSize: formFontSize),
                     border: OutlineInputBorder(
@@ -64,11 +67,30 @@ class _LoginFormsState extends State<LoginForms> {
               },
               style: TextStyle(),
               decoration: InputDecoration(
-                labelText: "Senha",
+                floatingLabelBehavior: FloatingLabelBehavior.always,
+                labelText: 'Senha',
+                constraints: BoxConstraints(maxHeight: 33),
                 labelStyle: TextStyle(fontSize: formFontSize),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(36.0),
                 ),
+              ),
+            ),
+            Container(
+              alignment: Alignment.bottomRight,
+              child: TextButton(
+                style: ButtonStyle(),
+                onPressed: bttnFuctions.forgotPassword,
+                child: Text(
+                  "Esqueceu sua senha?",
+                  style: TextStyle(fontSize: formFontSize - 3),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: defaultCheckBox(
+                fontSize: 20,
               ),
             ),
             Padding(

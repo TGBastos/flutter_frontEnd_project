@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultAppBar.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialAppBar.dart';
 
 class DesktopLogedScreen extends StatefulWidget {
   const DesktopLogedScreen({Key? key}) : super(key: key);
@@ -13,7 +13,7 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: DefaultAppBar(
+      appBar: InicialAppBar(
           DeviceHeight: screenSize.height / 3, DeviceWidth: screenSize.width),
       body: Container(),
     );
