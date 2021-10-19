@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.3"
   extended_masked_text:
     dependency: "direct main"
     description:
@@ -144,6 +151,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.17.0"
   lints:
     dependency: transitive
     description:
@@ -331,6 +345,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.9"
+  wsda:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: master
+      resolved-ref: a3e4cfe0acbb60cfd4096dfbce0cb209ea213968
+      url: "git@github.com:intellisys-informatica/WSDA.git"
+    source: git
+    version: "0.0.1"
   xdg_directories:
     dependency: transitive
     description:
