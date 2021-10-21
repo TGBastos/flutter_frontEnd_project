@@ -129,7 +129,7 @@ packages:
       name: font_awesome_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "9.1.0"
+    version: "9.2.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -337,13 +337,13 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.9"
+    version: "2.2.10"
   wsda:
     dependency: "direct main"
     description:
       path: "."
       ref: master
-      resolved-ref: "67035e6a12b5eec80688014810c78340a2de56ab"
+      resolved-ref: "124c7cc582239f17814ac8561a61d36321a46e29"
       url: "git@github.com:intellisys-informatica/WSDA.git"
     source: git
     version: "0.0.1"

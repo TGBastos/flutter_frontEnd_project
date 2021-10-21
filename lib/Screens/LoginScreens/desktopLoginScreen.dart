@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialSliverAppBar.dart';
-import '../commun/buttonFuctions.dart';
+import '../../core/common/utils/buttonFuctions.dart';
 import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../commun/widgets/Defaults/defaultCheckBox.dart';

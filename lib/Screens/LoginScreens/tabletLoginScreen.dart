@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
-import '../commun/buttonFuctions.dart';
+import '../../core/common/utils/buttonFuctions.dart';
 import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../commun/widgets/Defaults/defaultCheckBox.dart';

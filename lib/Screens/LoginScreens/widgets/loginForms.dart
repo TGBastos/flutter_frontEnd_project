@@ -2,7 +2,7 @@ import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktopLoginScreen.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/core/common/utils/buttonFuctions.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultCheckBox.dart';
 import 'package:rio_das_pedras_front_end/core/entities/cpf.dart';
@@ -19,7 +19,7 @@ class LoginForms extends StatefulWidget {
 
 class _LoginFormsState extends State<LoginForms> {
   var _formKey = GlobalKey<FormState>();
-  final controller = MaskedTextController(mask: '000.000.000-00');
+  //final controller = MaskedTextController(mask: '000.000.000-00');
 
   String _CPF = "";
   String _Senha = "";
@@ -39,14 +39,9 @@ class _LoginFormsState extends State<LoginForms> {
             Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                 child: TextFormField(
-                  controller: controller,
+                  //controller: controller,
                   validator: (val) => val!.isEmpty ? 'Coloque seu CPF' : null,
-                  onChanged: (val) {
-                    setState(() {
-                      _CPF = val;
-                    });
-                    ;
-                  },
+                  onSaved: (value) => _CPF = value!,
                   style: TextStyle(),
                   decoration: InputDecoration(
                     constraints: BoxConstraints(maxHeight: 33),
@@ -62,9 +57,7 @@ class _LoginFormsState extends State<LoginForms> {
             TextFormField(
               obscureText: true,
               validator: (val) => val!.isEmpty ? 'Coloque sua senha' : null,
-              onChanged: (val) {
-                setState(() => _Senha = val);
-              },
+              onSaved: (val) => _Senha = val!,
               style: TextStyle(),
               decoration: InputDecoration(
                 floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -98,8 +91,10 @@ class _LoginFormsState extends State<LoginForms> {
                 child: new defaultButton(
                   btnText: 'Entrar',
                   onPressed: () async {
-                    if (_formKey.currentState!.validate())
+                    if (_formKey.currentState!.validate()) {
+                      _formKey.currentState!.save();
                       dynamic result = bttnFuctions.entrar(_CPF);
+                    }
                   },
                   buttonHeight: 54,
                   buttonWidth: 155,

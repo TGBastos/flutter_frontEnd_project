@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialSliverAppBar.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
-import '../commun/buttonFuctions.dart';
+import '../../core/common/utils/buttonFuctions.dart';
 import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../commun/widgets/Defaults/defaultCheckBox.dart';

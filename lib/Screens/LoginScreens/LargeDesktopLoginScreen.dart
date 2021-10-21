@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../Screens/LoginScreens/widgets/loginForms.dart';
 
-import '../commun/buttonFuctions.dart';
+import '../../core/common/utils/buttonFuctions.dart';
 import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
 import '../utils/TextStyle.dart';
