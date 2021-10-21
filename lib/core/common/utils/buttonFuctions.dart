@@ -30,14 +30,7 @@ class buttonFuctions {
       version: 2,
     );
 
-    SignInEndpoint signInEndpoint = SignInEndpoint(
-      accessToken: accessToken,
-      login: '04578563510',
-      senha: 'MTIzNDU2',
-      version: 2,
-    );
-
-    searchClient().then((value) => print(value.data));
+    searchClient().then((value) => print(value.data.toString()));
     //signInEndpoint().then((value) => print(value.data));
 
     Navigator.of(ctx).pushReplacement(

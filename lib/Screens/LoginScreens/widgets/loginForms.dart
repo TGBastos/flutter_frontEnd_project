@@ -19,7 +19,7 @@ class LoginForms extends StatefulWidget {
 
 class _LoginFormsState extends State<LoginForms> {
   var _formKey = GlobalKey<FormState>();
-  //final controller = MaskedTextController(mask: '000.000.000-00');
+  final cpfController = MaskedTextController(mask: '000.000.000-00');
 
   String _CPF = "";
   String _Senha = "";
@@ -39,9 +39,9 @@ class _LoginFormsState extends State<LoginForms> {
             Padding(
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
                 child: TextFormField(
-                  //controller: controller,
+                  controller: cpfController,
                   validator: (val) => val!.isEmpty ? 'Coloque seu CPF' : null,
-                  onSaved: (value) => _CPF = value!,
+                  onSaved: (value) => _CPF = cpfController.unmasked,
                   style: TextStyle(),
                   decoration: InputDecoration(
                     constraints: BoxConstraints(maxHeight: 33),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/row_meusDados.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/signingUp_path.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialAppBar.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/mainAppBar.dart';
+import 'package:rio_das_pedras_front_end/Screens/utils/colorPalette.dart';
 
 class DesktopSingUpScreen extends StatefulWidget {
   const DesktopSingUpScreen({Key? key}) : super(key: key);
@@ -10,27 +13,41 @@ class DesktopSingUpScreen extends StatefulWidget {
   _DesktopSingUpScreenState createState() => _DesktopSingUpScreenState();
 }
 
-class _DesktopSingUpScreenState extends State<DesktopSingUpScreen> {
+class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
+    with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: MainAppBar(
-        appBarConfigs: new AppBarConfigs(
-          deviceWidth: screenSize.width,
-          deviceHeight: screenSize.height / 8,
-          greenContainerHeight: screenSize.height / 12,
-          greenContainerWidth: screenSize.width,
-          imageHeight: screenSize.height / 12,
-          imageWidth: screenSize.width / 8,
-          orangeContainerHeight: screenSize.height / 24,
-          orangeContainerWidth: screenSize.width,
-          witheImageBackgroundHeight: screenSize.height / 9.5,
-          witheImageBackgroundWidth: screenSize.width / 6,
+        appBar: MainAppBar(
+          appBarConfigs: new AppBarConfigs(
+            deviceWidth: screenSize.width,
+            deviceHeight: screenSize.height / 8,
+            greenContainerHeight: screenSize.height / 12,
+            greenContainerWidth: screenSize.width,
+            imageHeight: screenSize.height / 12,
+            imageWidth: screenSize.width / 8,
+            orangeContainerHeight: screenSize.height / 24,
+            orangeContainerWidth: screenSize.width,
+            witheImageBackgroundHeight: screenSize.height / 9.5,
+            witheImageBackgroundWidth: screenSize.width / 6,
+          ),
+          isLoged: false,
         ),
-        isLoged: false,
-      ),
-      body: Container(),
-    );
+        body: Column(children: <Widget>[
+          RowMeusDados(
+            rowMeusDadosCongif: new RowMeusDadosCongif(
+              mainSizedBoxWidth: screenSize.width,
+              mainSizedBoxHeight: screenSize.height / 8,
+              contentSizedBoxWidth: screenSize.width / 2,
+              contentSizedBoxHeight: screenSize.height / 12,
+              rightFirstTextPadding: screenSize.width / 40,
+              topFirstTextPadding: 0,
+              leftFirstTextPadding: 0,
+              bottomFirstTextPadding: screenSize.height / 45,
+            ),
+          ),
+          SingUpPath()
+        ]));
   }
 }
