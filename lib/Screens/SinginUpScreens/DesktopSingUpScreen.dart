@@ -35,17 +35,26 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
           isLoged: false,
         ),
         body: Column(children: <Widget>[
-          RowMeusDados(
-            rowMeusDadosCongif: new RowMeusDadosCongif(
-              mainSizedBoxWidth: screenSize.width,
-              mainSizedBoxHeight: screenSize.height / 8,
-              contentSizedBoxWidth: screenSize.width / 2,
-              contentSizedBoxHeight: screenSize.height / 12,
-              rightFirstTextPadding: screenSize.width / 40,
-              topFirstTextPadding: 0,
-              leftFirstTextPadding: 0,
-              bottomFirstTextPadding: screenSize.height / 45,
+          Padding(
+            padding: EdgeInsets.only(top: screenSize.height / 15),
+            child: RowMeusDados(
+              rowMeusDadosCongif: new RowMeusDadosCongif(
+                mainSizedBoxWidth: screenSize.width,
+                mainSizedBoxHeight: screenSize.height / 8,
+                contentSizedBoxWidth: screenSize.width / 2,
+                contentSizedBoxHeight: screenSize.height / 10,
+                rightFirstTextPadding: screenSize.width / 40,
+                topFirstTextPadding: 0,
+                leftFirstTextPadding: 0,
+                bottomFirstTextPadding: screenSize.height / 12,
+              ),
             ),
+          ),
+          SizedBox(
+            //space between widgets
+            //this widget swap the paddign, because it doesnt cause a overflow
+            height: screenSize.height / 40,
+            width: screenSize.width,
           ),
           SingUpPath()
         ]));

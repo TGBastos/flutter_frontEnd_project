@@ -46,8 +46,9 @@ class _RowMeusDadosState extends State<RowMeusDados> {
           Padding(
             //First Text Padding
             padding: EdgeInsets.only(
-                right: widget.rowMeusDadosCongif.rightFirstTextPadding,
-                bottom: widget.rowMeusDadosCongif.bottomFirstTextPadding),
+              right: widget.rowMeusDadosCongif.rightFirstTextPadding,
+              bottom: widget.rowMeusDadosCongif.bottomFirstTextPadding,
+            ),
             child: Text(
               "Meus Dados",
               style: TextStyle(
@@ -57,14 +58,21 @@ class _RowMeusDadosState extends State<RowMeusDados> {
             ),
           ),
           Align(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.center,
             child: SizedBox(
               height: widget.rowMeusDadosCongif.contentSizedBoxHeight,
               width: widget.rowMeusDadosCongif.contentSizedBoxWidth,
               child: Column(children: [
-                Divider(
-                  color: Palette.projectCollors[200],
-                  thickness: 3.5,
+                Container(
+                  width: widget.rowMeusDadosCongif.contentSizedBoxWidth,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(2),
+                    color: Palette.projectCollors[200],
+                  ),
+                  height: 3,
+                ),
+                SizedBox(
+                  height: 10,
                 ),
                 RichText(
                   textAlign: TextAlign.center,
@@ -73,7 +81,7 @@ class _RowMeusDadosState extends State<RowMeusDados> {
                           'você poderá acessar a sua conta sem complicações \n' +
                           'Os campos que possuem "',
                       style: TextStyle(
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                         fontSize: 15,
                       ),
@@ -82,12 +90,12 @@ class _RowMeusDadosState extends State<RowMeusDados> {
                             text: '*',
                             style: TextStyle(
                                 color: Colors.red,
-                                fontWeight: FontWeight.w600,
+                                fontWeight: FontWeight.w500,
                                 fontSize: 18)),
                         TextSpan(
                           text: '" devem ser preenchidos ' + 'obrigatoriamente',
                           style: TextStyle(
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
                             color: Colors.black,
                             fontSize: 15,
                           ),
