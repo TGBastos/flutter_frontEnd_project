@@ -15,7 +15,6 @@ class UnlogedClientAppBar extends StatefulWidget {
 class _unlogedClientAppBarState extends State<UnlogedClientAppBar> {
   @override
   Widget build(BuildContext context) {
-    print(widget.appBarConfigs.deviceWidth / 10);
     return Stack(children: <Widget>[
       Column(children: <Widget>[
         //Caixas Verde e Laranja

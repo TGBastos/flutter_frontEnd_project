@@ -43,12 +43,8 @@ class _RowMeusDadosState extends State<RowMeusDados> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            //First Text Padding
-            padding: EdgeInsets.only(
-              right: widget.rowMeusDadosCongif.rightFirstTextPadding,
-              bottom: widget.rowMeusDadosCongif.bottomFirstTextPadding,
-            ),
+          Align(
+            alignment: Alignment.topCenter,
             child: Text(
               "Meus Dados",
               style: TextStyle(
@@ -57,22 +53,43 @@ class _RowMeusDadosState extends State<RowMeusDados> {
                   color: Palette.projectCollors[200]),
             ),
           ),
+          Flexible(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(0, 0, 30, 0),
+            ),
+          ),
           Align(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomCenter,
             child: SizedBox(
               height: widget.rowMeusDadosCongif.contentSizedBoxHeight,
               width: widget.rowMeusDadosCongif.contentSizedBoxWidth,
               child: Column(children: [
-                Container(
-                  width: widget.rowMeusDadosCongif.contentSizedBoxWidth,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(2),
-                    color: Palette.projectCollors[200],
+                Align(
+                  alignment:
+                      widget.rowMeusDadosCongif.contentSizedBoxHeight <= 654
+                          ? Alignment.topCenter
+                          : Alignment.bottomCenter,
+                  child: Container(
+                    width: widget.rowMeusDadosCongif.contentSizedBoxWidth,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(2),
+                      color: Palette.projectCollors[200],
+                    ),
+                    height: 3,
                   ),
-                  height: 3,
                 ),
-                SizedBox(
-                  height: 10,
+                Flexible(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        bottom: widget
+                                    .rowMeusDadosCongif.contentSizedBoxHeight <=
+                                654
+                            ? widget.rowMeusDadosCongif.contentSizedBoxHeight /
+                                4
+                            : widget.rowMeusDadosCongif.contentSizedBoxHeight /
+                                6),
+                  ),
                 ),
                 RichText(
                   textAlign: TextAlign.center,
