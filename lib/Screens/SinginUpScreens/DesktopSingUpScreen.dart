@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/foo.dart';
+
 import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/row_meusDados.dart';
 import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/signingUp_path.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialAppBar.dart';

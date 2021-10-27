@@ -3,10 +3,9 @@ import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms
 import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/signingUp_path.dart';
 import 'package:rio_das_pedras_front_end/Screens/utils/colorPalette.dart';
 
-import 'Etapas de cadastro/dados_pessoais.dart';
-import 'foo.dart';
-import 'signingUp_path.dart';
-import 'Etapas de cadastro/etapa.dart';
+import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
+
+import 'SigningUp_Path Steps/Etapa_signinUp_path.dart';
 
 class SingUpPath extends StatefulWidget {
   const SingUpPath({Key? key}) : super(key: key);
@@ -86,8 +85,11 @@ class _SingUpPathState extends State<SingUpPath> {
             ),
             Expanded(
               child: TabBarView(children: [
-                DadosPessoais(context),
-                DadosPessoais(context),
+                ListView(children: <Widget>[FormularioDadosPessoais()]),
+                Container(
+                  //Contatos
+                  child: Text("User Body"),
+                ),
                 Container(
                   //Contatos
                   child: Text("User Body"),
