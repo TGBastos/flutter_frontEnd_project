@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoClienteOragaoEmissorCPF extends StatefulWidget {
-  const CampoClienteOragaoEmissorCPF({Key? key}) : super(key: key);
+  CamposSizeConfigs camposSizeConfigs;
+  CampoClienteOragaoEmissorCPF({required this.camposSizeConfigs});
 
   @override
   _CampoClienteOragaoEmissorCPFState createState() =>
@@ -13,33 +15,39 @@ class _CampoClienteOragaoEmissorCPFState
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: SizedBox(
-        height: 40,
-        width: 480,
-        child: TextFormField(
-          validator: (value) =>
-              value!.isEmpty ? 'coloque o Orgão missor' : null,
-          decoration: InputDecoration(
-            constraints: BoxConstraints(
-              maxHeight: 33,
-            ),
-            floatingLabelBehavior: FloatingLabelBehavior.always,
-            labelText: "Org.Emissor",
-            labelStyle: TextStyle(
-              fontSize: 20,
-            ),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.blue,
+      padding: EdgeInsets.only(
+          top: widget.camposSizeConfigs.spaceBetweenFieldsInTop),
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Org.Emissor'),
+            SizedBox(
+              height: widget.camposSizeConfigs.campoHeight,
+              width: widget.camposSizeConfigs.campoWidth,
+              child: TextFormField(
+                validator: (value) =>
+                    value!.isEmpty ? 'Coloque o orgão emissor' : null,
+                decoration: InputDecoration(
+                  constraints: BoxConstraints(
+                    maxHeight: 33,
+                  ),
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  //labelText: "",
+                  labelStyle: TextStyle(
+                    fontSize: 20,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                      widget.camposSizeConfigs.borderRadius,
+                    ),
+                  ),
+                ),
               ),
-              borderRadius: BorderRadius.circular(
-                36.0,
-              ),
             ),
-          ),
-        ),
-      ),
+          ]),
     );
   }
 }

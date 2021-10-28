@@ -53,7 +53,7 @@ class _SingUpPathState extends State<SingUpPath> {
                   Tab(
                       child: new Etapa(
                           stepNumber: 1,
-                          stepName: 'DadosPessoais',
+                          stepName: 'Dados Pessoais',
                           textFlexNumber: 2)),
                   Tab(
                       child: new Etapa(
