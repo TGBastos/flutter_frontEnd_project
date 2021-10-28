@@ -7,7 +7,7 @@ class Tratamentos {
 }
 
 class CampoClienteTratamento extends StatefulWidget {
-  CamposSizeConfigs camposSizeConfigs;
+  final CamposSizeConfigs camposSizeConfigs;
   CampoClienteTratamento({required this.camposSizeConfigs});
 
   @override

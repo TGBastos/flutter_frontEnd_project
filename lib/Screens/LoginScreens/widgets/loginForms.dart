@@ -1,11 +1,8 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktopLoginScreen.dart';
 import 'package:rio_das_pedras_front_end/core/common/utils/buttonFuctions.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultCheckBox.dart';
-import 'package:rio_das_pedras_front_end/core/entities/cpf.dart';
 
 class LoginForms extends StatefulWidget {
   final double formFontSize;
@@ -22,6 +19,7 @@ class _LoginFormsState extends State<LoginForms> {
   final cpfController = MaskedTextController(mask: '000.000.000-00');
 
   String _CPF = "";
+  // ignore: unused_field
   String _Senha = "";
 
   @override
@@ -44,9 +42,10 @@ class _LoginFormsState extends State<LoginForms> {
                   onSaved: (value) => _CPF = cpfController.unmasked,
                   style: TextStyle(),
                   decoration: InputDecoration(
-                    constraints: BoxConstraints(maxHeight: 33),
                     floatingLabelBehavior: FloatingLabelBehavior.always,
+                    alignLabelWithHint: false,
                     labelText: "CPF",
+                    constraints: BoxConstraints(maxHeight: 33),
                     labelStyle: TextStyle(fontSize: formFontSize),
                     border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.blue),
@@ -93,7 +92,7 @@ class _LoginFormsState extends State<LoginForms> {
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      dynamic result = bttnFuctions.entrar(_CPF);
+                      bttnFuctions.entrar(_CPF);
                     }
                   },
                   buttonHeight: 54,

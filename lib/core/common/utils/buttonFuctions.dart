@@ -1,16 +1,12 @@
-import 'dart:js';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LogedScreens/DesktoLogedScreen.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/SingingUpPageWrapper.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/logedPageWrapper.dart';
 import 'package:rio_das_pedras_front_end/core/entities/cpf.dart';
 import 'package:wsda/core/values/access_token.dart';
 import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
 import 'package:wsda/source/common/endpoints/search_client.dart';
-import 'package:wsda/wsda.dart';
 
 class buttonFuctions {
   BuildContext ctx;
@@ -33,8 +29,8 @@ class buttonFuctions {
     searchClient().then((value) => print(value.data.toString()));
     //signInEndpoint().then((value) => print(value.data));
 
-    Navigator.of(ctx).pushReplacement(
-        MaterialPageRoute(builder: (context) => logedPageWrapper()));
+    Navigator.of(ctx)
+        .push(MaterialPageRoute(builder: (context) => logedPageWrapper()));
   }
 
   cadastrar() {

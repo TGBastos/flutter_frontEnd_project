@@ -3,7 +3,7 @@ import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/Signing
 import '../../../../../commun/widgets/UFList.dart';
 
 class CampoClienteUFNascimento extends StatefulWidget {
-  CamposSizeConfigs camposSizeConfigs;
+  final CamposSizeConfigs camposSizeConfigs;
   CampoClienteUFNascimento({required this.camposSizeConfigs});
 
   @override

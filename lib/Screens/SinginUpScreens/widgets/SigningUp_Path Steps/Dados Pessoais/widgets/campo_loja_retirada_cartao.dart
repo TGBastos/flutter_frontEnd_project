@@ -7,7 +7,7 @@ class Lojas {
 }
 
 class CampoLojaRetiradaCartao extends StatefulWidget {
-  CamposSizeConfigs camposSizeConfigs;
+  final CamposSizeConfigs camposSizeConfigs;
   CampoLojaRetiradaCartao({required this.camposSizeConfigs});
 
   @override

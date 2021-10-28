@@ -4,7 +4,7 @@ import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/mainApp
 import 'package:rio_das_pedras_front_end/Screens/utils/colorPalette.dart';
 
 class UnlogedClientAppBar extends StatefulWidget {
-  AppBarConfigs appBarConfigs;
+  final AppBarConfigs appBarConfigs;
   UnlogedClientAppBar({Key? key, required this.appBarConfigs})
       : super(key: key);
 

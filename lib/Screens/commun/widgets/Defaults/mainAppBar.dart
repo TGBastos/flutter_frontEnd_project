@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/unlogedClientAppBar.dart';
-import '../../../utils/colorPalette.dart';
 
 class AppBarConfigs {
   double deviceHeight;

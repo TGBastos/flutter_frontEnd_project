@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialAppBar.dart';
 import 'package:rio_das_pedras_front_end/Screens/utils/colorPalette.dart';
 
 class InicialSliverAppBar extends StatelessWidget {

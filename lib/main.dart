@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/SingingUpPageWrapper.dart';
 import 'package:wsda/wsda.dart';
 import '../Screens/LoginScreens/LargeDesktopLoginScreen.dart';
 import '../Screens/commun/responsiveController.dart';
@@ -25,16 +24,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: SingingUpPageWrapper());
-    //       responsiveController(
-    //           mobile: mobileLoginScreen(),
-    //           largeDesktop: largeDesktopLoginScreen(),
-    //           desktop: desktopLoginScreen(),
-    //           tablet: tabletLoginScreen()),
-    // );
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home:
+          //SingingUpPageWrapper());
+          responsiveController(
+              mobile: mobileLoginScreen(),
+              largeDesktop: largeDesktopLoginScreen(),
+              desktop: desktopLoginScreen(),
+              tablet: tabletLoginScreen()),
+    );
   }
 }

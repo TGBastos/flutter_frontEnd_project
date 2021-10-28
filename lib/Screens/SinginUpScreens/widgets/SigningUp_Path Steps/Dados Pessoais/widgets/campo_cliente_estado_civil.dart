@@ -7,7 +7,7 @@ class EstadoCivil {
 }
 
 class CampoClienteEstadoCivil extends StatefulWidget {
-  CamposSizeConfigs camposSizeConfigs;
+  final CamposSizeConfigs camposSizeConfigs;
   CampoClienteEstadoCivil({required this.camposSizeConfigs});
 
   @override

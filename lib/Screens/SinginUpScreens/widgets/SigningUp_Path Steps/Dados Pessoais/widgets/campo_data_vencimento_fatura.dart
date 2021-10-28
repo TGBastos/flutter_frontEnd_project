@@ -7,7 +7,7 @@ class Data {
 }
 
 class CampoDataVencimentoFatura extends StatefulWidget {
-  CamposSizeConfigs camposSizeConfigs;
+  final CamposSizeConfigs camposSizeConfigs;
   CampoDataVencimentoFatura({required this.camposSizeConfigs});
   @override
   _CampoDataVencimentoFaturaState createState() =>
