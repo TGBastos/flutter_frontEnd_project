@@ -57,18 +57,6 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
         ),
         Expanded(child: SingUpPath()),
       ]),
-      bottomNavigationBar: SizedBox(
-        height: 30,
-        width: screenSize.width,
-        child: Row(
-          children: <Widget>[
-            IconButton(
-              onPressed: () => {},
-              icon: Icon(Icons.arrow_forward),
-            )
-          ],
-        ),
-      ),
     );
   }
 }

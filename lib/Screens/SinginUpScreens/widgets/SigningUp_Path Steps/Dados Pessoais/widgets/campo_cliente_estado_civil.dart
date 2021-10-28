@@ -20,8 +20,10 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
   List<EstadoCivil> EstadosCivis = <EstadoCivil>[
     EstadoCivil('Solteiro'),
     EstadoCivil('Casado'),
+    EstadoCivil('União Estável'),
     EstadoCivil('Divorciado'),
     EstadoCivil('Viúvo'),
+    EstadoCivil('Outro'),
   ];
   @override
   Widget build(BuildContext context) {

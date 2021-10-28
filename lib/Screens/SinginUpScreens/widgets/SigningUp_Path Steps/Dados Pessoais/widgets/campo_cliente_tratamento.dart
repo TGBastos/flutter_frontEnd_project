@@ -17,8 +17,11 @@ class CampoClienteTratamento extends StatefulWidget {
 class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
   Tratamentos? selectedTratamento;
   List<Tratamentos> tratamentos = <Tratamentos>[
+    Tratamentos('Nenhum'),
     Tratamentos('Sr.'),
     Tratamentos('Sra.'),
+    Tratamentos('Srta.'),
+    Tratamentos('v.exa.'),
   ];
   @override
   Widget build(BuildContext context) {

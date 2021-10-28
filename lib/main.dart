@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:wsda/wsda.dart';
 import '../Screens/LoginScreens/LargeDesktopLoginScreen.dart';
@@ -6,6 +8,7 @@ import '../Screens/commun/responsiveController.dart';
 import 'Screens/LoginScreens/desktopLoginScreen.dart';
 import 'Screens/LoginScreens/mobileLoginScreen.dart';
 import 'Screens/LoginScreens/tabletLoginScreen.dart';
+import 'Screens/commun/widgets/PageWrappers/SingingUpPageWrapper.dart';
 
 void main() {
   WSDA.init(
@@ -24,17 +27,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:
-          //SingingUpPageWrapper());
-          responsiveController(
-              mobile: mobileLoginScreen(),
-              largeDesktop: largeDesktopLoginScreen(),
-              desktop: desktopLoginScreen(),
-              tablet: tabletLoginScreen()),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: SingingUpPageWrapper());
+    //       responsiveController(
+    //           mobile: mobileLoginScreen(),
+    //           largeDesktop: largeDesktopLoginScreen(),
+    //           desktop: desktopLoginScreen(),
+    //           tablet: tabletLoginScreen()),
+    // );
   }
 }

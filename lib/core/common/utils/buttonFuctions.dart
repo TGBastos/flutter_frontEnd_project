@@ -29,8 +29,8 @@ class buttonFuctions {
     searchClient().then((value) => print(value.data.toString()));
     //signInEndpoint().then((value) => print(value.data));
 
-    Navigator.of(ctx)
-        .push(MaterialPageRoute(builder: (context) => logedPageWrapper()));
+    Navigator.of(ctx).pushReplacement(
+        MaterialPageRoute(builder: (context) => logedPageWrapper()));
   }
 
   cadastrar() {

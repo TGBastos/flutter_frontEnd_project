@@ -19,7 +19,10 @@ class _CampoDataVencimentoFaturaState extends State<CampoDataVencimentoFatura> {
   List<Data> datas = <Data>[
     Data('10'),
     Data('15'),
+    Data('18'),
     Data('20'),
+    Data('22'),
+    Data('28'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,6 +35,9 @@ class _CampoDataVencimentoFaturaState extends State<CampoDataVencimentoFatura> {
           children: <Widget>[
             Text('Escolha a data de vencimento da fatura:'),
             Container(
+              padding: EdgeInsets.only(left: 20),
+              height: widget.camposSizeConfigs.campoHeight,
+              width: widget.camposSizeConfigs.campoWidth,
               decoration: BoxDecoration(
                   border: Border.all(
                     width: 1,
@@ -39,37 +45,44 @@ class _CampoDataVencimentoFaturaState extends State<CampoDataVencimentoFatura> {
                   ),
                   borderRadius: BorderRadius.circular(
                       widget.camposSizeConfigs.borderRadius)),
-              child: SizedBox(
-                height: widget.camposSizeConfigs.campoHeight,
-                width: widget.camposSizeConfigs.campoWidth,
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<Data>(
-                    borderRadius: BorderRadius.circular(20),
-                    hint: Text("Selecionar"),
-                    isExpanded: true,
-                    icon: Icon(
-                      Icons.arrow_drop_down,
+              child: Align(
+                alignment: Alignment.center,
+                child: SizedBox(
+                  height: widget.camposSizeConfigs.campoHeight,
+                  width: widget.camposSizeConfigs.campoWidth,
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<Data>(
+                      borderRadius: BorderRadius.circular(20),
+                      alignment: AlignmentDirectional.centerEnd,
+                      hint: Text(
+                        "Selecionar",
+                        style: TextStyle(),
+                      ),
+                      isExpanded: true,
+                      icon: Icon(
+                        Icons.arrow_drop_down,
+                      ),
+                      value: selectedData,
+                      onChanged: (Data? Value) {
+                        setState(() {
+                          selectedData = Value;
+                        });
+                      },
+                      items: datas.map((Data data) {
+                        return DropdownMenuItem<Data>(
+                          value: data,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                data.data,
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        );
+                      }).toList(),
                     ),
-                    value: selectedData,
-                    onChanged: (Data? Value) {
-                      setState(() {
-                        selectedData = Value;
-                      });
-                    },
-                    items: datas.map((Data data) {
-                      return DropdownMenuItem<Data>(
-                        value: data,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              data.data,
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
-                      );
-                    }).toList(),
                   ),
                 ),
               ),
