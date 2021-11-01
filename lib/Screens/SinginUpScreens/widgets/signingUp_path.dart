@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Contatos/formulario_contatos.dart';
 import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/formulario_endere%C3%A7o.dart';
 
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
@@ -87,11 +88,14 @@ class _SingUpPathState extends State<SingUpPath> {
                   FormularioDadosPessoais(),
                 ]),
                 ListView(
-                  children: <Widget>[FormularioEndereco()],
+                  children: <Widget>[
+                    FormularioEndereco(),
+                  ],
                 ),
-                Container(
-                  //Contatos
-                  child: Text("User Body"),
+                ListView(
+                  children: <Widget>[
+                    FormularioContatos(),
+                  ],
                 ),
                 Container(
                   //Profissional e financeira
