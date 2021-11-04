@@ -33,7 +33,7 @@ class _CampoPreferenciaContatoState extends State<CampoPreferenciaContato> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('UF de nascimento'),
+          Text('Preferência de contato'),
           Container(
             decoration: BoxDecoration(
               border: Border.all(

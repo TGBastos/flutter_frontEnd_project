@@ -1,17 +1,28 @@
 import 'package:flutter/material.dart';
-import '../../../../../commun/widgets/UFList.dart';
-import '../../campos_size_configs.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/campos_size_configs.dart';
 
-class CampoEmpresaUF extends StatefulWidget {
-  final CamposSizeConfigs camposSizeConfigs;
-  const CampoEmpresaUF({required this.camposSizeConfigs});
-
-  @override
-  _CampoEmpresaUFState createState() => _CampoEmpresaUFState();
+class Profissao {
+  final String profissao;
+  Profissao(
+    this.profissao,
+  );
 }
 
-class _CampoEmpresaUFState extends State<CampoEmpresaUF> {
-  UF? selectedUF;
+class CampoProfisao extends StatefulWidget {
+  final CamposSizeConfigs camposSizeConfigs;
+  const CampoProfisao({required this.camposSizeConfigs});
+
+  @override
+  _CampoProfisaoState createState() => _CampoProfisaoState();
+}
+
+class _CampoProfisaoState extends State<CampoProfisao> {
+  Profissao? selectedProfissao;
+  List<Profissao> profissoes = <Profissao>[
+    Profissao('profissao'),
+    Profissao('profissao'),
+    Profissao('profissao'),
+  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +32,7 @@ class _CampoEmpresaUFState extends State<CampoEmpresaUF> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Text('UF'),
+          Text('Profissão'),
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -35,25 +46,25 @@ class _CampoEmpresaUFState extends State<CampoEmpresaUF> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: DropdownButtonHideUnderline(
-                child: DropdownButton<UF>(
+                child: DropdownButton<Profissao>(
                   style: TextStyle(),
                   borderRadius: BorderRadius.circular(20),
                   //hint: Text('Selecionar'),
                   isExpanded: true,
-                  value: selectedUF,
-                  onChanged: (UF? Value) {
+                  value: selectedProfissao,
+                  onChanged: (Profissao? Value) {
                     setState(() {
-                      selectedUF = Value;
+                      selectedProfissao = Value;
                     });
                   },
-                  items: ufs.map((UF uf) {
-                    return DropdownMenuItem<UF>(
-                        value: uf,
+                  items: profissoes.map((Profissao profissao) {
+                    return DropdownMenuItem<Profissao>(
+                        value: profissao,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             Text(
-                              uf.uf,
+                              profissao.profissao,
                               style: TextStyle(
                                 color: Colors.black,
                               ),

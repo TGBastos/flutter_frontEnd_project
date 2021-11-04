@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/campos_size_configs.dart';
 
-class CampoEmpresa extends StatefulWidget {
+class CampoNome2 extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
-  const CampoEmpresa({required this.camposSizeConfigs});
+  const CampoNome2({required this.camposSizeConfigs});
 
   @override
-  _CampoEmpresaState createState() => _CampoEmpresaState();
+  _CampoNome2State createState() => _CampoNome2State();
 }
 
-class _CampoEmpresaState extends State<CampoEmpresa> {
+class _CampoNome2State extends State<CampoNome2> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,13 +18,12 @@ class _CampoEmpresaState extends State<CampoEmpresa> {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Empresa'),
+            Text('Nome'),
             SizedBox(
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) =>
-                    value!.isEmpty ? 'Coloque sua empresa' : null,
+                validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
