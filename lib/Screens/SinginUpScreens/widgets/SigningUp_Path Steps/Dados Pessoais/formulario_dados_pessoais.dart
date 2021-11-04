@@ -43,7 +43,7 @@ class _FormularioDadosPessoaisState extends State<FormularioDadosPessoais> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
-          PrimeiraColuna(),
+          PrimeiraColunaDadosPessoais(),
           SegundaColuna(),
           TerceiraColuna(),
         ],

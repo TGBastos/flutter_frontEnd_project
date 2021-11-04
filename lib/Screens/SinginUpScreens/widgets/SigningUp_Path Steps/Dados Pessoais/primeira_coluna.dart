@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_estado_civil.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_conjuge_nome.dart';
 
 import '../campos_size_configs.dart';
 import 'widgets/campo_cliente_UF_nascimento.dart';
@@ -8,12 +10,19 @@ import 'widgets/campo_cliente_orgao_emissor_CPF_cliente.dart';
 import 'widgets/campo_cliente_sexo.dart';
 import 'widgets/campo_data_vencimento_fatura.dart';
 
-class PrimeiraColuna extends StatelessWidget {
-  const PrimeiraColuna({Key? key}) : super(key: key);
+class PrimeiraColunaDadosPessoais extends StatefulWidget {
+  const PrimeiraColunaDadosPessoais({Key? key}) : super(key: key);
 
   @override
+  _PrimeiraColunaDadosPessoaisState createState() =>
+      _PrimeiraColunaDadosPessoaisState();
+}
+
+class _PrimeiraColunaDadosPessoaisState
+    extends State<PrimeiraColunaDadosPessoais> {
+  @override
   Widget build(BuildContext context) {
-    Size screenSize = MediaQuery.of(context).size;
+    final Size screenSize = MediaQuery.of(context).size;
     return Column(
       //Primeira Coluna
       children: <Widget>[
@@ -70,6 +79,16 @@ class PrimeiraColuna extends StatelessWidget {
             spaceBetweenFieldsInTop: 40,
           ),
         ),
+        CampoClienteEstadoCivil.inRelationship == true
+            ? Container()
+            : CampoConjugeNome(
+                camposSizeConfigs: new CamposSizeConfigs(
+                  campoHeight: 40,
+                  campoWidth: screenSize.width / 4.5,
+                  borderRadius: 15,
+                  spaceBetweenFieldsInTop: 40,
+                ),
+              ),
         SizedBox(
           height: screenSize.height / 64,
         ),

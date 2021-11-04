@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicialAppBar.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/logedClientAppBar.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/mainAppBar.dart';
 import 'package:rio_das_pedras_front_end/core/common/utils/buttonFuctions.dart';
 
 class DesktopLogedScreen extends StatefulWidget {
@@ -14,8 +16,21 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: InicialAppBar(
-          DeviceHeight: screenSize.height / 3, DeviceWidth: screenSize.width),
+      appBar: MainAppBar(
+        appBarConfigs: new AppBarConfigs(
+          deviceWidth: screenSize.width,
+          deviceHeight: screenSize.height / 8,
+          greenContainerHeight: screenSize.height / 12,
+          greenContainerWidth: screenSize.width,
+          imageHeight: screenSize.height / 12,
+          imageWidth: screenSize.width / 8,
+          orangeContainerHeight: screenSize.height / 24,
+          orangeContainerWidth: screenSize.width,
+          witheImageBackgroundHeight: screenSize.height / 9.5,
+          witheImageBackgroundWidth: screenSize.width / 6,
+        ),
+        isLoged: true,
+      ),
       body: Text(buttonFuctions.clienteInfos.clienteNome),
     );
   }

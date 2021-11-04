@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/logedClientAppBar.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/unlogedClientAppBar.dart';
 
 class AppBarConfigs {
@@ -42,7 +43,7 @@ class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return isLoged == false
         ? UnlogedClientAppBar(appBarConfigs: appBarConfigs)
-        : Container();
+        : LogedClientAppBar(appBarConfigs: appBarConfigs);
   }
 
   @override

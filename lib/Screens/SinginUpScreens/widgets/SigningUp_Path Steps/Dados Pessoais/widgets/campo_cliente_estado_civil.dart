@@ -1,14 +1,19 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class EstadoCivil {
   String estadoCivil;
+
   EstadoCivil(this.estadoCivil);
 }
 
 class CampoClienteEstadoCivil extends StatefulWidget {
+  static bool? inRelationship;
   final CamposSizeConfigs camposSizeConfigs;
   CampoClienteEstadoCivil({required this.camposSizeConfigs});
+  _CampoClienteEstadoCivilState state = _CampoClienteEstadoCivilState();
 
   @override
   _CampoClienteEstadoCivilState createState() =>
@@ -17,6 +22,7 @@ class CampoClienteEstadoCivil extends StatefulWidget {
 
 class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
   EstadoCivil? selectedEstadoCivil;
+
   List<EstadoCivil> EstadosCivis = <EstadoCivil>[
     EstadoCivil('Solteiro'),
     EstadoCivil('Casado'),
@@ -34,7 +40,7 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Escolha a data de vencimento da fatura:'),
+            Text('Estada Civil'),
             Container(
               decoration: BoxDecoration(
                   border: Border.all(
@@ -58,6 +64,8 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
                     onChanged: (EstadoCivil? Value) {
                       setState(() {
                         selectedEstadoCivil = Value;
+
+                        CampoClienteEstadoCivil.inRelationship = true;
                       });
                     },
                     items: EstadosCivis.map((EstadoCivil estadoCivil) {
