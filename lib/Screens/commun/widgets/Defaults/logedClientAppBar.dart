@@ -10,8 +10,6 @@ class LogedClientAppBar extends StatefulWidget {
   @override
   _LogedClientAppBarState createState() => _LogedClientAppBarState();
 
-  @override
-  // TODO: implement preferredSize
   Size get preferredSize => throw UnimplementedError();
 }
 

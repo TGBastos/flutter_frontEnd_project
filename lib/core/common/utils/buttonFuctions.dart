@@ -40,7 +40,7 @@ class buttonFuctions {
 
     if (teste.clienteNome != '') {
       await teste;
-      Navigator.of(ctx).pushReplacement(
+      Navigator.of(ctx).push(
         MaterialPageRoute(
           builder: (context) => logedPageWrapper(),
         ),
@@ -57,8 +57,8 @@ class buttonFuctions {
 
   cadastrar() {
     print("Cadastrado");
-    Navigator.of(ctx).pushReplacement(
-        MaterialPageRoute(builder: (context) => SingingUpPageWrapper()));
+    Navigator.of(ctx)
+        .push(MaterialPageRoute(builder: (context) => SingingUpPageWrapper()));
   }
 
   forgotPassword() {
