@@ -84,6 +84,8 @@ class Cliente {
   late final bool clientePossuiSenhaWeb;
   late final String clienteDataAceiteRegulamentoFidelidade;
 
+  static Cliente instance = Cliente.fromJson({});
+
   Cliente.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     clienteCodigo = json['clienteCodigo'];

@@ -15,7 +15,7 @@ class desktopLoginScreen extends StatefulWidget {
 class _desktopLoginScreenState extends State<desktopLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions(context);
+    buttonFuctions bttnFuctions = buttonFuctions();
     final screenSize = MediaQuery.of(context).size;
     return WillPopScope(
       onWillPop: () async => false,

@@ -16,7 +16,7 @@ class largeDesktopLoginScreen extends StatefulWidget {
 class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions(context);
+    buttonFuctions bttnFuctions = buttonFuctions();
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: InicialAppBar(

@@ -47,6 +47,8 @@ dependencies:
   cpf_cnpj_validator: ^2.0.0
   extended_masked_text: ^2.3.1
   font_awesome_flutter: ^9.1.0
+  bloc: ^7.2.1
+  carousel_slider: ^4.0.0
   
 
 dev_dependencies:

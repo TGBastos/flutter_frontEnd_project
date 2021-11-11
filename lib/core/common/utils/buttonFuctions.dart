@@ -11,10 +11,7 @@ import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
 import 'package:wsda/source/common/endpoints/search_client.dart';
 
 class buttonFuctions {
-  static late Cliente clienteInfos;
-  var cliente;
-  BuildContext ctx;
-  buttonFuctions(this.ctx);
+  buttonFuctions();
   entrar(
     String ClientCPF,
   ) async {
@@ -33,32 +30,14 @@ class buttonFuctions {
     Cliente teste = await searchClient().then(
       (value) => value.data['code'] == '100'
           ? Cliente.fromJson({})
-          : Cliente.fromJson(value.data),
+          : Cliente.instance = Cliente.fromJson(value.data),
     );
-
-    clienteInfos = teste;
-
-    if (teste.clienteNome != '') {
-      await teste;
-      Navigator.of(ctx).push(
-        MaterialPageRoute(
-          builder: (context) => logedPageWrapper(),
-        ),
-      );
-    }
-    print(teste.clienteNome);
-    searchClient().then(
-      (value) =>
-          value.data['code'] == '000' ? print('Deu bom') : print('Deu ruim'),
-    );
-
-    //signInEndpoint().then((value) => print(value.data));
   }
 
   cadastrar() {
-    print("Cadastrado");
-    Navigator.of(ctx)
-        .push(MaterialPageRoute(builder: (context) => SingingUpPageWrapper()));
+    // print("Cadastrado");
+    // Navigator.of(ctx)
+    //     .push(MaterialPageRoute(builder: (context) => SingingUpPageWrapper()));
   }
 
   forgotPassword() {

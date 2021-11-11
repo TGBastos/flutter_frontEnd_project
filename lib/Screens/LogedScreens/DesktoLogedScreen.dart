@@ -3,6 +3,7 @@ import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/inicial
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/logedClientAppBar.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/mainAppBar.dart';
 import 'package:rio_das_pedras_front_end/core/common/utils/buttonFuctions.dart';
+import 'package:rio_das_pedras_front_end/core/entities/cliente.dart';
 
 class DesktopLogedScreen extends StatefulWidget {
   const DesktopLogedScreen({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
         ),
         isLoged: true,
       ),
-      body: Text(buttonFuctions.clienteInfos.clienteNome),
+      body: Text(Cliente.instance.clienteNome),
     );
   }
 }

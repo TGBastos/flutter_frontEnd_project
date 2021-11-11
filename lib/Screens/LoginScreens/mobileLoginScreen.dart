@@ -19,7 +19,7 @@ class mobileLoginScreen extends StatefulWidget {
 class _mobileLoginScreenState extends State<mobileLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions(context);
+    buttonFuctions bttnFuctions = buttonFuctions();
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       body: CustomScrollView(slivers: <Widget>[

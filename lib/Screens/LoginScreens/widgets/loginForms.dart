@@ -1,8 +1,10 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/logedPageWrapper.dart';
 import 'package:rio_das_pedras_front_end/core/common/utils/buttonFuctions.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultCheckBox.dart';
+import 'package:rio_das_pedras_front_end/core/entities/cliente.dart';
 
 class LoginForms extends StatefulWidget {
   final double formFontSize;
@@ -25,7 +27,7 @@ class _LoginFormsState extends State<LoginForms> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    buttonFuctions bttnFuctions = buttonFuctions(context);
+    buttonFuctions bttnFuctions = buttonFuctions();
     var formWidth = this.widget.formWidth;
     var formFontSize = this.widget.formFontSize;
     return Container(
@@ -92,7 +94,12 @@ class _LoginFormsState extends State<LoginForms> {
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
-                      bttnFuctions.entrar(_CPF);
+                      await bttnFuctions.entrar(_CPF);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => logedPageWrapper(),
+                        ),
+                      );
                     }
                   },
                   buttonHeight: 54,

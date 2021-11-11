@@ -16,7 +16,7 @@ class tabletLoginScreen extends StatefulWidget {
 class _tabletLoginScreenState extends State<tabletLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    buttonFuctions bttnFuctions = buttonFuctions(context);
+    buttonFuctions bttnFuctions = buttonFuctions();
 
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
