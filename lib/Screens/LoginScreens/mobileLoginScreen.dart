@@ -60,9 +60,9 @@ class _mobileLoginScreenState extends State<mobileLoginScreen> {
                       Padding(
                           padding: EdgeInsets.fromLTRB(
                               0, screenSize.height / 40, 0, 20),
-                          child: new defaultButton(
-                            btnText: 'Cadastrar',
-                            onPressed: bttnFuctions.cadastrar,
+                          child: new DefaultButton(
+                            btnContent: Text('Cadastrar'),
+                            onPressed: () {},
                             buttonHeight: 54,
                             buttonWidth: 155,
                           )),

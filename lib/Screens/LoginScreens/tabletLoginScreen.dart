@@ -77,8 +77,8 @@ class _tabletLoginScreenState extends State<tabletLoginScreen> {
                   ),
                   Padding(
                       padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      child: new defaultButton(
-                        btnText: 'Cadastre-se',
+                      child: new DefaultButton(
+                        btnContent: Text('Cadastre-se'),
                         onPressed: bttnFuctions.cadastrar,
                         buttonHeight: 54,
                         buttonWidth: 155,

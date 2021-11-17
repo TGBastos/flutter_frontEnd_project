@@ -68,8 +68,8 @@ class _largeDesktopLoginScreenState extends State<largeDesktopLoginScreen> {
                     ),
                     Padding(
                         padding: const EdgeInsets.all(5),
-                        child: defaultButton(
-                          btnText: 'cadastrar',
+                        child: DefaultButton(
+                          btnContent: Text('cadastrar'),
                           onPressed: bttnFuctions.cadastrar,
                           buttonHeight: 72,
                           buttonWidth: 206,

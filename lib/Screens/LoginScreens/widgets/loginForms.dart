@@ -4,7 +4,6 @@ import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/log
 import 'package:rio_das_pedras_front_end/core/common/utils/buttonFuctions.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultButton.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/defaultCheckBox.dart';
-import 'package:rio_das_pedras_front_end/core/entities/cliente.dart';
 
 class LoginForms extends StatefulWidget {
   final double formFontSize;
@@ -19,7 +18,7 @@ class LoginForms extends StatefulWidget {
 class _LoginFormsState extends State<LoginForms> {
   var _formKey = GlobalKey<FormState>();
   final cpfController = MaskedTextController(mask: '000.000.000-00');
-
+  bool clickInProgress = false;
   String _CPF = "";
   // ignore: unused_field
   String _Senha = "";
@@ -89,21 +88,32 @@ class _LoginFormsState extends State<LoginForms> {
             ),
             Padding(
                 padding: EdgeInsets.fromLTRB(0, screenSize.height / 20, 0, 0),
-                child: new defaultButton(
-                  btnText: 'Entrar',
-                  onPressed: () async {
-                    if (_formKey.currentState!.validate()) {
-                      _formKey.currentState!.save();
-                      await bttnFuctions.entrar(_CPF);
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => logedPageWrapper(),
-                        ),
-                      );
-                    }
-                  },
-                  buttonHeight: 54,
-                  buttonWidth: 155,
+                child: IgnorePointer(
+                  ignoring: clickInProgress,
+                  child: new DefaultButton(
+                    btnContent: clickInProgress == false
+                        ? Text('Entrar')
+                        : Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                            ),
+                          ),
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        _formKey.currentState!.save();
+                        setState(() => clickInProgress = true);
+                        await bttnFuctions.entrar(_CPF);
+                        setState(() => clickInProgress = false);
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => logedPageWrapper(),
+                          ),
+                        );
+                      }
+                    },
+                    buttonHeight: 54,
+                    buttonWidth: 155,
+                  ),
                 )),
           ])),
     ));

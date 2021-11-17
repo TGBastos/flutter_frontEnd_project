@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/widgets/loginForms.dart';
+import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/signingUp_path.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/SingingUpPageWrapper.dart';
 import '../../core/common/utils/buttonFuctions.dart';
 import '../commun/widgets/Defaults/inicialAppBar.dart';
 import '../commun/widgets/Defaults/defaultButton.dart';
@@ -103,14 +105,22 @@ class _desktopLoginScreenState extends State<desktopLoginScreen> {
                             ),
                           ),
                           Padding(
-                              padding: EdgeInsets.fromLTRB(
-                                  0, screenSize.height / 20, 0, 0),
-                              child: new defaultButton(
-                                btnText: 'Cadastrar',
-                                onPressed: bttnFuctions.cadastrar,
-                                buttonHeight: 54,
-                                buttonWidth: 155,
-                              ))
+                            padding: EdgeInsets.fromLTRB(
+                                0, screenSize.height / 20, 0, 0),
+                            child: new DefaultButton(
+                              btnContent: Text('Cadastrar'),
+                              onPressed: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        SingingUpPageWrapper(),
+                                  ),
+                                );
+                              },
+                              buttonHeight: 54,
+                              buttonWidth: 155,
+                            ),
+                          ),
                         ],
                       ),
                     )),

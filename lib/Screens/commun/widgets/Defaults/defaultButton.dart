@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../../../utils/colorPalette.dart';
 
-class defaultButton extends StatelessWidget {
-  final String btnText;
+class DefaultButton extends StatelessWidget {
+  final Widget btnContent;
   final void Function() onPressed;
   final double? buttonWidth;
   final double? buttonHeight;
-  const defaultButton({
+  const DefaultButton({
     Key? key,
-    required String this.btnText,
+    required this.btnContent,
     required this.onPressed,
     required this.buttonWidth,
     required this.buttonHeight,
@@ -21,7 +21,7 @@ class defaultButton extends StatelessWidget {
       height: buttonHeight,
       child: ElevatedButton(
           onPressed: () => onPressed(),
-          child: Text(btnText),
+          child: btnContent,
           style: ButtonStyle(
               textStyle:
                   MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 20)),
