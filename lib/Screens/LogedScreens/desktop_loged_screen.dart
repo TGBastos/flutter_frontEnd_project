@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '.././LogedScreens/widgets/Corpo%20da%20tela/corpo_tela.dart';
+import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/alert_icons.dart';
+import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/icons_column.dart';
+import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/text_column.dart';
 import '.././LogedScreens/widgets/titulo_tela.dart';
 import '.././commun/widgets/Defaults/bottom_brand_line.dart';
 import '.././commun/widgets/Defaults/carousel_slider.dart';
@@ -51,16 +52,16 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
                 bottomFirstTextPadding: screenSize.height,
               ),
             ),
-            CorpoDaTela(),
-            // BottomBrandLine(),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  right: screenSize.width / 3.5,
-                ),
-                child: Icon(Icons.ac_unit),
-              ),
+            SizedBox(height: screenSize.height / 32),
+            Row(
+              children: <Widget>[
+                SizedBox(width: screenSize.width / 9),
+                IconsColumn(),
+                SizedBox(width: screenSize.width / 32),
+                TextColumn(),
+                SizedBox(width: screenSize.width / 8),
+                InformationIcons(),
+              ],
             ),
           ],
         ),
