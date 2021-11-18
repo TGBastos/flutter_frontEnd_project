@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Referencias%20Pessoais/widgets/campo_telefone1.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Referencias%20Pessoais/widgets/campo_telefone2.dart';
 
 import '../campos_size_configs.dart';
+import 'widgets/campo_telefone1.dart';
+import 'widgets/campo_telefone2.dart';
 
 class SegundaColunaReferenciasPessoais extends StatelessWidget {
   const SegundaColunaReferenciasPessoais({Key? key}) : super(key: key);

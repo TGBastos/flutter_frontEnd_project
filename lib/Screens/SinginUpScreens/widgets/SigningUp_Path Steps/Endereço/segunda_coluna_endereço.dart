@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_bairro.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_endere%C3%A7o.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_tipo_residencia.dart';
+
 import '../campos_size_configs.dart';
+import 'widgets/campo_bairro.dart';
+import 'widgets/campo_endereço.dart';
+import 'widgets/campo_tipo_residencia.dart';
 
 class SegundaColunaEndereco extends StatelessWidget {
   const SegundaColunaEndereco({Key? key}) : super(key: key);

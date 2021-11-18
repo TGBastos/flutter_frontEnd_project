@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_data_nascimento.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_expedidor_RG.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_naturalidade.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_nome_mae.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_data_nascimento.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_expedidor_RG.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_naturalidade.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_nome_mae.dart';
 
 import '../campos_size_configs.dart';
 import 'widgets/campo_cliente_nome.dart';

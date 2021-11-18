@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Contatos/formulario_contatos.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/formulario_endere%C3%A7o.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Profissional%20e%20financeira/formulario_profissional_financeira.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Referencias%20Comerciais/formulario_referencias_comerciais.dart';
 
+import 'SigningUp_Path Steps/Contatos/formulario_contatos.dart';
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
-
+import 'SigningUp_Path Steps/Endereço/formulario_endereço.dart';
 import 'SigningUp_Path Steps/Etapa_signinUp_path.dart';
+import 'SigningUp_Path Steps/Profissional_e_financeira/formulario_profissional_financeira.dart';
+import 'SigningUp_Path Steps/Referencias Comerciais/formulario_referencias_comerciais.dart';
 import 'SigningUp_Path Steps/Referencias Pessoais/formulario_referencias_pessoais.dart';
 
 class SingUpPath extends StatefulWidget {
@@ -17,6 +16,16 @@ class SingUpPath extends StatefulWidget {
 }
 
 class _SingUpPathState extends State<SingUpPath> {
+  List<GlobalKey<FormState>> myKeys = [
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+    GlobalKey<FormState>(),
+  ];
+  int previousTabIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -41,6 +50,10 @@ class _SingUpPathState extends State<SingUpPath> {
                   borderRadius: BorderRadius.all(Radius.circular(2))),
               // color: Colors.red,
               child: TabBar(
+                onTap: (index) {
+                  myKeys[previousTabIndex].currentState?.validate();
+                  previousTabIndex = index;
+                },
                 unselectedLabelStyle:
                     TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                 labelStyle:
@@ -86,36 +99,40 @@ class _SingUpPathState extends State<SingUpPath> {
               ),
             ),
             Expanded(
-              child: TabBarView(children: [
-                ListView(children: <Widget>[
-                  FormularioDadosPessoais(),
-                ]),
-                ListView(
-                  children: <Widget>[
-                    FormularioEndereco(),
-                  ],
-                ),
-                ListView(
-                  children: <Widget>[
-                    FormularioContatos(),
-                  ],
-                ),
-                ListView(
-                  children: <Widget>[
-                    FormularioProfissionalFinanceira(),
-                  ],
-                ),
-                ListView(
-                  children: <Widget>[
-                    FormularioReferenciasPessoais(),
-                  ],
-                ),
-                ListView(
-                  children: <Widget>[
-                    FormularioReferenciasComerciais(),
-                  ],
-                )
-              ]),
+              child: TabBarView(
+                children: [
+                  ListView(
+                    children: <Widget>[
+                      FormularioDadosPessoais(formKey: myKeys[0]),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      FormularioEndereco(),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      FormularioContatos(),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      FormularioProfissionalFinanceira(),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      FormularioReferenciasPessoais(),
+                    ],
+                  ),
+                  ListView(
+                    children: <Widget>[
+                      FormularioReferenciasComerciais(),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

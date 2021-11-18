@@ -14,13 +14,15 @@ class RowCartoes extends StatelessWidget {
         Row(
           children: [
             IconButton(
+              iconSize: 60,
               onPressed: () => {},
               icon: Icon(
-                Icons.credit_card,
+                Icons.credit_card_rounded,
+                //size: 60,
               ),
             ),
             SizedBox(
-              width: screenSize.width / 96,
+              width: screenSize.width / 36,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

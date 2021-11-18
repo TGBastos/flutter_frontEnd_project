@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/utils/colorPalette.dart';
+import '../../../utils/pallete_color.dart';
 
 class BottomBrandLine extends StatelessWidget {
   const BottomBrandLine({Key? key}) : super(key: key);

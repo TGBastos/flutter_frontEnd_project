@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class CamposSizeConfigs {
   final double campoWidth;
   final double campoHeight;

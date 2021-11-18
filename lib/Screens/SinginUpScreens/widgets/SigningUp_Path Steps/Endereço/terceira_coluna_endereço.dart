@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_tempo_residencia.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_tempo_residencia.dart';
 
 import '../campos_size_configs.dart';
 

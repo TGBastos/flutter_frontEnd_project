@@ -14,13 +14,15 @@ class RowFaturas extends StatelessWidget {
         Row(
           children: [
             IconButton(
+              iconSize: 60,
               onPressed: () => {},
               icon: Icon(
-                Icons.file_present,
+                Icons.file_copy_rounded,
+                //size: 60,
               ),
             ),
             SizedBox(
-              width: screenSize.width / 96,
+              width: screenSize.width / 36,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,

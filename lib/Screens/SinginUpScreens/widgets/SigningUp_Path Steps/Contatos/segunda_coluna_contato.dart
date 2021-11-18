@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Contatos/widgets/campo_telefone.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/Contatos/widgets/campo_telefone_fixo.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Contatos/widgets/campo_telefone.dart';
+import '../../../widgets/SigningUp_Path%20Steps/Contatos/widgets/campo_telefone_fixo.dart';
 
 import '../campos_size_configs.dart';
 

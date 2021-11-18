@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/SinginUpScreens/widgets/SigningUp_Path%20Steps/campos_size_configs.dart';
-import '../../../../../commun/widgets/UFList.dart';
+import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
+import '../../../../../../core/entities/uf_list.dart';
 
 class CampoClienteUFNascimento extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;

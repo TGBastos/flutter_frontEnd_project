@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../commun/widgets/UFList.dart';
+import '../../../../../../core/entities/uf_list.dart';
 import '../../campos_size_configs.dart';
 
 class CampoUF extends StatefulWidget {
