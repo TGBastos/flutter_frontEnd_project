@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/alert_icons.dart';
+import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/information_row.dart';
 import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/icons_column.dart';
 import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/Corpo%20da%20tela/text_column.dart';
 import '.././LogedScreens/widgets/titulo_tela.dart';

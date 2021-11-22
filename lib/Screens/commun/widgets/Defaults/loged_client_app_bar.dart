@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rio_das_pedras_front_end/Screens/LogedScreens/desktop_loged_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktop_login_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils/pallete_color.dart';
 import '../Defaults/main_app_bar.dart';
@@ -59,7 +59,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                         ),
                         child: IconButton(
                           color: Colors.white,
-                          onPressed: () => {},
+                          onPressed: _launchFacebookURL,
                           icon: FaIcon(
                             FontAwesomeIcons.facebook,
                           ),
@@ -79,7 +79,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                         ),
                         child: IconButton(
                           color: Colors.white,
-                          onPressed: () => {},
+                          onPressed: _launchInstagramURL,
                           icon: FaIcon(
                             FontAwesomeIcons.instagram,
                           ),
@@ -239,5 +239,23 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
         ),
       ],
     );
+  }
+
+  void _launchInstagramURL() async {
+    const url = 'https://www.instagram.com/superriodaspedras/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Página não encontrada';
+    }
+  }
+
+  void _launchFacebookURL() async {
+    const url = 'https://www.facebook.com/supermercadoriodaspedras/';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Página não encontrada';
+    }
   }
 }

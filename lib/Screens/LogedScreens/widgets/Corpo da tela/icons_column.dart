@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class IconsColumn extends StatelessWidget {
   const IconsColumn({Key? key}) : super(key: key);
@@ -8,15 +9,24 @@ class IconsColumn extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
     return Column(
       children: <Widget>[
-        Icon(Icons.credit_card),
+        Icon(
+          LineAwesomeIcons.credit_card_1,
+          size: 40,
+        ),
         SizedBox(
           height: screenSize.height / 16,
         ),
-        Icon(Icons.file_copy),
+        Icon(
+          LineAwesomeIcons.file_invoice,
+          size: 40,
+        ),
         SizedBox(
           height: screenSize.height / 16,
         ),
-        Icon(Icons.mail),
+        Icon(
+          LineAwesomeIcons.mail_bulk,
+          size: 40,
+        ),
       ],
     );
   }
