@@ -1,10 +1,10 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/routes/routes_name.dart';
 
 import '../../../core/common/utils/button_fuctions.dart';
 import '../../commun/widgets/Defaults/default_button.dart';
 import '../../commun/widgets/Defaults/default_check_box.dart';
-import '../../commun/widgets/PageWrappers/loged_page_wrapper.dart';
 
 class LoginForms extends StatefulWidget {
   final double formFontSize;
@@ -105,11 +105,7 @@ class _LoginFormsState extends State<LoginForms> {
                         setState(() => clickInProgress = true);
                         await bttnFuctions.entrar(_CPF);
                         setState(() => clickInProgress = false);
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => LogedPageWrapper(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, RoutesName.logedPage);
                       }
                     },
                     buttonHeight: 54,

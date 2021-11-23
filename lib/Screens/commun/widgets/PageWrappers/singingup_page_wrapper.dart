@@ -16,8 +16,8 @@ class SingingUpPageWrapper extends StatefulWidget {
 class _SingingUpPageWrapperState extends State<SingingUpPageWrapper> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ResponsiveController(
+    return Scaffold(
+      body: ResponsiveController(
           desktop: DesktopSingUpScreen(),
           tablet: TabletSingUpScreen(),
           mobile: MobileSingUpScreen(),

@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import '../LogedScreens/widgets/Corpo da tela/text_column.dart';
-import '../LogedScreens/widgets/Corpo da tela/information_row.dart';
-import '../LogedScreens/widgets/Corpo da tela/icons_column.dart';
-import '.././LogedScreens/widgets/titulo_tela.dart';
-import '.././commun/widgets/Defaults/bottom_brand_line.dart';
-import '.././commun/widgets/Defaults/carousel_slider.dart';
-import '.././commun/widgets/Defaults/main_app_bar.dart';
+import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/titulo_tela.dart';
+import 'package:rio_das_pedras_front_end/Screens/MensagesScreens/widgets/mensages_list.dart';
+import 'package:rio_das_pedras_front_end/Screens/MensagesScreens/widgets/titulo_tela.dart';
+import '../commun/widgets/Defaults/bottom_brand_line.dart';
+import '../commun/widgets/Defaults/main_app_bar.dart';
 
-class DesktopLogedScreen extends StatefulWidget {
-  const DesktopLogedScreen({Key? key}) : super(key: key);
+class DesktopMensageScreen extends StatefulWidget {
+  const DesktopMensageScreen({Key? key}) : super(key: key);
 
   @override
-  _DesktopLogedScreenState createState() => _DesktopLogedScreenState();
+  _DesktopMensageScreenState createState() => _DesktopMensageScreenState();
 }
 
-class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
+class _DesktopMensageScreenState extends State<DesktopMensageScreen> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -37,11 +35,9 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
           isLoged: true,
         ),
         body: Column(
-          children: [
-            //Text(Cliente.instance.clienteNome),
-            ImageCarousel(),
-            TituloDaTela(
-              tituloDaTelaConfig: new TituloDaTelaConfig(
+          children: <Widget>[
+            MensageHeader(
+              mensageHeaderConfig: new MensageHeaderConfig(
                 mainSizedBoxWidth: screenSize.width / 4,
                 mainSizedBoxHeight: screenSize.height / 4,
                 contentSizedBoxWidth: screenSize.width / 4,
@@ -52,17 +48,10 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
                 bottomFirstTextPadding: screenSize.height,
               ),
             ),
-            SizedBox(height: screenSize.height / 16),
-            Row(
-              children: <Widget>[
-                SizedBox(width: screenSize.width / 9),
-                IconsColumn(),
-                SizedBox(width: screenSize.width / 32),
-                TextColumn(),
-                SizedBox(width: screenSize.width / 8),
-                InformationIcons(),
-              ],
+            SizedBox(
+              height: screenSize.height / 16,
             ),
+            MensagesList()
           ],
         ),
         bottomSheet: BottomBrandLine(),

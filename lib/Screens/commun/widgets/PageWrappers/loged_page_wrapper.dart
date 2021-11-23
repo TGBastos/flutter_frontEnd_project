@@ -16,11 +16,11 @@ class LogedPageWrapper extends StatefulWidget {
 class _LogedPageWrapperState extends State<LogedPageWrapper> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ResponsiveController(
+    return Scaffold(
+      body: ResponsiveController(
+          desktop: DesktopLogedScreen(),
           mobile: MobileLogedScreen(),
           largeDesktop: LargeDesktopLogedScreen(),
-          desktop: DesktopLogedScreen(),
           tablet: TabletLogedScreen()),
     );
   }

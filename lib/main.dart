@@ -2,12 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:wsda/wsda.dart';
-import 'Screens/LoginScreens/large_desktop_login_screen.dart';
-import 'Screens/commun/responsive_controller.dart';
 
 import 'Screens/LoginScreens/desktop_login_screen.dart';
+import 'Screens/LoginScreens/large_desktop_login_screen.dart';
 import 'Screens/LoginScreens/mobile_login_screen.dart';
 import 'Screens/LoginScreens/tablet_login_screen.dart';
+import 'Screens/commun/responsive_controller.dart';
+import 'Screens/commun/routes/route_generator.dart';
+import 'Screens/commun/routes/routes_name.dart';
 import 'Screens/commun/widgets/PageWrappers/singingup_page_wrapper.dart';
 
 void main() {
@@ -27,17 +29,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home:
-          //SingingUpPageWrapper());
-          ResponsiveController(
-              mobile: MobileLoginScreen(),
-              largeDesktop: LargeDesktopLoginScreen(),
-              desktop: DesktopLoginScreen(),
-              tablet: TabletLoginScreen()),
+      builder: (context, child) => LoginPage(child: child),
+      onGenerateRoute: RouteGenerator.generateRoute,
+      initialRoute: RoutesName.loginPage,
     );
   }
 }

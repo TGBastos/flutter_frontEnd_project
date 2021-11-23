@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rio_das_pedras_front_end/Screens/LogedScreens/desktop_loged_screen.dart';
+import 'package:rio_das_pedras_front_end/Screens/MensagesScreens/descktop_mensage_screen.dart';
+import 'package:rio_das_pedras_front_end/Screens/commun/routes/routes_name.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils/pallete_color.dart';
@@ -22,9 +23,9 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
     return Stack(
       children: <Widget>[
         Column(children: <Widget>[
-          //Caixas Verde e Laranja
+          //Header
           Container(
-            //GreenBox
+            //UpHeader
             color: Palette.projectCollors[200],
             width: widget.appBarConfigs.greenContainerWidth,
             height: widget.appBarConfigs.greenContainerHeight,
@@ -126,11 +127,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                     children: <Widget>[
                       TextButton(
                         onPressed: () => {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => DesktopLogedScreen(),
-                            ),
-                          ),
+                          Navigator.pushNamed(context, RoutesName.logedPage),
                         },
                         child: Text(
                           "Inicio",
@@ -164,7 +161,8 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () => {},
+                        onPressed: () => Navigator.pushNamed(
+                            context, RoutesName.mensagesPage),
                         child: Text(
                           "Mensagem",
                           style: TextStyle(
@@ -175,7 +173,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () => {},
+                        onPressed: () => DesktopMensageScreen(),
                         child: Text(
                           "Sair",
                           style: TextStyle(

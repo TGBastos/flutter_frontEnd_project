@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '.././LoginScreens/widgets/login_forms.dart';
-import '.././commun/widgets/PageWrappers/singingup_page_wrapper.dart';
+import '../commun/routes/routes_name.dart';
 import '../commun/widgets/Defaults/default_button.dart';
 import '../commun/widgets/Defaults/inicial_app_bar.dart';
 import '../utils/text_style.dart';
@@ -107,12 +107,8 @@ class _DesktopLoginScreenState extends State<DesktopLoginScreen> {
                             child: new DefaultButton(
                               btnContent: Text('Cadastrar'),
                               onPressed: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        SingingUpPageWrapper(),
-                                  ),
-                                );
+                                Navigator.pushNamed(
+                                    context, RoutesName.singupPage);
                               },
                               buttonHeight: 54,
                               buttonWidth: 155,
