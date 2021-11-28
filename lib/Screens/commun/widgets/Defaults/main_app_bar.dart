@@ -15,6 +15,7 @@ class AppBarConfigs {
   final double witheImageBackgroundHeight;
   final double imageWidth;
   final double imageHeight;
+  final GlobalKey<ScaffoldState>? key = GlobalKey();
 
   AppBarConfigs(
       {required this.deviceHeight,
@@ -26,7 +27,8 @@ class AppBarConfigs {
       required this.witheImageBackgroundWidth,
       required this.witheImageBackgroundHeight,
       required this.imageWidth,
-      required this.imageHeight});
+      required this.imageHeight,
+      required GlobalKey<ScaffoldState> key});
 }
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {

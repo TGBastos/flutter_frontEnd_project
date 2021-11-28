@@ -13,6 +13,7 @@ class DesktopMensageScreen extends StatefulWidget {
 }
 
 class _DesktopMensageScreenState extends State<DesktopMensageScreen> {
+  GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -30,7 +31,7 @@ class _DesktopMensageScreenState extends State<DesktopMensageScreen> {
             orangeContainerHeight: screenSize.height / 24,
             orangeContainerWidth: screenSize.width,
             witheImageBackgroundHeight: screenSize.height / 9.5,
-            witheImageBackgroundWidth: screenSize.width / 6,
+            witheImageBackgroundWidth: screenSize.width / 6, key: _key,
           ),
           isLoged: true,
         ),

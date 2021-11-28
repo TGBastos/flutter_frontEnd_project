@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/Screens/ChangePasswordScreens/change_password_desktop_screen.dart';
 import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktop_login_screen.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/loged_page_wrapper.dart';
 import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/login_page_wrapper.dart';
@@ -48,6 +49,9 @@ class RouteGenerator {
       case RoutesName.singupPage:
         return _GeneratePageRoute(
             widget: SingingUpPageWrapper(), routeName: settings.name);
+      case RoutesName.changePasswordPage:
+        return _GeneratePageRoute(
+            widget: ChangePasswordDesktopScreen(), routeName: settings.name);
       default:
         return _GeneratePageRoute(
             widget: LoginPageWrapper(), routeName: settings.name);

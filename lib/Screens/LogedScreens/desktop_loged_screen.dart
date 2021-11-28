@@ -15,9 +15,11 @@ class DesktopLogedScreen extends StatefulWidget {
 }
 
 class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
+  GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+
     return WillPopScope(
       onWillPop: () async => true,
       child: Scaffold(
@@ -32,7 +34,7 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
             orangeContainerHeight: screenSize.height / 24,
             orangeContainerWidth: screenSize.width,
             witheImageBackgroundHeight: screenSize.height / 9.5,
-            witheImageBackgroundWidth: screenSize.width / 6,
+            witheImageBackgroundWidth: screenSize.width / 6, key: _key,
           ),
           isLoged: true,
         ),
@@ -53,14 +55,24 @@ class _DesktopLogedScreenState extends State<DesktopLogedScreen> {
               ),
             ),
             SizedBox(height: screenSize.height / 16),
-            Row(
+            Flex(
+              direction: Axis.horizontal,
               children: <Widget>[
                 SizedBox(width: screenSize.width / 9),
                 IconsColumn(),
-                SizedBox(width: screenSize.width / 32),
+                SizedBox(width: screenSize.width / 64),
                 TextColumn(),
-                SizedBox(width: screenSize.width / 8),
-                InformationIcons(),
+                Flexible(
+                  child: SizedBox(width: screenSize.width / 8),
+                ),
+                InformationIcons(
+                  informationIconsConfig: new InformationIconsConfig(
+                    iconBoxHeight: 20,
+                    iconBoxWidth: 20,
+                    textBoxHeight: 80,
+                    textBoxWidth: 80,
+                  ),
+                )
               ],
             ),
           ],

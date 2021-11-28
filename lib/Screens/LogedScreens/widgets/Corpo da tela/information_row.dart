@@ -2,8 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:rio_das_pedras_front_end/Screens/utils/pallete_color.dart';
 
+class InformationIconsConfig {
+  final double iconBoxWidth;
+  final double iconBoxHeight;
+  final double textBoxWidth;
+  final double textBoxHeight;
+  const InformationIconsConfig({
+    required this.iconBoxWidth,
+    required this.iconBoxHeight,
+    required this.textBoxWidth,
+    required this.textBoxHeight,
+  });
+}
+
 class InformationIcons extends StatelessWidget {
-  const InformationIcons({Key? key}) : super(key: key);
+  final InformationIconsConfig informationIconsConfig;
+
+  const InformationIcons({Key? key, required this.informationIconsConfig})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +35,8 @@ class InformationIcons extends StatelessWidget {
             Positioned(
               top: 40,
               child: Container(
-                height: 75,
-                width: 75,
+                height: informationIconsConfig.textBoxHeight,
+                width: informationIconsConfig.textBoxWidth,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 5,
@@ -70,8 +86,8 @@ class InformationIcons extends StatelessWidget {
             Positioned(
               top: 40,
               child: Container(
-                height: 75,
-                width: 75,
+                height: informationIconsConfig.textBoxHeight,
+                width: informationIconsConfig.textBoxWidth,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 5,
@@ -121,8 +137,8 @@ class InformationIcons extends StatelessWidget {
             Positioned(
               top: 40,
               child: Container(
-                height: 75,
-                width: 75,
+                height: informationIconsConfig.textBoxHeight,
+                width: informationIconsConfig.textBoxWidth,
                 decoration: BoxDecoration(
                   border: Border.all(
                     width: 5,
