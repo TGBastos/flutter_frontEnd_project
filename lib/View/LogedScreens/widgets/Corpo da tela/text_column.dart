@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/core/model/cliente.dart';
 
 class TextColumn extends StatelessWidget {
   const TextColumn({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class TextColumn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Cartões',
+          'Cliente.instance.clienteNome',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,

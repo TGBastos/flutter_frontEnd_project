@@ -108,7 +108,6 @@ class _LoginFormsState extends State<LoginForms> {
                               ),
                             ),
                       onPressed: () async {
-                        setState(() => clickInProgress = true);
                         if (await controller.doLogin() == true) {
                           setState(() => clickInProgress = false);
                           return _loginSucces();
