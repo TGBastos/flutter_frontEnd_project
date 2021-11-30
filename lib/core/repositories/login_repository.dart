@@ -20,13 +20,16 @@ class LoginRepository {
     try {
       print('Ta aq');
       final Response response = await signInClient();
-      final Map<String, dynamic> responseBody = response.data;
-      print(responseBody);
-      if (responseBody['code'] == '000') {
-        Cliente.instance = Cliente.fromJson(response.data);
+      //final Map<String, dynamic> responseBody = response.data;
+      print(response.data);
+      Cliente.instance = Cliente.fromMap(response.data);
+      if (response.data['code'] == '000') {
+        print(Cliente.instance.clienteNome + 'AQ PORRAAAA');
         return true;
+      } else {
+        print('Fudeu');
+        return false;
       }
-      return false;
     } catch (e) {
       return false;
     }
