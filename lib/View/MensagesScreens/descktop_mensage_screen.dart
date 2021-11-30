@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LogedScreens/widgets/titulo_tela.dart';
-import 'package:rio_das_pedras_front_end/Screens/MensagesScreens/widgets/mensages_list.dart';
-import 'package:rio_das_pedras_front_end/Screens/MensagesScreens/widgets/titulo_tela.dart';
+
+import '.././MensagesScreens/widgets/mensages_list.dart';
+import '.././MensagesScreens/widgets/titulo_tela.dart';
 import '../commun/widgets/Defaults/bottom_brand_line.dart';
 import '../commun/widgets/Defaults/main_app_bar.dart';
 
@@ -31,7 +31,8 @@ class _DesktopMensageScreenState extends State<DesktopMensageScreen> {
             orangeContainerHeight: screenSize.height / 24,
             orangeContainerWidth: screenSize.width,
             witheImageBackgroundHeight: screenSize.height / 9.5,
-            witheImageBackgroundWidth: screenSize.width / 6, key: _key,
+            witheImageBackgroundWidth: screenSize.width / 6,
+            key: _key,
           ),
           isLoged: true,
         ),

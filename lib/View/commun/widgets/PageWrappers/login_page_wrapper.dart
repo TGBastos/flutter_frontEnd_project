@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktop_login_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/large_desktop_login_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/mobile_login_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/tablet_login_screen.dart';
+import '../../../LoginScreens/desktop_login_screen.dart';
+import '../../../LoginScreens/large_desktop_login_screen.dart';
+import '../../../LoginScreens/mobile_login_screen.dart';
+import '../../../LoginScreens/tablet_login_screen.dart';
 
 import '../../responsive_controller.dart';
 

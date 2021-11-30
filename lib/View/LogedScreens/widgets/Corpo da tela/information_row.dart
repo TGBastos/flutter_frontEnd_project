@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:rio_das_pedras_front_end/Screens/utils/pallete_color.dart';
+
+import '../../../utils/pallete_color.dart';
 
 class InformationIconsConfig {
   final double iconBoxWidth;

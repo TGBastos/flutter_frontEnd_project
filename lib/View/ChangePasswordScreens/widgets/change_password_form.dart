@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/default_button.dart';
+import '../../commun/widgets/Defaults/default_button.dart';
 
 class ChangePasswordForm extends StatefulWidget {
   final double formsWidth;

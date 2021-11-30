@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/ChangePasswordScreens/change_password_desktop_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/LoginScreens/desktop_login_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/loged_page_wrapper.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/login_page_wrapper.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/PageWrappers/singingup_page_wrapper.dart';
 
 import './routes_name.dart';
+import '../../ChangePasswordScreens/change_password_desktop_screen.dart';
 import '../../MensagesScreens/descktop_mensage_screen.dart';
+import '../../commun/widgets/PageWrappers/loged_page_wrapper.dart';
+import '../../commun/widgets/PageWrappers/login_page_wrapper.dart';
+import '../../commun/widgets/PageWrappers/singingup_page_wrapper.dart';
 
 class _GeneratePageRoute extends PageRouteBuilder {
   final Widget widget;

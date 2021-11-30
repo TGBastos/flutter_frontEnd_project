@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/utils/pallete_color.dart';
+import '../../utils/pallete_color.dart';
 
 class ChangePasswordPageTitle extends StatelessWidget {
   final double topTitlePadding;

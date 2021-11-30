@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/main_app_bar.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/side_navigation_bar.dart';
+import '../commun/widgets/Defaults/main_app_bar.dart';
+import '../commun/widgets/Defaults/side_navigation_bar.dart';
 
 class MobileLogedScreen extends StatefulWidget {
   const MobileLogedScreen({Key? key}) : super(key: key);
@@ -28,7 +28,8 @@ class _MobileLogedScreenState extends State<MobileLogedScreen> {
           orangeContainerHeight: screenSize.height / 24,
           orangeContainerWidth: screenSize.width,
           witheImageBackgroundHeight: screenSize.height / 9,
-          witheImageBackgroundWidth: screenSize.width / 2.5, key: _key,
+          witheImageBackgroundWidth: screenSize.width / 2.5,
+          key: _key,
         ),
         isLoged: true,
       ),

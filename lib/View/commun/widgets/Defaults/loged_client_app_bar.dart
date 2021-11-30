@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:rio_das_pedras_front_end/Screens/MensagesScreens/descktop_mensage_screen.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/routes/routes_name.dart';
-import 'package:rio_das_pedras_front_end/Screens/commun/widgets/Defaults/side_navigation_bar.dart';
-import 'package:rio_das_pedras_front_end/core/entities/uf_list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../MensagesScreens/descktop_mensage_screen.dart';
 import '../../../utils/pallete_color.dart';
+import '../../routes/routes_name.dart';
 import '../Defaults/main_app_bar.dart';
 
 class LogedClientAppBar extends StatefulWidget {
@@ -25,7 +23,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
-    UF? selectedUF;
+
     return screenSize.width >= 768
         ? Stack(
             children: <Widget>[
@@ -148,7 +146,8 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () => {},
+                            onPressed: () => Navigator.pushNamed(
+                                context, RoutesName.changePasswordPage),
                             child: Text(
                               "Meus dados",
                               style: TextStyle(

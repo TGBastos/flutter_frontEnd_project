@@ -1,9 +1,9 @@
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
-import '../common/interfaces/login.dart';
+import 'package:rio_das_pedras_front_end/core/model/user_model.dart';
 
 class InvalidCPF extends Error {}
 
-class CPF implements Login {
+class CPF implements UserModel {
   String? _rawData;
 
   CPF(String ClientCPF) {
@@ -15,4 +15,7 @@ class CPF implements Login {
 
   @override
   String toString() => _rawData!;
+
+  @override
+  noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
 }
