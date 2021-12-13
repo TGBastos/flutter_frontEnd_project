@@ -11,7 +11,7 @@ class TextColumn extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Text(
-          'Cliente.instance.clienteCelularNumero',
+          Cliente.instance.clienteNome,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: 20,

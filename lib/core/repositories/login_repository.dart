@@ -21,10 +21,10 @@ class LoginRepository {
       print('Ta aq');
       final Response response = await signInClient();
       //final Map<String, dynamic> responseBody = response.data;
-      print(response.data);
-      Cliente.instance = Cliente.fromMap(response.data);
+
       if (response.data['code'] == '000') {
-        print(Cliente.instance.clienteNome + 'AQ PORRAAAA');
+        print('ta aq' + response.data['code']);
+        Cliente.instance = Cliente.fromMap(response.data);
         return true;
       } else {
         print('Fudeu');
