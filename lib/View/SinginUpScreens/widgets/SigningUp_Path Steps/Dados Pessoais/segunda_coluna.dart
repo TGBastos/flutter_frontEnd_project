@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/BLOC/estadoCivil_bloc.dart';
+import './BLOC/estadoCivil_bloc.dart';
 import '../campos_size_configs.dart';
 import 'widgets/campo_cliente_estado_civil.dart';
 import 'widgets/campo_cliente_nacionalidade.dart';

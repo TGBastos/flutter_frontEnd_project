@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
-import 'package:rio_das_pedras_front_end/core/BLOC/estadoCivil_bloc.dart';
+import './../BLOC/estadoCivil_bloc.dart';
 
 class EstadoCivil {
   String estadoCivil;
