@@ -18,8 +18,11 @@ class LoginController {
     }
     formKey.currentState!.save();
     try {
-      await repository.entrar(user);
-      return true;
+      if (await repository.entrar(user) == true) {
+        print('loginSucces');
+        return true;
+      } else
+        return false;
     } catch (e) {
       return false;
     }

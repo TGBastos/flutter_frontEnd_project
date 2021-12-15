@@ -13,7 +13,6 @@ class _MobileLogedScreenState extends State<MobileLogedScreen> {
   GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
     Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
       drawer: NavDrawer(),
