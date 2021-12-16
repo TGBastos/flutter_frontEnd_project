@@ -17,6 +17,7 @@ class LoginRepository {
       senha: user.senha,
       version: 2,
     );
+
     try {
       final Response response = await signInClient();
 
@@ -28,6 +29,8 @@ class LoginRepository {
         return false;
       }
     } catch (e) {
+      print(user.CPF);
+      print(user.senha);
       return false;
     }
   }

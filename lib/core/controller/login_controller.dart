@@ -24,6 +24,7 @@ class LoginController {
       } else
         return false;
     } catch (e) {
+      print(e);
       return false;
     }
   }

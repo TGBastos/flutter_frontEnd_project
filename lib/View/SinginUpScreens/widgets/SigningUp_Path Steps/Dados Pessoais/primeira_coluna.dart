@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_conjuge_nome.dart';
-import '../../../../../core/BLOC/estadoCivil_bloc.dart';
+import './BLOC/estadoCivil_bloc.dart';
 import '../campos_size_configs.dart';
 import 'widgets/campo_cliente_UF_nascimento.dart';
 import 'widgets/campo_cliente_cpf.dart';

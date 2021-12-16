@@ -47,7 +47,7 @@ class _LoginFormsState extends State<LoginForms> {
               child: const Text('Ok'),
               onPressed: () {
                 setState(() {
-                  clickInProgress == false;
+                  clickInProgress = false;
                 });
                 Navigator.of(context).pop();
               },
