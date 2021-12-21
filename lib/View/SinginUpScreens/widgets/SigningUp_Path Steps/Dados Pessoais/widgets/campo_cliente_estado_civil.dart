@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 import './../BLOC/estadoCivil_bloc.dart';
+import 'campo_cliente_cpf.dart';
 
 class EstadoCivil {
   String estadoCivil;
@@ -38,64 +39,59 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
       padding: EdgeInsets.only(
         top: widget.camposSizeConfigs.spaceBetweenFieldsInTop,
       ),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-          Widget>[
-        Text('Estada Civil'),
-        Container(
-          decoration: BoxDecoration(
-              border: Border.all(
-                width: 1,
-                color: Colors.grey,
-              ),
-              borderRadius:
-                  BorderRadius.circular(widget.camposSizeConfigs.borderRadius)),
-          child: SizedBox(
-            height: widget.camposSizeConfigs.campoHeight,
-            width: widget.camposSizeConfigs.campoWidth,
-            child: DropdownButtonHideUnderline(
-              child: DropdownButton<String>(
-                borderRadius: BorderRadius.circular(20),
-                hint: Text("Selecionar"),
-                isExpanded: true,
-                icon: Icon(
-                  Icons.arrow_drop_down,
-                ),
-                value: selectedEstadoCivil,
-                onChanged: (String? Value) {
-                  setState(() {
-                    selectedEstadoCivil = Value;
-                    print(Value);
-                    if (Value == "Casado" || Value == "União Estável") {
-                      EstadoCivilBloc.instance
-                          .add(EstadoCivilEvent.isntInRelationship);
-                    } else if (Value == "Divorciado" || Value != "Solteiro") {
-                      EstadoCivilBloc.instance
-                          .add(EstadoCivilEvent.isInRelation);
-                    }
-                    CampoClienteEstadoCivil.inRelationship = true;
-                  });
-                },
-                items: EstadosCivis.map((String estadoCivil) {
-                  return DropdownMenuItem<String>(
-                    value: estadoCivil,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          estadoCivil,
-                          style: TextStyle(
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Estada Civil'),
+            Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                      widget.camposSizeConfigs.borderRadius)),
+              child: SizedBox(
+                height: widget.camposSizeConfigs.campoHeight,
+                width: widget.camposSizeConfigs.campoWidth,
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    borderRadius: BorderRadius.circular(20),
+                    hint: Text("Selecionar"),
+                    isExpanded: true,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
                     ),
-                  );
-                }).toList(),
+                    value: selectedEstadoCivil,
+                    onChanged: (String? valor) {
+                      print(singinUpController.dadosPessoais.estadoCivil);
+                      setState(() {
+                        singinUpController.estadoCivil(valor);
+                        selectedEstadoCivil = valor;
+                        //print(valor);
+                      });
+                    },
+                    items: EstadosCivis.map((String estadoCivil) {
+                      return DropdownMenuItem<String>(
+                        value: estadoCivil,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              estadoCivil,
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-      ]),
+          ]),
     );
   }
 }

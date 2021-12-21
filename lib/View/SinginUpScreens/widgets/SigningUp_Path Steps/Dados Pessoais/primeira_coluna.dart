@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/controllers/singin_up_controller.dart';
+import 'package:rio_das_pedras_front_end/models/singin_up_model.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_conjuge_nome.dart';
 import './BLOC/estadoCivil_bloc.dart';
 import '../campos_size_configs.dart';
@@ -19,13 +21,15 @@ class PrimeiraColunaDadosPessoais extends StatefulWidget {
 
 class _PrimeiraColunaDadosPessoaisState
     extends State<PrimeiraColunaDadosPessoais> {
+  SinginUpController singinUpController = SinginUpController();
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
     return StreamBuilder(
       stream: EstadoCivilBloc.instance.stream,
       builder: (context, snapshot) {
-        if (EstadoCivilBloc.instance.state == false) {
+        if (singinUpController.estadoCivil != 'Casado' ||
+            singinUpController.estadoCivil != 'União Estável') {
           return Column(
             //Primeira Coluna
             children: <Widget>[

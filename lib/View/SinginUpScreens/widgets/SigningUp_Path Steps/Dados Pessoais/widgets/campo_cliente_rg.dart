@@ -1,4 +1,6 @@
+import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoClienteRG extends StatefulWidget {
@@ -10,6 +12,8 @@ class CampoClienteRG extends StatefulWidget {
 }
 
 class _CampoClienteRGState extends State<CampoClienteRG> {
+  final controladorRgCadastro = MaskedTextController(
+      mask: '00-000-000.00', text: singinUpController.dadosPessoais.rg);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +27,10 @@ class _CampoClienteRGState extends State<CampoClienteRG> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) => value!.isEmpty ? 'Coloque seu RG' : null,
+                controller: controladorRgCadastro,
+                validator: (valor) => valor!.isEmpty ? 'Coloque seu RG' : null,
+                onSaved: (valor) =>
+                    singinUpController.rg(controladorRgCadastro.unmasked),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

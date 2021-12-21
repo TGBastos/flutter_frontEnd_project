@@ -34,7 +34,7 @@ class _CampoLojaRetiradaCartaoState extends State<CampoLojaRetiradaCartao> {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Escolha a data de vencimento da fatura:'),
+            Text('Escolha a loja para retirada do cartão:'),
             Container(
               decoration: BoxDecoration(
                   border: Border.all(

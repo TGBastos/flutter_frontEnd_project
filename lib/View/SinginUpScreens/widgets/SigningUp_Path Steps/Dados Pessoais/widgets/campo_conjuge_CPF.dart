@@ -23,7 +23,7 @@ class _CampoConjugeCPFState extends State<CampoConjugeCPF> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) => value!.isEmpty ? 'Coloque seu CPF' : null,
+                //validator: (value) => value!.isEmpty ? 'Coloque seu CPF' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

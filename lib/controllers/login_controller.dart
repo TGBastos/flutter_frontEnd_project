@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:rio_das_pedras_front_end/core/model/user_model.dart';
+import '../models/user_model.dart';
 import 'package:rio_das_pedras_front_end/core/repositories/login_repository.dart';
 
 class LoginController {

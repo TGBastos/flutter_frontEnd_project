@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/core/model/cliente.dart';
+import '../../../../models/cliente.dart';
 
 class TextColumn extends StatelessWidget {
   const TextColumn({Key? key}) : super(key: key);

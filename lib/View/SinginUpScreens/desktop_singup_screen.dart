@@ -12,13 +12,15 @@ class DesktopSingUpScreen extends StatefulWidget {
 
 class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
     with SingleTickerProviderStateMixin {
-      GlobalKey<ScaffoldState> _key = GlobalKey();
+  GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
 
     return WillPopScope(
-      onWillPop: () async => true,
+      onWillPop: () async {
+        return true;
+      },
       child: Scaffold(
         appBar: MainAppBar(
           appBarConfigs: new AppBarConfigs(
@@ -31,7 +33,8 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
             orangeContainerHeight: screenSize.height / 24,
             orangeContainerWidth: screenSize.width,
             witheImageBackgroundHeight: screenSize.height / 9.5,
-            witheImageBackgroundWidth: screenSize.width / 6, key: _key,
+            witheImageBackgroundWidth: screenSize.width / 6,
+            key: _key,
           ),
           isLoged: false,
         ),

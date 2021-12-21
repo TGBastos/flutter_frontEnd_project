@@ -23,8 +23,8 @@ class _CampoConjugeNomeState extends State<CampoConjugeNome> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) =>
-                    value!.isEmpty ? 'Coloque o nome de seu cônjuge' : null,
+                //validator: (value) =>
+                // value!.isEmpty ? 'Coloque o nome de seu cônjuge' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

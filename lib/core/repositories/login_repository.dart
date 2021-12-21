@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:rio_das_pedras_front_end/core/model/user_model.dart';
+import '../../models/user_model.dart';
 import 'package:wsda/source/user_data_access/user_data_access.dart';
-import '../model/cliente.dart';
+import '../../models/cliente.dart';
 import 'package:wsda/core/values/access_token.dart';
 import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
 

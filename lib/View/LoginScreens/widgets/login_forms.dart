@@ -1,8 +1,8 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/core/controller/login_controller.dart';
+import '../../../controllers/login_controller.dart';
 
-import '../../../core/common/utils/button_fuctions.dart';
+import '../../../core/button_fuctions.dart';
 import '../../commun/routes/routes_name.dart';
 import '../../commun/widgets/Defaults/default_button.dart';
 import '../../commun/widgets/Defaults/default_check_box.dart';
@@ -25,6 +25,9 @@ class _LoginFormsState extends State<LoginForms> {
 
   _loginSucces() {
     Navigator.pushNamed(context, RoutesName.logedPage);
+    setState(() {
+      clickInProgress = false;
+    });
   }
 
   Future<void> _loginFailed() async {

@@ -1,5 +1,5 @@
 import 'package:cpf_cnpj_validator/cpf_validator.dart';
-import 'package:rio_das_pedras_front_end/core/model/user_model.dart';
+import '../../models/user_model.dart';
 
 class InvalidCPF extends Error {}
 

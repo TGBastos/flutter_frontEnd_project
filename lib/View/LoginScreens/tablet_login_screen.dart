@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../../core/common/utils/button_fuctions.dart';
+import '../../core/button_fuctions.dart';
 import '../commun/widgets/Defaults/default_button.dart';
 import '../commun/widgets/Defaults/default_check_box.dart';
 import '../commun/widgets/Defaults/inicial_app_bar.dart';

@@ -1,0 +1,3 @@
+class SinginUpModel {
+  String estadoCivil = '';
+}
