@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoClienteOragaoEmissorCPF extends StatefulWidget {
@@ -25,8 +26,13 @@ class _CampoClienteOragaoEmissorCPFState
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) =>
-                    value!.isEmpty ? 'Coloque o orgão emissor' : null,
+                initialValue:
+                    singinUpController.dadosPessoais.orgaoEmissor != ''
+                        ? singinUpController.dadosPessoais.orgaoEmissor
+                        : '',
+                validator: (valor) =>
+                    valor!.isEmpty ? 'Coloque o orgão emissor' : null,
+                onSaved: (valor) => singinUpController.cpfOrgaoEmissor(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

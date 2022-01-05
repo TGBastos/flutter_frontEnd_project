@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 import './../BLOC/estadoCivil_bloc.dart';
 import 'campo_cliente_cpf.dart';
@@ -57,7 +58,10 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
                     borderRadius: BorderRadius.circular(20),
-                    hint: Text("Selecionar"),
+                    hint: Text(
+                        singinUpController.dadosPessoais.estadoCivil != ''
+                            ? singinUpController.dadosPessoais.estadoCivil
+                            : "Selecionar"),
                     isExpanded: true,
                     icon: Icon(
                       Icons.arrow_drop_down,

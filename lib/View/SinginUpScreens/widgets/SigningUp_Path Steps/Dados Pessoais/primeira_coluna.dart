@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/controllers/singin_up_controller.dart';
+import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import 'package:rio_das_pedras_front_end/models/singin_up_model.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_conjuge_nome.dart';
 import './BLOC/estadoCivil_bloc.dart';

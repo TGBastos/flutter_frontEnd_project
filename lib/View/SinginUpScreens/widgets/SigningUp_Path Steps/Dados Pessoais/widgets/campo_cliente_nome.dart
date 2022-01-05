@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
+import 'campo_cliente_cpf.dart';
 
 class CampoClienteNome extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -23,8 +24,12 @@ class _CampoClienteNomeState extends State<CampoClienteNome> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue: singinUpController.dadosPessoais.clienteNome != ''
+                    ? singinUpController.dadosPessoais.clienteNome
+                    : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque seu nome' : null,
+                onSaved: (valor) => singinUpController.clienteNome(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

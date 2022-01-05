@@ -9,7 +9,7 @@ class DadosPessoaisModel {
   String rg = '';
   String nacionalidade = '';
   String tratamento = '';
-  String estadoCivil = '';
+  String estadoCivil = 'S';
   String clienteNome = '';
   String expedidorRg = '';
   String naturalidade = '';

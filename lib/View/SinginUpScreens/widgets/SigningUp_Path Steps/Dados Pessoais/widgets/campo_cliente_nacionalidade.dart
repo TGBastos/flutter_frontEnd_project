@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoClienteNacionalidade extends StatefulWidget {
@@ -24,8 +25,13 @@ class _CampoClienteNacionalidadeState extends State<CampoClienteNacionalidade> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) =>
-                    value!.isEmpty ? 'Coloque sua nacionalidade' : null,
+                initialValue:
+                    singinUpController.dadosPessoais.nacionalidade != ''
+                        ? singinUpController.dadosPessoais.nacionalidade
+                        : '',
+                validator: (valor) =>
+                    valor!.isEmpty ? 'Coloque sua nacionalidade' : null,
+                onSaved: (valor) => singinUpController.nacionalidade(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

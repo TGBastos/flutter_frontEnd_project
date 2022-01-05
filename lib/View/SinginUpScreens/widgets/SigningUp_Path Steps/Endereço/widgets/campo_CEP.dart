@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
 import '../../campos_size_configs.dart';
 
 class CampoCEP extends StatefulWidget {
@@ -10,6 +11,7 @@ class CampoCEP extends StatefulWidget {
 }
 
 class _CampoCEPState extends State<CampoCEP> {
+  EnderecoController enderecoController = EnderecoController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,7 +25,11 @@ class _CampoCEPState extends State<CampoCEP> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) => value!.isEmpty ? 'Coloque seu CEP' : null,
+                initialValue: enderecoController.enderecoModel.enderecoCep != ''
+                    ? enderecoController.enderecoModel.enderecoCep
+                    : '',
+                validator: (valor) => valor!.isEmpty ? 'Coloque seu CEP' : null,
+                onSaved: (valor) => enderecoController.enderecoCep(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoExpedidorDoRG extends StatefulWidget {
@@ -23,8 +24,12 @@ class _CampoExpedidorDoRGState extends State<CampoExpedidorDoRG> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue: singinUpController.dadosPessoais.expedidorRg != ''
+                    ? singinUpController.dadosPessoais.expedidorRg
+                    : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o expedidor do RG' : null,
+                onSaved: (valor) => singinUpController.expedidorRg(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

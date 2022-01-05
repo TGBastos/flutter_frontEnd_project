@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
+import 'campo_cliente_cpf.dart';
 
 class CampoClienteNaturalidade extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -24,8 +25,13 @@ class _CampoClienteNaturalidadeState extends State<CampoClienteNaturalidade> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue:
+                    singinUpController.dadosPessoais.naturalidade != ''
+                        ? singinUpController.dadosPessoais.naturalidade
+                        : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua naturalidade' : null,
+                onSaved: (valor) => singinUpController.naturalidade(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

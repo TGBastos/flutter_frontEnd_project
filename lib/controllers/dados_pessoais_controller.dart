@@ -13,6 +13,13 @@ class SinginUpController {
   String rg(String? valor) => dadosPessoais.rg = valor ?? '';
   String dataDeNascimento(String? valor) =>
       dadosPessoais.dataDeNascimento = valor ?? '';
-  String estadoCivil(String? valor) =>
-      dadosPessoais.estadoCivil = valor ?? 'Casado';
+  String estadoCivil(String? valor) => dadosPessoais.estadoCivil = valor ?? '';
+  String escolaridade(String? valor) =>
+      dadosPessoais.escolaridade = valor ?? '';
+  String expedidorRg(String? valor) => dadosPessoais.expedidorRg = valor ?? '';
+  String nacionalidade(String? valor) =>
+      dadosPessoais.nacionalidade = valor ?? '';
+  String naturalidade(String? valor) =>
+      dadosPessoais.naturalidade = valor ?? '';
+  String nomeDaMae(String? valor) => dadosPessoais.nomeDaMae = valor ?? '';
 }

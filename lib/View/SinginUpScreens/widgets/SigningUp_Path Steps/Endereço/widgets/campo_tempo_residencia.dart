@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
 import '../../campos_size_configs.dart';
 
 class CampoTempoResidencia extends StatefulWidget {
@@ -10,6 +11,7 @@ class CampoTempoResidencia extends StatefulWidget {
 }
 
 class _CampoTempoResidenciaState extends State<CampoTempoResidencia> {
+  EnderecoController enderecoController = EnderecoController();
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
@@ -26,8 +28,16 @@ class _CampoTempoResidenciaState extends State<CampoTempoResidencia> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth,
                   child: TextFormField(
-                    validator: (value) =>
-                        value!.isEmpty ? 'Coloque seu CPF' : null,
+                    initialValue: enderecoController
+                                .enderecoModel.enderecoTempoDeResidenciaAnos !=
+                            ''
+                        ? enderecoController
+                            .enderecoModel.enderecoTempoDeResidenciaAnos
+                        : '',
+                    validator: (valor) =>
+                        valor!.isEmpty ? 'Coloque quantos anos' : null,
+                    onSaved: (valor) =>
+                        enderecoController.enderecoTempoDeResidenciaAnos(valor),
                     decoration: InputDecoration(
                       constraints: BoxConstraints(
                         maxHeight: 33,
@@ -51,8 +61,16 @@ class _CampoTempoResidenciaState extends State<CampoTempoResidencia> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth,
                   child: TextFormField(
-                    validator: (value) =>
-                        value!.isEmpty ? 'Coloque seu CPF' : null,
+                    initialValue: enderecoController
+                                .enderecoModel.enderecoTempoDeResidenciaMeses !=
+                            ''
+                        ? enderecoController
+                            .enderecoModel.enderecoTempoDeResidenciaMeses
+                        : '',
+                    validator: (valor) =>
+                        valor!.isEmpty ? 'Coloque quantos meses' : null,
+                    onSaved: (valor) => enderecoController
+                        .enderecoTempoDeResidenciaMeses(valor),
                     decoration: InputDecoration(
                       constraints: BoxConstraints(
                         maxHeight: 33,

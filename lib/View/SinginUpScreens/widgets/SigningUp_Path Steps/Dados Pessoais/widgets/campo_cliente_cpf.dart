@@ -1,6 +1,6 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/controllers/singin_up_controller.dart';
+import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoClienteCPF extends StatefulWidget {
