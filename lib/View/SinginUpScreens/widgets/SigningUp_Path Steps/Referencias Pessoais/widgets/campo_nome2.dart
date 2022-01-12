@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoNome2 extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -24,6 +25,14 @@ class _CampoNome2State extends State<CampoNome2> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue: Repositories.referenciasPessoaisRepositorie
+                            .referenciasPessoaisModel.referenciaPessoalNome2 !=
+                        ''
+                    ? Repositories.referenciasPessoaisRepositorie
+                        .referenciasPessoaisModel.referenciaPessoalNome2
+                    : '',
+                onSaved: (valor) => Repositories.referenciasPessoaisRepositorie
+                    .referenciaPessoalNome2(valor),
                 validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
-class CampoEmpresa1 extends StatefulWidget {
+class CampoEmpresa2 extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
-  const CampoEmpresa1({required this.camposSizeConfigs});
+  const CampoEmpresa2({required this.camposSizeConfigs});
 
   @override
-  _CampoEmpresa1State createState() => _CampoEmpresa1State();
+  _CampoEmpresa2State createState() => _CampoEmpresa2State();
 }
 
-class _CampoEmpresa1State extends State<CampoEmpresa1> {
+class _CampoEmpresa2State extends State<CampoEmpresa2> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,13 +20,23 @@ class _CampoEmpresa1State extends State<CampoEmpresa1> {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Empresa'),
+            Text('Nome'),
             SizedBox(
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                validator: (value) =>
-                    value!.isEmpty ? 'Coloque uma empresa' : null,
+                initialValue: Repositories
+                            .referenciasComerciaisRepositorie
+                            .referenciaComercialModel
+                            .referenciaComercialEmpresa2 !=
+                        ''
+                    ? Repositories.referenciasComerciaisRepositorie
+                        .referenciaComercialModel.referenciaComercialEmpresa2
+                    : '',
+                onSaved: (valor) => Repositories
+                    .referenciasComerciaisRepositorie
+                    .referenciaComercialEmpresa2(valor),
+                validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

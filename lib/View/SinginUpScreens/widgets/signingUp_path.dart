@@ -157,17 +157,23 @@ class _SingUpPathState extends State<SingUpPath>
                 ),
                 ListView(
                   children: <Widget>[
-                    FormularioProfissionalFinanceira(),
+                    FormularioProfissionalFinanceira(
+                      formKey: myKeys[3],
+                    ),
                   ],
                 ),
                 ListView(
                   children: <Widget>[
-                    FormularioReferenciasPessoais(),
+                    FormularioReferenciasPessoais(
+                      formKey: myKeys[4],
+                    ),
                   ],
                 ),
                 ListView(
                   children: <Widget>[
-                    FormularioReferenciasComerciais(),
+                    FormularioReferenciasComerciais(
+                      formKey: myKeys[5],
+                    ),
                   ],
                 ),
               ],

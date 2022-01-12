@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
 import '../../campos_size_configs.dart';
+import 'campo_bairro.dart';
 
 class CampoCidade extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -11,7 +12,6 @@ class CampoCidade extends StatefulWidget {
 }
 
 class _CampoCidadeState extends State<CampoCidade> {
-  EnderecoController enderecoController = EnderecoController();
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoTelefoneComercial2 extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -27,6 +28,19 @@ class _CampoTelefoneComercial2State extends State<CampoTelefoneComercial2> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 4,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .referenciasComerciaisRepositorie
+                                .referenciaComercialModel
+                                .referenciaComercialDDDTelefone2 !=
+                            ''
+                        ? Repositories
+                            .referenciasComerciaisRepositorie
+                            .referenciaComercialModel
+                            .referenciaComercialDDDTelefone2
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .referenciasComerciaisRepositorie
+                        .referenciaComercialDDDTelefone2(valor),
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu DDD' : null,
                     decoration: InputDecoration(
@@ -61,6 +75,19 @@ class _CampoTelefoneComercial2State extends State<CampoTelefoneComercial2> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 1.5,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .referenciasComerciaisRepositorie
+                                .referenciaComercialModel
+                                .referenciaComercialTelefone2 !=
+                            ''
+                        ? Repositories
+                            .referenciasComerciaisRepositorie
+                            .referenciaComercialModel
+                            .referenciaComercialTelefone2
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .referenciasComerciaisRepositorie
+                        .referenciaComercialTelefone2(valor),
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque um telefone' : null,
                     decoration: InputDecoration(

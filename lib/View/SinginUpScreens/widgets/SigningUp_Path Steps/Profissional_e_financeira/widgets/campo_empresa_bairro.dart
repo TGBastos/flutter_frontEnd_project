@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/repositories.dart';
 
 import '../../campos_size_configs.dart';
 
@@ -13,7 +14,6 @@ class CampoEmpresaBairro extends StatefulWidget {
 class _CampoEmpresaBairroState extends State<CampoEmpresaBairro> {
   @override
   Widget build(BuildContext context) {
-    String? t;
     return Padding(
       padding: EdgeInsets.only(
           top: widget.camposSizeConfigs.spaceBetweenFieldsInTop),
@@ -25,9 +25,17 @@ class _CampoEmpresaBairroState extends State<CampoEmpresaBairro> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: t,
-                validator: (value) =>
-                    value!.isEmpty ? 'Coloque o bairro da empresa' : null,
+                initialValue: Repositories.profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel.profissionalBairro !=
+                        ''
+                    ? Repositories.profissionalFinanceiraRepositorie
+                        .profissionalEFinanceiraModel.profissionalBairro
+                    : '',
+                validator: (valor) =>
+                    valor!.isEmpty ? 'Coloque o bairro da empresa' : null,
+                onSaved: (valor) => Repositories
+                    .profissionalFinanceiraRepositorie
+                    .profissionalBairro(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

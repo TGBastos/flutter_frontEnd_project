@@ -10,8 +10,9 @@ class CampoBairro extends StatefulWidget {
   _CampoBairroState createState() => _CampoBairroState();
 }
 
+EnderecoController enderecoController = EnderecoController();
+
 class _CampoBairroState extends State<CampoBairro> {
-  EnderecoController enderecoController = EnderecoController();
   @override
   Widget build(BuildContext context) {
     return Padding(

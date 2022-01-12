@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoTempoDeServico extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -27,6 +28,19 @@ class _CampoTempoDeServicoState extends State<CampoTempoDeServico> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 2,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .profissionalFinanceiraRepositorie
+                                .profissionalEFinanceiraModel
+                                .profissionalTempoDeServicoAnos !=
+                            ''
+                        ? Repositories
+                            .profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel
+                            .profissionalTempoDeServicoAnos
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .profissionalFinanceiraRepositorie
+                        .profissionalTempoDeServicoAnos(valor),
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque o tempo de serviço' : null,
                     decoration: InputDecoration(

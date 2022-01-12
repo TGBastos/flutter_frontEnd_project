@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoEmpresaMatricula extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -24,6 +25,17 @@ class _CampoEmpresaMatriculaState extends State<CampoEmpresaMatricula> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue: Repositories
+                            .profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel
+                            .profissionalMatricula !=
+                        ''
+                    ? Repositories.profissionalFinanceiraRepositorie
+                        .profissionalEFinanceiraModel.profissionalMatricula
+                    : '',
+                onSaved: (valor) => Repositories
+                    .profissionalFinanceiraRepositorie
+                    .profissionalMatricula(valor),
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua matrícula' : null,
                 decoration: InputDecoration(

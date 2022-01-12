@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoSalario extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -26,6 +27,17 @@ class _CampoSalarioState extends State<CampoSalario> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 2,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .profissionalFinanceiraRepositorie
+                                .profissionalEFinanceiraModel
+                                .profissionalSalario !=
+                            ''
+                        ? Repositories.profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel.profissionalSalario
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .profissionalFinanceiraRepositorie
+                        .profissionalSalario(valor),
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu salário' : null,
                     decoration: InputDecoration(
@@ -60,6 +72,19 @@ class _CampoSalarioState extends State<CampoSalario> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 2,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .profissionalFinanceiraRepositorie
+                                .profissionalEFinanceiraModel
+                                .profissionalOutrasRendas !=
+                            ''
+                        ? Repositories
+                            .profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel
+                            .profissionalOutrasRendas
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .profissionalFinanceiraRepositorie
+                        .profissionalOutrasRendas(valor),
                     validator: (value) => value!.isEmpty ? null : null,
                     decoration: InputDecoration(
                       constraints: BoxConstraints(

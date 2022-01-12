@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/repositories.dart';
 
 import '../../campos_size_configs.dart';
 
@@ -24,6 +25,15 @@ class _CampoEmpresaCargoState extends State<CampoEmpresaCargo> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue: Repositories.profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel.profissionalCargo !=
+                        ''
+                    ? Repositories.profissionalFinanceiraRepositorie
+                        .profissionalEFinanceiraModel.profissionalCargo
+                    : '',
+                onSaved: (valor) => Repositories
+                    .profissionalFinanceiraRepositorie
+                    .profissionalCargo(valor),
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque seu cargo' : null,
                 decoration: InputDecoration(

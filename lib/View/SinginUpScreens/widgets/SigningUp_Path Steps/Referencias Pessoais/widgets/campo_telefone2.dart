@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoTelefone2 extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -26,6 +27,19 @@ class _CampoTelefone2State extends State<CampoTelefone2> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 4,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .referenciasPessoaisRepositorie
+                                .referenciasPessoaisModel
+                                .referenciaPessoalDDDTelefone2 !=
+                            ''
+                        ? Repositories
+                            .referenciasPessoaisRepositorie
+                            .referenciasPessoaisModel
+                            .referenciaPessoalDDDTelefone2
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .referenciasPessoaisRepositorie
+                        .referenciaPessoalDDDTelefone2(valor),
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu DDD' : null,
                     decoration: InputDecoration(
@@ -60,6 +74,17 @@ class _CampoTelefone2State extends State<CampoTelefone2> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 1.5,
                   child: TextFormField(
+                    initialValue: Repositories
+                                .referenciasPessoaisRepositorie
+                                .referenciasPessoaisModel
+                                .referenciaPessoalTelefone2 !=
+                            ''
+                        ? Repositories.referenciasPessoaisRepositorie
+                            .referenciasPessoaisModel.referenciaPessoalTelefone2
+                        : '',
+                    onSaved: (valor) => Repositories
+                        .referenciasPessoaisRepositorie
+                        .referenciaPessoalTelefone2(valor),
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque um telefone' : null,
                     decoration: InputDecoration(

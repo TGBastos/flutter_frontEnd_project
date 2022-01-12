@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Contatos/widgets/campo_emailEconfirma%C3%A7ao.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoTelefoneFixo extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -20,7 +22,15 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
             height: widget.camposSizeConfigs.campoHeight,
             width: widget.camposSizeConfigs.campoWidth / 4,
             child: TextFormField(
+              initialValue: Repositories
+                          .contatosRepositorie.contatosModel.dddTelefoneFixo !=
+                      ''
+                  ? Repositories
+                      .contatosRepositorie.contatosModel.dddTelefoneFixo
+                  : '',
               validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
+              onSaved: (valor) =>
+                  Repositories.contatosRepositorie..contatosDDDFixo(valor),
               decoration: InputDecoration(
                 constraints: BoxConstraints(
                   maxHeight: 33,
@@ -51,8 +61,15 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
             height: widget.camposSizeConfigs.campoHeight,
             width: widget.camposSizeConfigs.campoWidth / 1.5,
             child: TextFormField(
+              initialValue: Repositories
+                          .contatosRepositorie.contatosModel.telefoneFixo !=
+                      ''
+                  ? Repositories.contatosRepositorie.contatosModel.telefoneFixo
+                  : '',
               validator: (value) =>
                   value!.isEmpty ? 'Coloque seu telefone fixo' : null,
+              onSaved: (valor) =>
+                  Repositories.contatosRepositorie.contatosTelefoneFixo(valor),
               decoration: InputDecoration(
                 constraints: BoxConstraints(
                   maxHeight: 33,

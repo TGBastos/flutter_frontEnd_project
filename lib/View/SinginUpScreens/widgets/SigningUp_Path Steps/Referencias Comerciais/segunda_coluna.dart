@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../campos_size_configs.dart';
-import 'widgets/campo_telefone1.dart';
-import 'widgets/campo_telefone2.dart';
+import 'widgets/campo_empresa1_telefone.dart';
+import 'widgets/campo_empresa2_telefone.dart';
 
 class SegundaColunaReferenciasComerciais extends StatelessWidget {
   const SegundaColunaReferenciasComerciais({Key? key}) : super(key: key);

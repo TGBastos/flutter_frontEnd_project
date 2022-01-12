@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../campos_size_configs.dart';
+import '../../repositories.dart';
 
 class CampoEmpresa extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -24,6 +25,15 @@ class _CampoEmpresaState extends State<CampoEmpresa> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
+                initialValue: Repositories.profissionalFinanceiraRepositorie
+                            .profissionalEFinanceiraModel.profissionalEmpresa !=
+                        ''
+                    ? Repositories.profissionalFinanceiraRepositorie
+                        .profissionalEFinanceiraModel.profissionalEmpresa
+                    : '',
+                onSaved: (valor) => Repositories
+                    .profissionalFinanceiraRepositorie
+                    .profissionalEmpresa(valor),
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua empresa' : null,
                 decoration: InputDecoration(
