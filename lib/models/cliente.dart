@@ -2,7 +2,6 @@ import 'dart:convert';
 
 class Cliente {
   Cliente({
-    required this.code,
     required this.clienteCodigo,
     required this.clienteNome,
     required this.clienteIdWeb,
@@ -44,7 +43,6 @@ class Cliente {
     required this.clientePossuiSenhaWeb,
     required this.clienteDataAceiteRegulamentoFidelidade,
   });
-  final String code;
   final int clienteCodigo;
   final String clienteNome;
   final String clienteIdWeb;
@@ -90,7 +88,6 @@ class Cliente {
 
   Map<String, dynamic> toMap() {
     return {
-      'code': code,
       'clienteCodigo': clienteCodigo,
       'clienteNome': clienteNome,
       'clienteIdWeb': clienteIdWeb,
@@ -137,7 +134,6 @@ class Cliente {
 
   factory Cliente.fromMap(Map<String, dynamic> map) {
     return Cliente(
-      code: map['code'] ?? 'Ta null',
       clienteCodigo: map['clienteCodigo'] ?? 0,
       clienteNome: map['clienteNome'] ?? 'Ta null',
       clienteIdWeb: map['clienteIdWeb'] ?? 'Ta null',

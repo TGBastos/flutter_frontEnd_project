@@ -32,7 +32,7 @@ class _CampoEmailState extends State<CampoEmail> {
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque seu Email' : null,
                 onSaved: (valor) =>
-                    Repositories.contatosRepositorie.contatosEmail(valor),
+                    Repositories.contatosRepositorie.contatosEmail = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
@@ -86,7 +86,7 @@ class _CampoEmailComfirmacaoState extends State<CampoEmailComfirmacao> {
                 : '',
             validator: (value) => value!.isEmpty ? 'Confirme seu email' : null,
             onSaved: (valor) =>
-                Repositories.contatosRepositorie.contatosConfirmaEmail(valor),
+                Repositories.contatosRepositorie.contatosConfirmaEmail = valor,
             decoration: InputDecoration(
               constraints: BoxConstraints(
                 maxHeight: 33,

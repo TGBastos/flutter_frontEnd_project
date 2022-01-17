@@ -30,7 +30,7 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
                   : '',
               validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
               onSaved: (valor) =>
-                  Repositories.contatosRepositorie..contatosDDDFixo(valor),
+                  Repositories.contatosRepositorie..contatosDDDFixo = valor,
               decoration: InputDecoration(
                 constraints: BoxConstraints(
                   maxHeight: 33,
@@ -69,7 +69,7 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
               validator: (value) =>
                   value!.isEmpty ? 'Coloque seu telefone fixo' : null,
               onSaved: (valor) =>
-                  Repositories.contatosRepositorie.contatosTelefoneFixo(valor),
+                  Repositories.contatosRepositorie.contatosTelefoneFixo = valor,
               decoration: InputDecoration(
                 constraints: BoxConstraints(
                   maxHeight: 33,

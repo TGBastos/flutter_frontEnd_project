@@ -19,42 +19,45 @@ class _CampoTelefoneState extends State<CampoTelefone> {
           top: widget.camposSizeConfigs.spaceBetweenFieldsInTop),
       child: Row(
         children: <Widget>[
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-              Widget>[
-            Text('DDD'),
-            SizedBox(
-              height: widget.camposSizeConfigs.campoHeight,
-              width: widget.camposSizeConfigs.campoWidth / 4,
-              child: TextFormField(
-                initialValue: Repositories
-                            .contatosRepositorie.contatosModel.dddTelefone !=
-                        ''
-                    ? Repositories.contatosRepositorie.contatosModel.dddTelefone
-                    : '',
-                validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
-                onSaved: (valor) =>
-                    Repositories.contatosRepositorie.contatosDDDTelefone(valor),
-                decoration: InputDecoration(
-                  constraints: BoxConstraints(
-                    maxHeight: 33,
-                  ),
-                  floatingLabelBehavior: FloatingLabelBehavior.always,
-                  //labelText: "",
-                  labelStyle: TextStyle(
-                    fontSize: 20,
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue,
-                    ),
-                    borderRadius: BorderRadius.circular(
-                      widget.camposSizeConfigs.borderRadius,
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text('DDD'),
+                SizedBox(
+                  height: widget.camposSizeConfigs.campoHeight,
+                  width: widget.camposSizeConfigs.campoWidth / 4,
+                  child: TextFormField(
+                    initialValue: Repositories.contatosRepositorie.contatosModel
+                                .dddTelefone !=
+                            ''
+                        ? Repositories
+                            .contatosRepositorie.contatosModel.dddTelefone
+                        : '',
+                    validator: (value) =>
+                        value!.isEmpty ? 'Coloque seu DDD' : null,
+                    onSaved: (valor) => Repositories
+                        .contatosRepositorie.contatosDDDTelefone = valor,
+                    decoration: InputDecoration(
+                      constraints: BoxConstraints(
+                        maxHeight: 33,
+                      ),
+                      floatingLabelBehavior: FloatingLabelBehavior.always,
+                      //labelText: "",
+                      labelStyle: TextStyle(
+                        fontSize: 20,
+                      ),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          widget.camposSizeConfigs.borderRadius,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
-          ]),
+              ]),
           SizedBox(
             width: widget.camposSizeConfigs.campoWidth / 32,
           ),
@@ -74,8 +77,8 @@ class _CampoTelefoneState extends State<CampoTelefone> {
                         : '',
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu telefone' : null,
-                    onSaved: (valor) => Repositories.contatosRepositorie
-                        .contatosTelefone(valor),
+                    onSaved: (valor) => Repositories
+                        .contatosRepositorie.contatosTelefone = valor,
                     decoration: InputDecoration(
                       constraints: BoxConstraints(
                         maxHeight: 33,
