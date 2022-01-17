@@ -21,6 +21,7 @@ class _LoginFormsState extends State<LoginForms> {
   LoginController controller = LoginController();
 
   final cpfController = MaskedTextController(mask: '000.000.000-00');
+  final senhaControlador = MaskedTextController(mask: '000000');
   bool clickInProgress = false;
 
   _loginSucces() {
@@ -96,6 +97,7 @@ class _LoginFormsState extends State<LoginForms> {
                 ),
               ),
               TextFormField(
+                controller: senhaControlador,
                 obscureText: true,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua senha' : null,
