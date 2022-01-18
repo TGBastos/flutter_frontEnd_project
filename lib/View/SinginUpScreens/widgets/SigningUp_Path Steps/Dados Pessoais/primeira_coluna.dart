@@ -28,8 +28,7 @@ class _PrimeiraColunaDadosPessoaisState
     return StreamBuilder(
       stream: EstadoCivilBloc.instance.stream,
       builder: (context, snapshot) {
-        if (singinUpController.estadoCivil != 'Casado' ||
-            singinUpController.estadoCivil != 'União Estável') {
+        if (EstadoCivilBloc.instance.state == false) {
           return Column(
             //Primeira Coluna
             children: <Widget>[

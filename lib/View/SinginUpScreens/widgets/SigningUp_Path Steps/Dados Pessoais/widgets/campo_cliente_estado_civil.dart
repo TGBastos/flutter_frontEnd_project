@@ -68,10 +68,15 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
                     ),
                     value: selectedEstadoCivil,
                     onChanged: (String? valor) {
-                      print(singinUpController.dadosPessoais.estadoCivil);
+                      print(valor);
                       setState(() {
                         singinUpController.estadoCivil(valor);
                         selectedEstadoCivil = valor;
+                        if (valor == 'Casado' || valor == 'União Estável') {
+                          EstadoCivilBloc.instance.add(relacionamentoFalso());
+                        } else {
+                          EstadoCivilBloc.instance.add(relacionamentoFalso());
+                        }
                         //print(valor);
                       });
                     },
