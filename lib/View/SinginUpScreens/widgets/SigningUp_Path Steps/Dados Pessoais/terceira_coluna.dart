@@ -21,7 +21,7 @@ class TerceiraColuna extends StatelessWidget {
             campoHeight: 40,
             campoWidth: screenSize.width / 4.5,
             borderRadius: 15,
-            spaceBetweenFieldsInTop: 40,
+            spaceBetweenFieldsInTop: 25,
           ),
         ),
         CampoExpedidorDoRG(

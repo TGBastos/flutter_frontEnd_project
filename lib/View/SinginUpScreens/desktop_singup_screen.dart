@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/InheritedPath.dart';
 import '.././SinginUpScreens/widgets/row_meusDados.dart';
 import '.././SinginUpScreens/widgets/signingUp_path.dart';
 import '.././commun/widgets/Defaults/main_app_bar.dart';
@@ -13,6 +14,8 @@ class DesktopSingUpScreen extends StatefulWidget {
 class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
     with SingleTickerProviderStateMixin {
   GlobalKey<ScaffoldState> _key = GlobalKey();
+  GlobalKey<SingUpPathState> _signUpPath = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;
@@ -60,7 +63,54 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
             height: screenSize.height / 20,
             width: screenSize.width,
           ),
-          Expanded(child: SingUpPath()),
+          Expanded(
+            child: SingUpPath(
+              key: _signUpPath,
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: SizedBox(
+              width: screenSize.width / 4,
+              child: Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: IconButton(
+                      onPressed: () {
+                        if (_signUpPath.currentState != null) {
+                          _signUpPath.currentState!.retrocederPassoCadastro();
+                        }
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: screenSize.width / 64,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: IconButton(
+                      onPressed: () {
+                        if (_signUpPath.currentState != null) {
+                          _signUpPath.currentState!.proximoPassoCadastro();
+                        }
+                      },
+                      icon: Icon(
+                        Icons.arrow_forward,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
         ]),
       ),
     );

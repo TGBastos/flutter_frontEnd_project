@@ -1,12 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
+import 'package:rio_das_pedras_front_end/models/endereco_model.dart';
 import 'package:wsda/core/values/access_token.dart';
 import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
 import 'package:wsda/wsda.dart';
 
 class SigninController {
-  Future<bool> signUp(DadosPessoaisModel dadosPessoaisModel) async {
+  Future<bool> signUp(DadosPessoaisModel dadosPessoaisModel,
+      EnderecoModel enderecoModel) async {
     AccessTokenEndpoint accessTokenEndpoint = AccessTokenEndpoint(version: 1);
     Response response = await accessTokenEndpoint();
     AccessToken accessToken = AccessToken.from(response.data);
@@ -21,9 +23,9 @@ class SigninController {
         "clienteCpf": dadosPessoaisModel.CPF,
         "clienteNascimento": dadosPessoaisModel.dataDeNascimento,
         "clienteSexo": dadosPessoaisModel.sexo,
-        "clienteResLogradouro": '',
-        "clienteResNumero": "190",
-        "clienteResComplemento": "",
+        "clienteResLogradouro": enderecoModel.endereco,
+        "clienteResNumero": enderecoModel.enderecoNumero,
+        "clienteResComplemento": enderecoModel.enderecoComplemento,
         "clienteResBairro": "Centro",
         "clienteRgNumero": dadosPessoaisModel.rg,
         "clienteRgOrgaoEmissor": dadosPessoaisModel.expedidorRg,

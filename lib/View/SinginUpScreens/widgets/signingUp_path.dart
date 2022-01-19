@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/InheritedPath.dart';
 
 import 'SigningUp_Path Steps/Contatos/formulario_contatos.dart';
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
@@ -12,23 +13,49 @@ class SingUpPath extends StatefulWidget {
   const SingUpPath({Key? key}) : super(key: key);
 
   @override
-  _SingUpPathState createState() => _SingUpPathState();
+  SingUpPathState createState() => SingUpPathState();
 }
 
-class _SingUpPathState extends State<SingUpPath>
+class SingUpPathState extends State<SingUpPath>
     with SingleTickerProviderStateMixin {
   bool t = false;
-  late final TabController _tabController;
+  late final TabController tabController;
+
+  void proximoPassoCadastro() {
+    final int index = tabController.index;
+    final GlobalKey<FormState> form = myKeys[index];
+    final FormState? currentFormState = form.currentState;
+    final bool? isValidated = currentFormState?.validate();
+
+    if (isValidated != null &&
+        isValidated &&
+        index < tabController.length - 1) {
+      tabController.animateTo(tabController.index + 1);
+    }
+    currentFormState?.save();
+  }
+
+  void retrocederPassoCadastro() {
+    final int index = tabController.index;
+    final GlobalKey<FormState> form = myKeys[index];
+    final FormState? currentFormState = form.currentState;
+    final bool? isValidated = currentFormState?.validate();
+
+    if (isValidated != null && isValidated && index > 0) {
+      tabController.animateTo(tabController.index - 1);
+    }
+    currentFormState?.save();
+  }
 
   @override
   void initState() {
-    _tabController = new TabController(length: 6, vsync: this);
+    tabController = new TabController(length: 6, vsync: this);
     super.initState();
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
+    tabController.dispose();
     super.dispose();
   }
 
@@ -61,15 +88,15 @@ class _SingUpPathState extends State<SingUpPath>
               borderRadius: BorderRadius.all(Radius.circular(2)),
             ),
             child: TabBar(
-              controller: _tabController,
-              onTap: (index) async {
-                final int previousIndex = _tabController.previousIndex;
+              controller: tabController,
+              onTap: (index) {
+                final int previousIndex = tabController.previousIndex;
                 final GlobalKey<FormState> form = myKeys[previousIndex];
                 final FormState? currentFormState = form.currentState;
                 final bool? isValidated = currentFormState?.validate();
 
                 if (isValidated != null && !isValidated) {
-                  _tabController.index = previousIndex;
+                  tabController.index = previousIndex;
                 }
                 currentFormState?.save();
               },
@@ -136,16 +163,20 @@ class _SingUpPathState extends State<SingUpPath>
           ),
           Expanded(
             child: TabBarView(
-              controller: _tabController,
+              controller: tabController,
               children: [
                 ListView(
                   children: <Widget>[
-                    FormularioDadosPessoais(formKey: myKeys[0]),
+                    FormularioDadosPessoais(
+                      formKey: myKeys[0],
+                    ),
                   ],
                 ),
                 ListView(
                   children: <Widget>[
-                    FormularioEndereco(formKey: myKeys[1]),
+                    FormularioEndereco(
+                      formKey: myKeys[1],
+                    ),
                   ],
                 ),
                 ListView(
