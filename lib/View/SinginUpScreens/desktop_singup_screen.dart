@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/InheritedPath.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_bairro.dart';
+import 'package:rio_das_pedras_front_end/controllers/signin_controller.dart';
 import '.././SinginUpScreens/widgets/row_meusDados.dart';
 import '.././SinginUpScreens/widgets/signingUp_path.dart';
 import '.././commun/widgets/Defaults/main_app_bar.dart';
@@ -104,6 +107,24 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
                       },
                       icon: Icon(
                         Icons.arrow_forward,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: screenSize.width / 64,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Colors.orange,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: IconButton(
+                      onPressed: () {
+                        SigninController().signUp(
+                            singinUpController.dadosPessoais,
+                            enderecoController.enderecoModel);
+                      },
+                      icon: Icon(
+                        Icons.exit_to_app,
                       ),
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:rio_das_pedras_front_end/View/SinginUpScreens/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
 import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 import 'package:rio_das_pedras_front_end/models/endereco_model.dart';
@@ -47,7 +48,18 @@ class SigninController {
         "clienteAceiteRegulamento": "1",
       },
     );
-
-    return false;
+    try {
+      final Response response = await signupUser();
+      if (response.data['code'] == '000') {
+        print('this shit get ok');
+        return true;
+      } else {
+        print('this shit isnt ok');
+        return false;
+      }
+    } catch (e) {
+      print(e);
+      return false;
+    }
   }
 }
