@@ -145,17 +145,25 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                               ),
                             ),
                           ),
-                          TextButton(
-                            onPressed: () => Navigator.pushNamed(
-                                context, RoutesName.changePasswordPage),
+                          PopupMenuButton(
                             child: Text(
-                              "Meus dados",
+                              'Meus Dados',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            itemBuilder: (context) => [
+                              PopupMenuItem(
+                                child: Text("First"),
+                                value: 1,
+                              ),
+                              PopupMenuItem(
+                                child: Text("Second"),
+                                value: 2,
+                              )
+                            ],
                           ),
                           //ButtonMeusDados(buttonWidth: 115, buttonHeight: 40),
                           TextButton(

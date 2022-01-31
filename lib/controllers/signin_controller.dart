@@ -26,12 +26,12 @@ class SigninController {
         "clienteResLogradouro": enderecoModel.endereco,
         "clienteResNumero": enderecoModel.enderecoNumero,
         "clienteResComplemento": enderecoModel.enderecoComplemento,
-        "clienteResBairro": "Centro",
+        "clienteResBairro": enderecoModel.enderecoBairro,
         "clienteRgNumero": dadosPessoaisModel.rg,
         "clienteRgOrgaoEmissor": dadosPessoaisModel.expedidorRg,
-        "clienteResCidade": "Itabuna",
+        "clienteResCidade": enderecoModel.enderecoCidade,
         "clienteResUF": "BA",
-        "clienteResCep": "45600321",
+        "clienteResCep": enderecoModel.enderecoCep,
         "clienteResLatitude": "",
         "clienteResLongitude": "",
         "clienteResFoneDDD": "",
@@ -47,7 +47,6 @@ class SigninController {
         "clienteAceiteRegulamento": "1",
       },
     );
-
-    return false;
+    return true;
   }
 }

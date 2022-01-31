@@ -1,6 +1,6 @@
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 
-class SinginUpController {
+class DadosPessoaisController {
   DadosPessoaisModel dadosPessoais = DadosPessoaisModel();
 
   String clienteNome(String? valor) => dadosPessoais.clienteNome = valor ?? '';

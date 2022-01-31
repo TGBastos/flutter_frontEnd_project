@@ -21,7 +21,7 @@ class PrimeiraColunaDadosPessoais extends StatefulWidget {
 
 class _PrimeiraColunaDadosPessoaisState
     extends State<PrimeiraColunaDadosPessoais> {
-  SinginUpController singinUpController = SinginUpController();
+  DadosPessoaisController singinUpController = DadosPessoaisController();
   @override
   Widget build(BuildContext context) {
     final Size screenSize = MediaQuery.of(context).size;

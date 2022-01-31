@@ -11,14 +11,14 @@ class CampoClienteCPF extends StatefulWidget {
   _CampoClienteCPFState createState() => _CampoClienteCPFState();
 }
 
-SinginUpController singinUpController = SinginUpController();
+DadosPessoaisController singinUpController = DadosPessoaisController();
 
 class _CampoClienteCPFState extends State<CampoClienteCPF> {
   final controladorCPFCadastro = MaskedTextController(
       mask: '000.000.000-00', text: singinUpController.dadosPessoais.CPF);
   @override
   Widget build(BuildContext context) {
-    print(SinginUpController().dadosPessoais.CPF);
+    print(DadosPessoaisController().dadosPessoais.CPF);
     return Padding(
       padding: EdgeInsets.only(
           top: widget.camposSizeConfigs.spaceBetweenFieldsInTop),
