@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/desktop_singup_screen.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/large_desktop_singup_screen.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/mobile_singup_screen.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/tablet_singup_screen.dart';
 
-import '../../../SinginUpScreens/desktop_singup_screen.dart';
-import '../../../SinginUpScreens/large_desktop_singup_screen.dart';
-import '../../../SinginUpScreens/mobile_singup_screen.dart';
-import '../../../SinginUpScreens/tablet_singup_screen.dart';
 import '../../responsive_controller.dart';
 
 class SingingUpPageWrapper extends StatefulWidget {

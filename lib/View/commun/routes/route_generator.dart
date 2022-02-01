@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cartao/desktop_cartao.dart';
+import 'package:rio_das_pedras_front_end/View/cliente_mensagens/descktop_mensage_screen.dart';
+import 'package:rio_das_pedras_front_end/View/commun/widgets/PageWrappers/cartao_page_wrapper.dart';
+import 'package:rio_das_pedras_front_end/View/mudar_senha/change_password_desktop_screen.dart';
 
 import './routes_name.dart';
-import '../../ChangePasswordScreens/change_password_desktop_screen.dart';
-import '../../MensagesScreens/descktop_mensage_screen.dart';
 import '../../commun/widgets/PageWrappers/loged_page_wrapper.dart';
 import '../../commun/widgets/PageWrappers/login_page_wrapper.dart';
 import '../../commun/widgets/PageWrappers/singingup_page_wrapper.dart';
@@ -51,6 +53,9 @@ class RouteGenerator {
       case RoutesName.changePasswordPage:
         return _GeneratePageRoute(
             widget: ChangePasswordDesktopScreen(), routeName: settings.name);
+      case RoutesName.cartaoPage:
+        return _GeneratePageRoute(
+            widget: CartaoPageWrapper(), routeName: settings.name);
       default:
         return _GeneratePageRoute(
             widget: LoginPageWrapper(), routeName: settings.name);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:rio_das_pedras_front_end/View/cliente_mensagens/descktop_mensage_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../MensagesScreens/descktop_mensage_screen.dart';
 import '../../../utils/pallete_color.dart';
 import '../../routes/routes_name.dart';
 import '../Defaults/main_app_bar.dart';
@@ -156,18 +156,31 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                             ),
                             itemBuilder: (context) => [
                               PopupMenuItem(
-                                child: Text("First"),
+                                child: Text("Alterar meus dados"),
                                 value: 1,
                               ),
                               PopupMenuItem(
-                                child: Text("Second"),
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, RoutesName.changePasswordPage);
+                                  },
+                                  child: Text('Trocar senha'),
+                                ),
                                 value: 2,
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RoutesName.changePasswordPage);
+                                },
                               )
                             ],
                           ),
                           //ButtonMeusDados(buttonWidth: 115, buttonHeight: 40),
                           TextButton(
-                            onPressed: () => {},
+                            onPressed: () => {
+                              Navigator.pushNamed(
+                                  context, RoutesName.cartaoPage)
+                            },
                             child: Text(
                               "Cartão",
                               style: TextStyle(
