@@ -16,8 +16,8 @@ class CampoClienteDataNascimento extends StatefulWidget {
 class _CampoClienteDataNascimentoState
     extends State<CampoClienteDataNascimento> {
   final controladorDataDeNascimento = MaskedTextController(
-      mask: '00/00/0000',
-      text: singinUpController.dadosPessoais.dataDeNascimento);
+      mask: '00-00-0000', text: dadosPessoais.dataDeNascimento);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,14 +34,14 @@ class _CampoClienteDataNascimentoState
                 controller: controladorDataDeNascimento,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua data de nascimento' : null,
-                onSaved: (valor) => singinUpController
-                    .dataDeNascimento(controladorDataDeNascimento.unmasked),
+                onSaved: (valor) {
+                  singinUpController.dataDeNascimento = valor;
+                },
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
                   ),
                   floatingLabelBehavior: FloatingLabelBehavior.always,
-                  //labelText: "",
                   labelStyle: TextStyle(
                     fontSize: 20,
                   ),

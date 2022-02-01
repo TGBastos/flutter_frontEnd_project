@@ -24,12 +24,12 @@ class _CampoClienteNomeMaeState extends State<CampoClienteNomeMae> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: singinUpController.dadosPessoais.nomeDaMae != ''
-                    ? singinUpController.dadosPessoais.nomeDaMae
+                initialValue: dadosPessoais.nomeDaMae != ''
+                    ? dadosPessoais.nomeDaMae
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o nome da mãe' : null,
-                onSaved: (valor) => singinUpController.nomeDaMae(valor),
+                onSaved: (valor) => singinUpController.nomeDaMae = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

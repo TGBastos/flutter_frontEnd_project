@@ -13,8 +13,8 @@ class CampoClienteRG extends StatefulWidget {
 }
 
 class _CampoClienteRGState extends State<CampoClienteRG> {
-  final controladorRgCadastro = MaskedTextController(
-      mask: '00-000-000.00', text: singinUpController.dadosPessoais.rg);
+  final controladorRgCadastro =
+      MaskedTextController(mask: '00-000-000.00', text: dadosPessoais.rg);
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,7 +31,7 @@ class _CampoClienteRGState extends State<CampoClienteRG> {
                 controller: controladorRgCadastro,
                 validator: (valor) => valor!.isEmpty ? 'Coloque seu RG' : null,
                 onSaved: (valor) =>
-                    singinUpController.rg(controladorRgCadastro.unmasked),
+                    singinUpController.rg = controladorRgCadastro.unmasked,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

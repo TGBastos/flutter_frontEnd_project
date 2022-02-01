@@ -27,13 +27,12 @@ class _CampoClienteEscolaridadeState extends State<CampoClienteEscolaridade> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue:
-                    singinUpController.dadosPessoais.escolaridade != ''
-                        ? singinUpController.dadosPessoais.escolaridade
-                        : '',
+                initialValue: dadosPessoais.escolaridade != ''
+                    ? dadosPessoais.escolaridade
+                    : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua escolaridade' : null,
-                onSaved: (valor) => singinUpController.escolaridade(valor),
+                onSaved: (valor) => singinUpController.escolaridade = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
