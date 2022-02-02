@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
-import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
+import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 import 'package:rio_das_pedras_front_end/models/endereco_model.dart';
 import 'package:wsda/core/values/access_token.dart';
@@ -10,7 +11,6 @@ import 'package:wsda/wsda.dart';
 class SigninController {
   Future<bool> signUp() async {
     DadosPessoaisModel _dadosPessoais = DadosPessoaisController.dadosPessoais;
-    EnderecoModel _dadosEdereco = EnderecoController.enderecoModel;
     AccessTokenEndpoint accessTokenEndpoint = AccessTokenEndpoint(version: 1);
     Response response = await accessTokenEndpoint();
     AccessToken accessToken = AccessToken.from(response.data);
@@ -24,16 +24,16 @@ class SigninController {
         "clienteCpf": _dadosPessoais.CPF,
         "clienteNascimento": _dadosPessoais.dataDeNascimento,
         "clienteSexo": _dadosPessoais.sexo,
-        "clienteResLogradouro": _dadosEdereco.endereco,
-        "clienteResNumero": _dadosEdereco.enderecoNumero,
-        "clienteResComplemento": _dadosEdereco.enderecoComplemento,
-        "clienteResBairro": _dadosEdereco.enderecoBairro,
-        "clienteRgNumero": _dadosPessoais.rg,
-        "clienteRgOrgaoEmissor": _dadosPessoais.orgaoEmissor,
-        "clienteResCidade": _dadosEdereco.enderecoCidade,
-        "clienteResUF": _dadosEdereco.enderecoUf,
-        "clienteResCep": _dadosEdereco.enderecoCep,
-        "clienteResLatitude": '',
+        "clienteResLogradouro": "Rua Ruy Barbosa",
+        "clienteResNumero": "190",
+        "clienteResComplemento": "",
+        "clienteResBairro": "Centro",
+        "clienteRgNumero": "2070517802",
+        "clienteRgOrgaoEmissor": "SSP",
+        "clienteResCidade": "Itabuna",
+        "clienteResUF": "BA",
+        "clienteResCep": "45600321",
+        "clienteResLatitude": "",
         "clienteResLongitude": "",
         "clienteResFoneDDD": "",
         "clienteResFoneNumero": "",

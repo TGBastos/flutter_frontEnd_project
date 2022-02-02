@@ -1,8 +1,7 @@
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20teps/repositories.dart';
 import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
 
 class ContatosController {
-  static ContatosModel contatosModel = Repositories.contatosRepositorie;
+  ContatosModel contatosModel = ContatosModel();
 
   set contatosEmail(String? valor) {
     contatosModel.email = valor ?? '';

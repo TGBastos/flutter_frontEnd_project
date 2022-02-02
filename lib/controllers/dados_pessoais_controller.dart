@@ -1,17 +1,10 @@
 import 'package:intl/intl.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20teps/repositories.dart';
-
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 
-import '../View/commun/functions.dart';
-
 class DadosPessoaisController {
-  static DadosPessoaisModel dadosPessoais = Repositories.dadosPessoaisModel;
+  static DadosPessoaisModel dadosPessoais = DadosPessoaisModel();
 
   set clienteNome(String? valor) {
-    if (valor != null) {
-      valor = ViewFuctions.removerAcentos(valor);
-    }
     dadosPessoais.clienteNome = valor ?? '';
   }
 
@@ -20,9 +13,6 @@ class DadosPessoaisController {
   }
 
   set cpfOrgaoEmissor(String? valor) {
-    if (valor != null) {
-      valor = ViewFuctions.removerAcentos(valor);
-    }
     dadosPessoais.orgaoEmissor = valor ?? '';
   }
 
@@ -50,9 +40,8 @@ class DadosPessoaisController {
     dadosPessoais.estadoCivil = valor ?? '';
   }
 
-  set escolaridade(String valor) {
-    valor = ViewFuctions.removerAcentos(valor);
-    dadosPessoais.escolaridade = valor;
+  set escolaridade(String? valor) {
+    dadosPessoais.escolaridade = valor ?? '';
   }
 
   set expedidorRg(String? valor) {
@@ -60,10 +49,6 @@ class DadosPessoaisController {
   }
 
   set nacionalidade(String? valor) {
-    if (valor != null) {
-      valor = ViewFuctions.removerAcentos(valor);
-    }
-
     dadosPessoais.nacionalidade = valor ?? '';
   }
 

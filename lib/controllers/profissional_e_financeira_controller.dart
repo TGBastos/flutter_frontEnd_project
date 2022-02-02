@@ -1,32 +1,32 @@
 import 'package:rio_das_pedras_front_end/models/profissional_e_financeira_model.dart';
 
 class ProfissionalFinanceiraController {
-  static ProfissionalEFinanceiraModel profissionalEFinanceiraModel =
+  ProfissionalEFinanceiraModel profissionalEFinanceiraModel =
       ProfissionalEFinanceiraModel();
 
-  set profissionalEmpresa(String? valor) =>
+  String profissionalEmpresa(String? valor) =>
       profissionalEFinanceiraModel.profissionalEmpresa = valor ?? '';
-  set profissionalCEP(String? valor) =>
+  String profissionalCEP(String? valor) =>
       profissionalEFinanceiraModel.profissionalCEP = valor ?? '';
-  set profissionalComplemento(String? valor) =>
+  String profissionalComplemento(String? valor) =>
       profissionalEFinanceiraModel.profissionalComplemento = valor ?? '';
-  set profissionalNumero(String? valor) =>
+  String profissionalNumero(String? valor) =>
       profissionalEFinanceiraModel.profissionalNumero = valor ?? '';
-  set profissionalCargo(String? valor) =>
+  String profissionalCargo(String? valor) =>
       profissionalEFinanceiraModel.profissionalCargo = valor ?? '';
-  set profissionalMatricula(String? valor) =>
+  String profissionalMatricula(String? valor) =>
       profissionalEFinanceiraModel.profissionalMatricula = valor ?? '';
-  set profissionalEndereco(String? valor) =>
+  String profissionalEndereco(String? valor) =>
       profissionalEFinanceiraModel.profissionalEndereco = valor ?? '';
-  set profissionalBairro(String? valor) =>
+  String profissionalBairro(String? valor) =>
       profissionalEFinanceiraModel.profissionalBairro = valor ?? '';
-  set profissionalTempoDeServicoAnos(String? valor) =>
+  String profissionalTempoDeServicoAnos(String? valor) =>
       profissionalEFinanceiraModel.profissionalTempoDeServicoAnos = valor ?? '';
-  set profissionalTempoDeServicoMeses(String? valor) =>
+  String profissionalTempoDeServicoMeses(String? valor) =>
       profissionalEFinanceiraModel.profissionalTempoDeServicoMeses =
           valor ?? '';
-  set profissionalSalario(String? valor) =>
+  String profissionalSalario(String? valor) =>
       profissionalEFinanceiraModel.profissionalSalario = valor ?? '';
-  set profissionalOutrasRendas(String? valor) =>
+  String profissionalOutrasRendas(String? valor) =>
       profissionalEFinanceiraModel.profissionalOutrasRendas = valor ?? '';
 }
