@@ -56,36 +56,77 @@ class _DesktopCartaoScreenState extends State<DesktopCartaoScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.red, elevation: 10),
-                onPressed: () {},
-                child: Container(
-                  width: screenSize.width / 6,
-                  height: screenSize.height / 4,
-                ),
+              Column(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.red,
+                      shadowColor: Colors.blue,
+                      animationDuration: Duration(milliseconds: 300),
+                    ),
+                    onPressed: () {},
+                    child: Container(
+                      width: screenSize.width / 6,
+                      height: screenSize.height / 4,
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenSize.height / 32,
+                  ),
+                  Text(
+                    'Cartão 1',
+                  ),
+                ],
               ),
               SizedBox(
                 width: screenSize.width / 8,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.green),
-                onPressed: () {},
-                child: Container(
-                  width: screenSize.width / 6,
-                  height: screenSize.height / 4,
-                ),
+              Column(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.green,
+                      shadowColor: Colors.blue,
+                      animationDuration: Duration(milliseconds: 300),
+                    ),
+                    onPressed: () {},
+                    child: Container(
+                      width: screenSize.width / 6,
+                      height: screenSize.height / 4,
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenSize.height / 32,
+                  ),
+                  Text(
+                    'Cartão 2',
+                  ),
+                ],
               ),
               SizedBox(
                 width: screenSize.width / 8,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(primary: Colors.orange),
-                onPressed: () {},
-                child: Container(
-                  width: screenSize.width / 6,
-                  height: screenSize.height / 4,
-                ),
+              Column(
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.orange,
+                      shadowColor: Colors.blue,
+                      animationDuration: Duration(milliseconds: 300),
+                    ),
+                    onPressed: () {},
+                    child: Container(
+                      width: screenSize.width / 6,
+                      height: screenSize.height / 4,
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenSize.height / 32,
+                  ),
+                  Text(
+                    'Cartão 3',
+                  ),
+                ],
               ),
             ],
           ),

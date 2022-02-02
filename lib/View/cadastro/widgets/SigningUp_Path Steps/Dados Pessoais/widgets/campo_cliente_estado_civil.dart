@@ -58,10 +58,9 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton<String>(
                     borderRadius: BorderRadius.circular(20),
-                    hint: Text(
-                        singinUpController.dadosPessoais.estadoCivil != ''
-                            ? singinUpController.dadosPessoais.estadoCivil
-                            : "Selecionar"),
+                    hint: Text(dadosPessoais.estadoCivil != ''
+                        ? dadosPessoais.estadoCivil
+                        : "Selecionar"),
                     isExpanded: true,
                     icon: Icon(
                       Icons.arrow_drop_down,
@@ -70,7 +69,7 @@ class _CampoClienteEstadoCivilState extends State<CampoClienteEstadoCivil> {
                     onChanged: (String? valor) {
                       print(valor);
                       setState(() {
-                        singinUpController.estadoCivil(valor);
+                        singinUpController.estadoCivil = valor;
                         selectedEstadoCivil = valor;
                         if (valor == 'Casado' || valor == 'União Estável') {
                           EstadoCivilBloc.instance.add(relacionamentoFalso());

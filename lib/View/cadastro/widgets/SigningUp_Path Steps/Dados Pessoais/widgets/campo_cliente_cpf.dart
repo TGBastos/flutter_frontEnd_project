@@ -1,6 +1,7 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
+import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class CampoClienteCPF extends StatefulWidget {
@@ -12,13 +13,13 @@ class CampoClienteCPF extends StatefulWidget {
 }
 
 DadosPessoaisController singinUpController = DadosPessoaisController();
+DadosPessoaisModel dadosPessoais = DadosPessoaisController.dadosPessoais;
 
 class _CampoClienteCPFState extends State<CampoClienteCPF> {
-  final controladorCPFCadastro = MaskedTextController(
-      mask: '000.000.000-00', text: singinUpController.dadosPessoais.CPF);
+  final controladorCPFCadastro =
+      MaskedTextController(mask: '000.000.000-00', text: dadosPessoais.CPF);
   @override
   Widget build(BuildContext context) {
-    print(DadosPessoaisController().dadosPessoais.CPF);
     return Padding(
       padding: EdgeInsets.only(
           top: widget.camposSizeConfigs.spaceBetweenFieldsInTop),
@@ -33,8 +34,8 @@ class _CampoClienteCPFState extends State<CampoClienteCPF> {
                 controller: controladorCPFCadastro,
                 validator: (value) => value!.isEmpty ? 'Coloque seu CPF' : null,
                 onSaved: (valor) {
-                  singinUpController.clienteCPF(valor);
-                  print(singinUpController.dadosPessoais.CPF);
+                  singinUpController.clienteCPF =
+                      controladorCPFCadastro.unmasked;
                 },
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

@@ -113,9 +113,12 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
                     ),
                     TextButton(
                       onPressed: () {
-                        SigninController().signUp(
-                            DadosPessoaisController().dadosPessoais,
-                            EnderecoController().enderecoModel);
+                        print(DadosPessoaisController
+                            .dadosPessoais.dataDeNascimento);
+                        print(DadosPessoaisController.dadosPessoais.CPF);
+                        print(DadosPessoaisController
+                            .dadosPessoais.dataDeNascimento);
+                        SigninController().signUp();
                       },
                       child: Text(
                         'Finalizar',
