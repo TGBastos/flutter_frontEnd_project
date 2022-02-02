@@ -25,12 +25,12 @@ class _CampoExpedidorDoRGState extends State<CampoExpedidorDoRG> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: dadosPessoais.expedidorRg != ''
-                    ? dadosPessoais.expedidorRg
+                initialValue: singinUpController.dadosPessoais.expedidorRg != ''
+                    ? singinUpController.dadosPessoais.expedidorRg
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o expedidor do RG' : null,
-                onSaved: (valor) => singinUpController.expedidorRg = valor,
+                onSaved: (valor) => singinUpController.expedidorRg(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

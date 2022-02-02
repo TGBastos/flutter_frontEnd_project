@@ -26,12 +26,13 @@ class _CampoClienteNacionalidadeState extends State<CampoClienteNacionalidade> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: dadosPessoais.nacionalidade != ''
-                    ? dadosPessoais.nacionalidade
-                    : '',
+                initialValue:
+                    singinUpController.dadosPessoais.nacionalidade != ''
+                        ? singinUpController.dadosPessoais.nacionalidade
+                        : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque sua nacionalidade' : null,
-                onSaved: (valor) => singinUpController.nacionalidade = valor,
+                onSaved: (valor) => singinUpController.nacionalidade(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

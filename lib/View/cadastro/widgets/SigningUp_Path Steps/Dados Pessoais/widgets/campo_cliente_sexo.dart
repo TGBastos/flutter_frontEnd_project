@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
-import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class Sexo {
@@ -17,6 +15,9 @@ class CampoClienteSexo extends StatefulWidget {
 }
 
 class _CampoClienteSexoState extends State<CampoClienteSexo> {
+  Sexo? selectedSexo;
+  List<Sexo> sexos = <Sexo>[Sexo('Homem'), Sexo('Mulher'), Sexo('Outro')];
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
@@ -39,60 +40,36 @@ class _CampoClienteSexoState extends State<CampoClienteSexo> {
               ),
             ),
             child: SizedBox(
-              height: widget.camposSizeConfigs.campoHeight,
-              width: widget.camposSizeConfigs.campoWidth,
-              child: PopupMenuButton(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          dadosPessoais.sexo != ''
-                              ? dadosPessoais.sexo
-                              : 'selecionar',
-                          style: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_drop_down,
-                      ),
-                    ],
+                height: widget.camposSizeConfigs.campoHeight,
+                width: widget.camposSizeConfigs.campoWidth,
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<Sexo>(
+                    borderRadius: BorderRadius.circular(20),
+                    hint: Text('Selecionar'),
+                    isExpanded: true,
+                    value: selectedSexo,
+                    onChanged: (Sexo? Value) {
+                      setState(() {
+                        selectedSexo = Value;
+                      });
+                    },
+                    items: sexos.map((Sexo sexo) {
+                      return DropdownMenuItem(
+                          value: sexo,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                sexo.sexo,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ));
+                    }).toList(),
                   ),
-                ),
-                itemBuilder: (context) => [
-                  PopupMenuItem(
-                    child: Text("M"),
-                    value: 1,
-                  ),
-                  PopupMenuItem(
-                    child: Text(
-                      "F",
-                    ),
-                    value: 2,
-                  ),
-                  PopupMenuItem(
-                    child: Text(
-                      "Outro",
-                    ),
-                    value: 2,
-                  ),
-                ],
-                onSelected: (int menu) {
-                  if (menu == 1) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'M';
-                  } else if (menu == 2) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'F';
-                  } else {
-                    DadosPessoaisController.dadosPessoais.sexo = 'Outro';
-                  }
-                },
-              ),
-            ),
+                )),
           )
         ],
       ),

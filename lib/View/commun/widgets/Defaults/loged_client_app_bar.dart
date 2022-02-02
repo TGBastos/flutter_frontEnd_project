@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:rio_das_pedras_front_end/View/cliente_mensagens/descktop_mensage_screen.dart';
-import 'package:rio_das_pedras_front_end/models/cliente.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils/pallete_color.dart';
@@ -161,19 +160,20 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                                 value: 1,
                               ),
                               PopupMenuItem(
-                                child: Text(
-                                  'Trocar senha',
+                                child: TextButton(
+                                  onPressed: () {
+                                    Navigator.pushNamed(
+                                        context, RoutesName.changePasswordPage);
+                                  },
+                                  child: Text('Trocar senha'),
                                 ),
                                 value: 2,
-                              ),
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, RoutesName.changePasswordPage);
+                                },
+                              )
                             ],
-                            onSelected: (int menu) {
-                              if (menu == 1) {
-                              } else if (menu == 2) {
-                                Navigator.pushNamed(
-                                    context, RoutesName.changePasswordPage);
-                              }
-                            },
                           ),
                           //ButtonMeusDados(buttonWidth: 115, buttonHeight: 40),
                           TextButton(
@@ -203,10 +203,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                             ),
                           ),
                           TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, RoutesName.loginPage);
-                            },
+                            onPressed: () => DesktopMensageScreen(),
                             child: Text(
                               "Sair",
                               style: TextStyle(

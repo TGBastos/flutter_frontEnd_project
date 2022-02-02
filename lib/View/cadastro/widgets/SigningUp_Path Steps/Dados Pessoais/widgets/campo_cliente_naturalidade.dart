@@ -25,12 +25,13 @@ class _CampoClienteNaturalidadeState extends State<CampoClienteNaturalidade> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: dadosPessoais.naturalidade != ''
-                    ? dadosPessoais.naturalidade
-                    : '',
+                initialValue:
+                    singinUpController.dadosPessoais.naturalidade != ''
+                        ? singinUpController.dadosPessoais.naturalidade
+                        : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua naturalidade' : null,
-                onSaved: (valor) => singinUpController.naturalidade = valor,
+                onSaved: (valor) => singinUpController.naturalidade(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

@@ -27,12 +27,13 @@ class _CampoClienteOragaoEmissorCPFState
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: dadosPessoais.orgaoEmissor != ''
-                    ? dadosPessoais.orgaoEmissor
-                    : '',
+                initialValue:
+                    singinUpController.dadosPessoais.orgaoEmissor != ''
+                        ? singinUpController.dadosPessoais.orgaoEmissor
+                        : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque o orgão emissor' : null,
-                onSaved: (valor) => singinUpController.cpfOrgaoEmissor = valor,
+                onSaved: (valor) => singinUpController.cpfOrgaoEmissor(valor),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

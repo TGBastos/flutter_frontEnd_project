@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
-
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
-import 'campo_cliente_cpf.dart';
 
 class Tratamentos {
   String tratamento;
@@ -18,6 +15,14 @@ class CampoClienteTratamento extends StatefulWidget {
 }
 
 class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
+  Tratamentos? selectedTratamento;
+  List<Tratamentos> tratamentos = <Tratamentos>[
+    Tratamentos('Nenhum'),
+    Tratamentos('Sr.'),
+    Tratamentos('Sra.'),
+    Tratamentos('Srta.'),
+    Tratamentos('v.exa.'),
+  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,75 +30,53 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
         top: widget.camposSizeConfigs.spaceBetweenFieldsInTop,
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text('Tratamento'),
-          Container(
-            decoration: BoxDecoration(
-                border: Border.all(
-                  width: 1,
-                  color: Colors.grey,
-                ),
-                borderRadius: BorderRadius.circular(
-                    widget.camposSizeConfigs.borderRadius)),
-            child: SizedBox(
-              height: widget.camposSizeConfigs.campoHeight,
-              width: widget.camposSizeConfigs.campoWidth,
-              child: PopupMenuButton(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          dadosPessoais.sexo != ''
-                              ? dadosPessoais.sexo
-                              : 'selecionar',
-                          style: TextStyle(
-                            color: Colors.grey,
-                          ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Tratamento'),
+            Container(
+              decoration: BoxDecoration(
+                  border: Border.all(
+                    width: 1,
+                    color: Colors.grey,
+                  ),
+                  borderRadius: BorderRadius.circular(
+                      widget.camposSizeConfigs.borderRadius)),
+              child: SizedBox(
+                height: widget.camposSizeConfigs.campoHeight,
+                width: widget.camposSizeConfigs.campoWidth,
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<Tratamentos>(
+                    borderRadius: BorderRadius.circular(20),
+                    hint: Text("Selecionar"),
+                    isExpanded: true,
+                    icon: Icon(
+                      Icons.arrow_drop_down,
+                    ),
+                    value: selectedTratamento,
+                    onChanged: (Tratamentos? Value) {
+                      setState(() {
+                        selectedTratamento = Value;
+                      });
+                    },
+                    items: tratamentos.map((Tratamentos tratamentos) {
+                      return DropdownMenuItem<Tratamentos>(
+                        value: tratamentos,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              tratamentos.tratamento,
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ],
                         ),
-                      ),
-                      Icon(
-                        Icons.arrow_drop_down,
-                      ),
-                    ],
+                      );
+                    }).toList(),
                   ),
                 ),
-                itemBuilder: (context) => [
-                  PopupMenuItem(
-                    child: Text("M"),
-                    value: 1,
-                  ),
-                  PopupMenuItem(
-                    child: Text(
-                      "F",
-                    ),
-                    value: 2,
-                  ),
-                  PopupMenuItem(
-                    child: Text(
-                      "Outro",
-                    ),
-                    value: 2,
-                  ),
-                ],
-                onSelected: (int menu) {
-                  if (menu == 1) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'M';
-                  } else if (menu == 2) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'F';
-                  } else {
-                    DadosPessoaisController.dadosPessoais.sexo = 'Outro';
-                  }
-                },
               ),
             ),
-          ),
-        ],
-      ),
+          ]),
     );
   }
 }

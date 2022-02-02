@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
-
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
-import 'campo_cliente_cpf.dart';
+import '../../../../../../core/entities/uf_list.dart';
 
 class CampoClienteUFNascimento extends StatefulWidget {
   final CamposSizeConfigs camposSizeConfigs;
@@ -14,6 +12,8 @@ class CampoClienteUFNascimento extends StatefulWidget {
 }
 
 class _CampoClienteUFNascimentoState extends State<CampoClienteUFNascimento> {
+  UF? selectedUF;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,56 +36,34 @@ class _CampoClienteUFNascimentoState extends State<CampoClienteUFNascimento> {
             child: SizedBox(
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
-              child: PopupMenuButton(
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 5),
-                        child: Text(
-                          dadosPessoais.sexo != ''
-                              ? dadosPessoais.sexo
-                              : 'selecionar',
-                          style: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ),
-                      Icon(
-                        Icons.arrow_drop_down,
-                      ),
-                    ],
-                  ),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<UF>(
+                  style: TextStyle(),
+                  borderRadius: BorderRadius.circular(20),
+                  hint: Text('Selecionar'),
+                  isExpanded: true,
+                  value: selectedUF,
+                  onChanged: (UF? Value) {
+                    setState(() {
+                      selectedUF = Value;
+                    });
+                  },
+                  items: ufs.map((UF uf) {
+                    return DropdownMenuItem<UF>(
+                        value: uf,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              uf.uf,
+                              style: TextStyle(
+                                color: Colors.black,
+                              ),
+                            )
+                          ],
+                        ));
+                  }).toList(),
                 ),
-                itemBuilder: (context) => [
-                  PopupMenuItem(
-                    child: Text("M"),
-                    value: 1,
-                  ),
-                  PopupMenuItem(
-                    child: Text(
-                      "F",
-                    ),
-                    value: 2,
-                  ),
-                  PopupMenuItem(
-                    child: Text(
-                      "Outro",
-                    ),
-                    value: 2,
-                  ),
-                ],
-                onSelected: (int menu) {
-                  if (menu == 1) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'M';
-                  } else if (menu == 2) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'F';
-                  } else {
-                    DadosPessoaisController.dadosPessoais.sexo = 'Outro';
-                  }
-                },
               ),
             ),
           )
