@@ -33,7 +33,7 @@ class _CampoEmpresaCargoState extends State<CampoEmpresaCargo> {
                     : '',
                 onSaved: (valor) => Repositories
                     .profissionalFinanceiraRepositorie
-                    .profissionalCargo(valor),
+                    .profissionalCargo = valor,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque seu cargo' : null,
                 decoration: InputDecoration(

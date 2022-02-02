@@ -30,7 +30,7 @@ class _CampoEnderecoState extends State<CampoEndereco> {
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque seu Endereço' : null,
-                onSaved: (valor) => enderecoController.endereco(valor),
+                onSaved: (valor) => enderecoController.endereco = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

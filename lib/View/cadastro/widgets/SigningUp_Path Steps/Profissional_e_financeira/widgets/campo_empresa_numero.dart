@@ -33,7 +33,7 @@ class _CampoEmpresaNumeroState extends State<CampoEmpresaNumero> {
                     : '',
                 onSaved: (valor) => Repositories
                     .profissionalFinanceiraRepositorie
-                    .profissionalNumero(valor),
+                    .profissionalNumero = valor,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o número' : null,
                 decoration: InputDecoration(

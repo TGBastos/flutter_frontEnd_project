@@ -40,7 +40,7 @@ class _CampoTempoDeServicoState extends State<CampoTempoDeServico> {
                         : '',
                     onSaved: (valor) => Repositories
                         .profissionalFinanceiraRepositorie
-                        .profissionalTempoDeServicoAnos(valor),
+                        .profissionalTempoDeServicoAnos = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque o tempo de serviço' : null,
                     decoration: InputDecoration(

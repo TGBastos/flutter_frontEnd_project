@@ -32,7 +32,7 @@ class _CampoComplementoState extends State<CampoComplemento> {
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque um complemento' : null,
                 onSaved: (valor) =>
-                    enderecoController.enderecoComplemento(valor),
+                    enderecoController.enderecoComplemento = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

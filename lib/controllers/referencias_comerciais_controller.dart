@@ -4,16 +4,16 @@ class ReferenciasComerciaisController {
   ReferenciaComercialModel referenciaComercialModel =
       ReferenciaComercialModel();
 
-  String referenciaComercialEmpresa1(String? valor) =>
+  set referenciaComercialEmpresa1(String? valor) =>
       referenciaComercialModel.referenciaComercialEmpresa1 = valor ?? '';
-  String referenciaComercialEmpresa2(String? valor) =>
+  set referenciaComercialEmpresa2(String? valor) =>
       referenciaComercialModel.referenciaComercialEmpresa2 = valor ?? '';
-  String referenciaComercialDDDTelefone1(String? valor) =>
+  set referenciaComercialDDDTelefone1(String? valor) =>
       referenciaComercialModel.referenciaComercialDDDTelefone1 = valor ?? '';
-  String referenciaComercialTelefone1(String? valor) =>
+  set referenciaComercialTelefone1(String? valor) =>
       referenciaComercialModel.referenciaComercialTelefone1 = valor ?? '';
-  String referenciaComercialDDDTelefone2(String? valor) =>
+  set referenciaComercialDDDTelefone2(String? valor) =>
       referenciaComercialModel.referenciaComercialDDDTelefone2 = valor ?? '';
-  String referenciaComercialTelefone2(String? valor) =>
+  set referenciaComercialTelefone2(String? valor) =>
       referenciaComercialModel.referenciaComercialTelefone2 = valor ?? '';
 }

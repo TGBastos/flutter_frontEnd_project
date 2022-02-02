@@ -1,11 +1,13 @@
 import 'package:intl/intl.dart';
+import 'package:rio_das_pedras_front_end/View/utils/remover_acentos.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 
 class DadosPessoaisController {
   static DadosPessoaisModel dadosPessoais = DadosPessoaisModel();
 
   set clienteNome(String? valor) {
-    dadosPessoais.clienteNome = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.clienteNome = valor;
   }
 
   set clienteCPF(String? valor) {
@@ -13,7 +15,8 @@ class DadosPessoaisController {
   }
 
   set cpfOrgaoEmissor(String? valor) {
-    dadosPessoais.orgaoEmissor = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.orgaoEmissor = valor;
   }
 
   set ufDeNascimento(String? valor) {
@@ -41,22 +44,27 @@ class DadosPessoaisController {
   }
 
   set escolaridade(String? valor) {
-    dadosPessoais.escolaridade = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.escolaridade = valor;
   }
 
   set expedidorRg(String? valor) {
-    dadosPessoais.expedidorRg = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.expedidorRg = valor;
   }
 
   set nacionalidade(String? valor) {
-    dadosPessoais.nacionalidade = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.nacionalidade = valor;
   }
 
   set naturalidade(String? valor) {
-    dadosPessoais.naturalidade = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.naturalidade = valor;
   }
 
   set nomeDaMae(String? valor) {
-    dadosPessoais.nomeDaMae = valor ?? '';
+    valor = RemoverAcentos.removeDiacritics(valor!);
+    dadosPessoais.nomeDaMae = valor;
   }
 }

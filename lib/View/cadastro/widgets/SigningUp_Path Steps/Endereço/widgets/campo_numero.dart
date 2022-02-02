@@ -31,7 +31,7 @@ class _CampoNumeroState extends State<CampoNumero> {
                         : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o número' : null,
-                onSaved: (valor) => enderecoController.enderecoNumero(valor),
+                onSaved: (valor) => enderecoController.enderecoNumero = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

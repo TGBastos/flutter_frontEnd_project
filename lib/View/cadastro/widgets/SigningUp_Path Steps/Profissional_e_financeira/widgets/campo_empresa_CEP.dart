@@ -32,8 +32,7 @@ class _CampoEmpresaCEPState extends State<CampoEmpresaCEP> {
                         .profissionalEFinanceiraModel.profissionalCEP
                     : '',
                 onSaved: (valor) => Repositories
-                    .profissionalFinanceiraRepositorie
-                    .profissionalCEP(valor),
+                    .profissionalFinanceiraRepositorie.profissionalCEP = valor,
                 validator: (value) => value!.isEmpty ? 'Coloque o CEP' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

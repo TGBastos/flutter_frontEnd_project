@@ -39,7 +39,7 @@ class _CampoTelefone2State extends State<CampoTelefone2> {
                         : '',
                     onSaved: (valor) => Repositories
                         .referenciasPessoaisRepositorie
-                        .referenciaPessoalDDDTelefone2(valor),
+                        .referenciaPessoalDDDTelefone2 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu DDD' : null,
                     decoration: InputDecoration(
@@ -84,7 +84,7 @@ class _CampoTelefone2State extends State<CampoTelefone2> {
                         : '',
                     onSaved: (valor) => Repositories
                         .referenciasPessoaisRepositorie
-                        .referenciaPessoalTelefone2(valor),
+                        .referenciaPessoalTelefone2 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque um telefone' : null,
                     decoration: InputDecoration(

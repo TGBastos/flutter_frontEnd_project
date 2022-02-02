@@ -35,7 +35,7 @@ class _CampoEmpresa2State extends State<CampoEmpresa2> {
                     : '',
                 onSaved: (valor) => Repositories
                     .referenciasComerciaisRepositorie
-                    .referenciaComercialEmpresa2(valor),
+                    .referenciaComercialEmpresa2 = valor,
                 validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

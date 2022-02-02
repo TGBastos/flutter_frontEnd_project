@@ -35,7 +35,7 @@ class _CampoEmpresaBairroState extends State<CampoEmpresaBairro> {
                     valor!.isEmpty ? 'Coloque o bairro da empresa' : null,
                 onSaved: (valor) => Repositories
                     .profissionalFinanceiraRepositorie
-                    .profissionalBairro(valor),
+                    .profissionalBairro = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

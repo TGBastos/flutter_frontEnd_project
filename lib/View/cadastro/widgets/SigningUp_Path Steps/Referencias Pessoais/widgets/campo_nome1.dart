@@ -32,7 +32,7 @@ class _CampoNome1State extends State<CampoNome1> {
                         .referenciasPessoaisModel.referenciaPessoalNome1
                     : '',
                 onSaved: (valor) => Repositories.referenciasPessoaisRepositorie
-                    .referenciaPessoalNome1(valor),
+                    .referenciaPessoalNome1 = valor,
                 validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

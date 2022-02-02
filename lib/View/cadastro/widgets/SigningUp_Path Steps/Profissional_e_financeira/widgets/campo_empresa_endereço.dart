@@ -35,7 +35,7 @@ class _CampoEmpresaEnderecoState extends State<CampoEmpresaEndereco> {
                     : '',
                 onSaved: (valor) => Repositories
                     .profissionalFinanceiraRepositorie
-                    .profissionalEndereco(valor),
+                    .profissionalEndereco = valor,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o endereço da empresa' : null,
                 decoration: InputDecoration(

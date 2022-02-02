@@ -32,7 +32,7 @@ class _CampoBairroState extends State<CampoBairro> {
                         : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque seu Bairro' : null,
-                onSaved: (valor) => enderecoController.enderecoBairro(valor),
+                onSaved: (valor) => enderecoController.enderecoBairro = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

@@ -37,7 +37,7 @@ class _CampoSalarioState extends State<CampoSalario> {
                         : '',
                     onSaved: (valor) => Repositories
                         .profissionalFinanceiraRepositorie
-                        .profissionalSalario(valor),
+                        .profissionalSalario = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu salário' : null,
                     decoration: InputDecoration(
@@ -84,7 +84,7 @@ class _CampoSalarioState extends State<CampoSalario> {
                         : '',
                     onSaved: (valor) => Repositories
                         .profissionalFinanceiraRepositorie
-                        .profissionalOutrasRendas(valor),
+                        .profissionalOutrasRendas = valor,
                     validator: (value) => value!.isEmpty ? null : null,
                     decoration: InputDecoration(
                       constraints: BoxConstraints(

@@ -36,8 +36,8 @@ class _CampoTempoResidenciaState extends State<CampoTempoResidencia> {
                         : '',
                     validator: (valor) =>
                         valor!.isEmpty ? 'Coloque quantos anos' : null,
-                    onSaved: (valor) =>
-                        enderecoController.enderecoTempoDeResidenciaAnos(valor),
+                    onSaved: (valor) => enderecoController
+                        .enderecoTempoDeResidenciaAnos = valor,
                     decoration: InputDecoration(
                       constraints: BoxConstraints(
                         maxHeight: 33,
@@ -70,7 +70,7 @@ class _CampoTempoResidenciaState extends State<CampoTempoResidencia> {
                     validator: (valor) =>
                         valor!.isEmpty ? 'Coloque quantos meses' : null,
                     onSaved: (valor) => enderecoController
-                        .enderecoTempoDeResidenciaMeses(valor),
+                        .enderecoTempoDeResidenciaMeses = valor,
                     decoration: InputDecoration(
                       constraints: BoxConstraints(
                         maxHeight: 33,

@@ -40,7 +40,7 @@ class _CampoTelefoneComercial2State extends State<CampoTelefoneComercial2> {
                         : '',
                     onSaved: (valor) => Repositories
                         .referenciasComerciaisRepositorie
-                        .referenciaComercialDDDTelefone2(valor),
+                        .referenciaComercialDDDTelefone2 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu DDD' : null,
                     decoration: InputDecoration(
@@ -87,7 +87,7 @@ class _CampoTelefoneComercial2State extends State<CampoTelefoneComercial2> {
                         : '',
                     onSaved: (valor) => Repositories
                         .referenciasComerciaisRepositorie
-                        .referenciaComercialTelefone2(valor),
+                        .referenciaComercialTelefone2 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque um telefone' : null,
                     decoration: InputDecoration(

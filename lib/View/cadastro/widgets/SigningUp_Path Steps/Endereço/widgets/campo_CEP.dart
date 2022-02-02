@@ -29,7 +29,7 @@ class _CampoCEPState extends State<CampoCEP> {
                     ? enderecoController.enderecoModel.enderecoCep
                     : '',
                 validator: (valor) => valor!.isEmpty ? 'Coloque seu CEP' : null,
-                onSaved: (valor) => enderecoController.enderecoCep(valor),
+                onSaved: (valor) => enderecoController.enderecoCep = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

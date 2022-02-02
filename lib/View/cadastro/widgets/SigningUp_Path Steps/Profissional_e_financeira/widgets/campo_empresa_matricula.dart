@@ -35,7 +35,7 @@ class _CampoEmpresaMatriculaState extends State<CampoEmpresaMatricula> {
                     : '',
                 onSaved: (valor) => Repositories
                     .profissionalFinanceiraRepositorie
-                    .profissionalMatricula(valor),
+                    .profissionalMatricula = valor,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua matrícula' : null,
                 decoration: InputDecoration(

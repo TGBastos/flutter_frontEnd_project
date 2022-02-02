@@ -33,7 +33,7 @@ class _CampoEmpresaState extends State<CampoEmpresa> {
                     : '',
                 onSaved: (valor) => Repositories
                     .profissionalFinanceiraRepositorie
-                    .profissionalEmpresa(valor),
+                    .profissionalEmpresa = valor,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua empresa' : null,
                 decoration: InputDecoration(
