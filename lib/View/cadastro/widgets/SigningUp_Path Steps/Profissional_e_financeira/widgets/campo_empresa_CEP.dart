@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -25,14 +26,14 @@ class _CampoEmpresaCEPState extends State<CampoEmpresaCEP> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: Repositories.profissionalFinanceiraRepositorie
-                            .profissionalEFinanceiraModel.profissionalCEP !=
+                initialValue: Repositories
+                            .profissionalFinanceiraRepository.profissionalCEP !=
                         ''
-                    ? Repositories.profissionalFinanceiraRepositorie
-                        .profissionalEFinanceiraModel.profissionalCEP
+                    ? Repositories
+                        .profissionalFinanceiraRepository.profissionalCEP
                     : '',
-                onSaved: (valor) => Repositories
-                    .profissionalFinanceiraRepositorie.profissionalCEP = valor,
+                onSaved: (valor) => Controllers
+                    .profissionalEFinanceiraController.profissionalCEP = valor,
                 validator: (value) => value!.isEmpty ? 'Coloque o CEP' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

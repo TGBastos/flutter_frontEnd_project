@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
@@ -84,11 +85,11 @@ class _CampoClienteSexoState extends State<CampoClienteSexo> {
                 ],
                 onSelected: (int menu) {
                   if (menu == 1) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'M';
+                    dadosPessoaisController.sexo = 'M';
                   } else if (menu == 2) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'F';
+                    dadosPessoaisController.sexo = 'F';
                   } else {
-                    DadosPessoaisController.dadosPessoais.sexo = 'Outro';
+                    dadosPessoaisController.sexo = 'Outro';
                   }
                 },
               ),

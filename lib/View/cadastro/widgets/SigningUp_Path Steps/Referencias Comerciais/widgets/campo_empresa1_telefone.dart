@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -28,18 +29,14 @@ class _CampoTelefoneComercial1State extends State<CampoTelefoneComercial1> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 4,
                   child: TextFormField(
-                    initialValue: Repositories
-                                .referenciasComerciaisRepositorie
-                                .referenciaComercialModel
+                    initialValue: Repositories.referenciasComerciaisRepository
                                 .referenciaComercialDDDTelefone1 !=
                             ''
-                        ? Repositories
-                            .referenciasComerciaisRepositorie
-                            .referenciaComercialModel
+                        ? Repositories.referenciasComerciaisRepository
                             .referenciaComercialDDDTelefone1
                         : '',
-                    onSaved: (valor) => Repositories
-                        .referenciasComerciaisRepositorie
+                    onSaved: (valor) => Controllers
+                        .referenciasComerciaisController
                         .referenciaComercialDDDTelefone1 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu DDD' : null,
@@ -75,18 +72,14 @@ class _CampoTelefoneComercial1State extends State<CampoTelefoneComercial1> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 1.5,
                   child: TextFormField(
-                    initialValue: Repositories
-                                .referenciasComerciaisRepositorie
-                                .referenciaComercialModel
+                    initialValue: Repositories.referenciasComerciaisRepository
                                 .referenciaComercialTelefone1 !=
                             ''
-                        ? Repositories
-                            .referenciasComerciaisRepositorie
-                            .referenciaComercialModel
+                        ? Repositories.referenciasComerciaisRepository
                             .referenciaComercialTelefone1
                         : '',
-                    onSaved: (valor) => Repositories
-                        .referenciasComerciaisRepositorie
+                    onSaved: (valor) => Controllers
+                        .referenciasComerciaisController
                         .referenciaComercialTelefone1 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque um telefone' : null,

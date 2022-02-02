@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -25,16 +26,16 @@ class _CampoEmpresaBairroState extends State<CampoEmpresaBairro> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: Repositories.profissionalFinanceiraRepositorie
-                            .profissionalEFinanceiraModel.profissionalBairro !=
+                initialValue: Repositories.profissionalFinanceiraRepository
+                            .profissionalBairro !=
                         ''
-                    ? Repositories.profissionalFinanceiraRepositorie
-                        .profissionalEFinanceiraModel.profissionalBairro
+                    ? Repositories
+                        .profissionalFinanceiraRepository.profissionalBairro
                     : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque o bairro da empresa' : null,
-                onSaved: (valor) => Repositories
-                    .profissionalFinanceiraRepositorie
+                onSaved: (valor) => Controllers
+                    .profissionalEFinanceiraController
                     .profissionalBairro = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

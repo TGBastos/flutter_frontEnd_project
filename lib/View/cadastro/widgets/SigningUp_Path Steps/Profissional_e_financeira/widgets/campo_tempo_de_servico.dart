@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -28,18 +29,14 @@ class _CampoTempoDeServicoState extends State<CampoTempoDeServico> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 2,
                   child: TextFormField(
-                    initialValue: Repositories
-                                .profissionalFinanceiraRepositorie
-                                .profissionalEFinanceiraModel
+                    initialValue: Repositories.profissionalFinanceiraRepository
                                 .profissionalTempoDeServicoAnos !=
                             ''
-                        ? Repositories
-                            .profissionalFinanceiraRepositorie
-                            .profissionalEFinanceiraModel
+                        ? Repositories.profissionalFinanceiraRepository
                             .profissionalTempoDeServicoAnos
                         : '',
-                    onSaved: (valor) => Repositories
-                        .profissionalFinanceiraRepositorie
+                    onSaved: (valor) => Controllers
+                        .profissionalEFinanceiraController
                         .profissionalTempoDeServicoAnos = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque o tempo de serviço' : null,

@@ -29,7 +29,7 @@ class _CampoClienteNomeMaeState extends State<CampoClienteNomeMae> {
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o nome da mãe' : null,
-                onSaved: (valor) => singinUpController.nomeDaMae = valor,
+                onSaved: (valor) => dadosPessoaisController.nomeDaMae = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

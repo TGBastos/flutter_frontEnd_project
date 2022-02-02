@@ -35,7 +35,7 @@ class _CampoClienteDataNascimentoState
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua data de nascimento' : null,
                 onSaved: (valor) {
-                  singinUpController.dataDeNascimento = valor;
+                  dadosPessoaisController.dataDeNascimento = valor;
                 },
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

@@ -1,18 +1,21 @@
-import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
-import 'package:rio_das_pedras_front_end/controllers/profissional_e_financeira_controller.dart';
-import 'package:rio_das_pedras_front_end/controllers/referencias_comerciais_controller.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
-import '../../../../controllers/contatos_controller.dart';
-import '../../../../controllers/referencias_pessoais_controller.dart';
+import '../../../../models/contatos_model.dart';
+import '../../../../models/dados_pessoais_model.dart';
+import '../../../../models/profissional_e_financeira_model.dart';
+import '../../../../models/referencias_comerciais_models.dart';
+import '../../../../models/referencias_pessoais_models.dart';
 
 class Repositories {
-  static DadosPessoaisController dadosPessoaisController =
-      DadosPessoaisController();
-  static ContatosController contatosRepositorie = ContatosController();
-  static ProfissionalFinanceiraController profissionalFinanceiraRepositorie =
-      ProfissionalFinanceiraController();
-  static ReferenciasPessoaisController referenciasPessoaisRepositorie =
-      ReferenciasPessoaisController();
-  static ReferenciasComerciaisController referenciasComerciaisRepositorie =
-      ReferenciasComerciaisController();
+  static DadosPessoaisModel dadosPessoaisRepository =
+      Controllers.dadosPessoaisController.dadosPessoais;
+  static ContatosModel contatosRepository =
+      Controllers.contatosController.contatosModel;
+  static ProfissionalEFinanceiraModel profissionalFinanceiraRepository =
+      Controllers
+          .profissionalEFinanceiraController.profissionalEFinanceiraModel;
+  static ReferenciasPessoaisModel referenciasPessoaisRepository =
+      Controllers.referenciasPessoaisController.referenciasPessoaisModel;
+  static ReferenciasComerciaisModel referenciasComerciaisRepository =
+      Controllers.referenciasComerciaisController.referenciaComercialModel;
 }

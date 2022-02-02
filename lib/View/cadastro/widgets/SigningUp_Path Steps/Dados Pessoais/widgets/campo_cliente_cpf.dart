@@ -1,5 +1,7 @@
 import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/repositories.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
@@ -12,8 +14,9 @@ class CampoClienteCPF extends StatefulWidget {
   _CampoClienteCPFState createState() => _CampoClienteCPFState();
 }
 
-DadosPessoaisController singinUpController = DadosPessoaisController();
-DadosPessoaisModel dadosPessoais = DadosPessoaisController.dadosPessoais;
+DadosPessoaisController dadosPessoaisController =
+    Controllers.dadosPessoaisController;
+DadosPessoaisModel dadosPessoais = Repositories.dadosPessoaisRepository;
 
 class _CampoClienteCPFState extends State<CampoClienteCPF> {
   final controladorCPFCadastro =
@@ -34,7 +37,7 @@ class _CampoClienteCPFState extends State<CampoClienteCPF> {
                 controller: controladorCPFCadastro,
                 validator: (value) => value!.isEmpty ? 'Coloque seu CPF' : null,
                 onSaved: (valor) {
-                  singinUpController.clienteCPF =
+                  dadosPessoaisController.clienteCPF =
                       controladorCPFCadastro.unmasked;
                 },
                 decoration: InputDecoration(

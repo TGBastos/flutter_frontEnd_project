@@ -32,7 +32,8 @@ class _CampoClienteEscolaridadeState extends State<CampoClienteEscolaridade> {
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua escolaridade' : null,
-                onSaved: (valor) => singinUpController.escolaridade = valor,
+                onSaved: (valor) =>
+                    dadosPessoaisController.escolaridade = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

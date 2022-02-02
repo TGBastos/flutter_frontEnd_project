@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -25,13 +26,13 @@ class _CampoNome2State extends State<CampoNome2> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: Repositories.referenciasPessoaisRepositorie
-                            .referenciasPessoaisModel.referenciaPessoalNome2 !=
+                initialValue: Repositories.referenciasPessoaisRepository
+                            .referenciaPessoalNome2 !=
                         ''
-                    ? Repositories.referenciasPessoaisRepositorie
-                        .referenciasPessoaisModel.referenciaPessoalNome2
+                    ? Repositories
+                        .referenciasPessoaisRepository.referenciaPessoalNome2
                     : '',
-                onSaved: (valor) => Repositories.referenciasPessoaisRepositorie
+                onSaved: (valor) => Controllers.referenciasPessoaisController
                     .referenciaPessoalNome2 = valor,
                 validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(

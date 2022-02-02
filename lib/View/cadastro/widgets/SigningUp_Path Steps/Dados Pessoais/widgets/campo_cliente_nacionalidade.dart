@@ -31,7 +31,8 @@ class _CampoClienteNacionalidadeState extends State<CampoClienteNacionalidade> {
                     : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque sua nacionalidade' : null,
-                onSaved: (valor) => singinUpController.nacionalidade = valor,
+                onSaved: (valor) =>
+                    dadosPessoaisController.nacionalidade = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

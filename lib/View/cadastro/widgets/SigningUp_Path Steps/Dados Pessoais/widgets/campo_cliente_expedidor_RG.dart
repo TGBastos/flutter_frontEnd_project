@@ -30,7 +30,7 @@ class _CampoExpedidorDoRGState extends State<CampoExpedidorDoRG> {
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o expedidor do RG' : null,
-                onSaved: (valor) => singinUpController.expedidorRg = valor,
+                onSaved: (valor) => dadosPessoaisController.expedidorRg = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

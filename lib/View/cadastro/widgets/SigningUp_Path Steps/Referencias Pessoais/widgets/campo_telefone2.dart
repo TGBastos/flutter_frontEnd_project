@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -27,18 +28,14 @@ class _CampoTelefone2State extends State<CampoTelefone2> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 4,
                   child: TextFormField(
-                    initialValue: Repositories
-                                .referenciasPessoaisRepositorie
-                                .referenciasPessoaisModel
+                    initialValue: Repositories.referenciasPessoaisRepository
                                 .referenciaPessoalDDDTelefone2 !=
                             ''
-                        ? Repositories
-                            .referenciasPessoaisRepositorie
-                            .referenciasPessoaisModel
+                        ? Repositories.referenciasPessoaisRepository
                             .referenciaPessoalDDDTelefone2
                         : '',
-                    onSaved: (valor) => Repositories
-                        .referenciasPessoaisRepositorie
+                    onSaved: (valor) => Controllers
+                        .referenciasPessoaisController
                         .referenciaPessoalDDDTelefone2 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu DDD' : null,
@@ -74,16 +71,14 @@ class _CampoTelefone2State extends State<CampoTelefone2> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 1.5,
                   child: TextFormField(
-                    initialValue: Repositories
-                                .referenciasPessoaisRepositorie
-                                .referenciasPessoaisModel
+                    initialValue: Repositories.referenciasPessoaisRepository
                                 .referenciaPessoalTelefone2 !=
                             ''
-                        ? Repositories.referenciasPessoaisRepositorie
-                            .referenciasPessoaisModel.referenciaPessoalTelefone2
+                        ? Repositories.referenciasPessoaisRepository
+                            .referenciaPessoalTelefone2
                         : '',
-                    onSaved: (valor) => Repositories
-                        .referenciasPessoaisRepositorie
+                    onSaved: (valor) => Controllers
+                        .referenciasPessoaisController
                         .referenciaPessoalTelefone2 = valor,
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque um telefone' : null,

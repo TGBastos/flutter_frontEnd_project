@@ -1,20 +1,16 @@
 import 'package:dio/dio.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
-import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
-import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/repositories.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
-import 'package:rio_das_pedras_front_end/models/endereco_model.dart';
 import 'package:wsda/core/values/access_token.dart';
 import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
 import 'package:wsda/wsda.dart';
 
 class SigninController {
   Future<bool> signUp() async {
-    DadosPessoaisModel _dadosPessoais = DadosPessoaisController.dadosPessoais;
+    DadosPessoaisModel _dadosPessoais = Repositories.dadosPessoaisRepository;
     AccessTokenEndpoint accessTokenEndpoint = AccessTokenEndpoint(version: 1);
     Response response = await accessTokenEndpoint();
     AccessToken accessToken = AccessToken.from(response.data);
-    Map<String, dynamic> data = {};
 
     SignupUser signupUser = SignupUser(
       accessToken: accessToken,
@@ -57,8 +53,10 @@ class SigninController {
         return false;
       }
     } catch (e) {
-      print(DadosPessoaisController.dadosPessoais.clienteNome);
-      print(DadosPessoaisController.dadosPessoais.dataDeNascimento);
+      print(_dadosPessoais.clienteNome);
+      print(_dadosPessoais.CPF);
+      print(_dadosPessoais.dataDeNascimento);
+      print(_dadosPessoais.sexo);
       print('ta não');
       print(e);
       return false;

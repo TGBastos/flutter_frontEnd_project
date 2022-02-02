@@ -82,11 +82,11 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
                 ],
                 onSelected: (int menu) {
                   if (menu == 1) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'M';
+                    DadosPessoaisController().dadosPessoais.sexo = 'M';
                   } else if (menu == 2) {
-                    DadosPessoaisController.dadosPessoais.sexo = 'F';
+                    DadosPessoaisController().dadosPessoais.sexo = 'F';
                   } else {
-                    DadosPessoaisController.dadosPessoais.sexo = 'Outro';
+                    DadosPessoaisController().dadosPessoais.sexo = 'Outro';
                   }
                 },
               ),

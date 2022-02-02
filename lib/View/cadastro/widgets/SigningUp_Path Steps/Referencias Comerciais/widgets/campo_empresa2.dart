@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../campos_size_configs.dart';
 import '../../repositories.dart';
@@ -25,16 +26,13 @@ class _CampoEmpresa2State extends State<CampoEmpresa2> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: Repositories
-                            .referenciasComerciaisRepositorie
-                            .referenciaComercialModel
+                initialValue: Repositories.referenciasComerciaisRepository
                             .referenciaComercialEmpresa2 !=
                         ''
-                    ? Repositories.referenciasComerciaisRepositorie
-                        .referenciaComercialModel.referenciaComercialEmpresa2
+                    ? Repositories.referenciasComerciaisRepository
+                        .referenciaComercialEmpresa2
                     : '',
-                onSaved: (valor) => Repositories
-                    .referenciasComerciaisRepositorie
+                onSaved: (valor) => Controllers.referenciasComerciaisController
                     .referenciaComercialEmpresa2 = valor,
                 validator: (value) => value!.isEmpty ? 'Coloque um nome' : null,
                 decoration: InputDecoration(

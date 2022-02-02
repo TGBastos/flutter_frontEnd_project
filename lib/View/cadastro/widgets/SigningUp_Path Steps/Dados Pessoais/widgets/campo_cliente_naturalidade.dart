@@ -30,7 +30,8 @@ class _CampoClienteNaturalidadeState extends State<CampoClienteNaturalidade> {
                     : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque sua naturalidade' : null,
-                onSaved: (valor) => singinUpController.naturalidade = valor,
+                onSaved: (valor) =>
+                    dadosPessoaisController.naturalidade = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

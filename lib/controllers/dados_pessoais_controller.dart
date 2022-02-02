@@ -3,10 +3,12 @@ import 'package:rio_das_pedras_front_end/View/utils/remover_acentos.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 
 class DadosPessoaisController {
-  static DadosPessoaisModel dadosPessoais = DadosPessoaisModel();
+  DadosPessoaisModel dadosPessoais = DadosPessoaisModel();
 
   set clienteNome(String? valor) {
+    print(valor);
     valor = RemoverAcentos.removeDiacritics(valor!);
+    print(valor);
     dadosPessoais.clienteNome = valor;
   }
 

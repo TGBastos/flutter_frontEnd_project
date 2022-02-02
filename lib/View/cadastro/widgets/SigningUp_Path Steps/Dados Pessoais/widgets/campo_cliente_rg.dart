@@ -31,7 +31,7 @@ class _CampoClienteRGState extends State<CampoClienteRG> {
                 controller: controladorRgCadastro,
                 validator: (valor) => valor!.isEmpty ? 'Coloque seu RG' : null,
                 onSaved: (valor) =>
-                    singinUpController.rg = controladorRgCadastro.unmasked,
+                    dadosPessoaisController.rg = controladorRgCadastro.unmasked,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

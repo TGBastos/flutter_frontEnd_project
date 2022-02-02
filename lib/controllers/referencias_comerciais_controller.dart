@@ -1,8 +1,8 @@
 import 'package:rio_das_pedras_front_end/models/referencias_comerciais_models.dart';
 
 class ReferenciasComerciaisController {
-  ReferenciaComercialModel referenciaComercialModel =
-      ReferenciaComercialModel();
+  ReferenciasComerciaisModel referenciaComercialModel =
+      ReferenciasComerciaisModel();
 
   set referenciaComercialEmpresa1(String? valor) =>
       referenciaComercialModel.referenciaComercialEmpresa1 = valor ?? '';

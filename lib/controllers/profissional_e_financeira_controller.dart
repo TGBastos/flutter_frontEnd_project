@@ -1,6 +1,6 @@
 import 'package:rio_das_pedras_front_end/models/profissional_e_financeira_model.dart';
 
-class ProfissionalFinanceiraController {
+class ProfissionalEFinanceiraController {
   ProfissionalEFinanceiraModel profissionalEFinanceiraModel =
       ProfissionalEFinanceiraModel();
 

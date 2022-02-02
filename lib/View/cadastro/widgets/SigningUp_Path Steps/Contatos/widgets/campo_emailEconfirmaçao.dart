@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 import '../../repositories.dart';
@@ -25,14 +26,13 @@ class _CampoEmailState extends State<CampoEmail> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue:
-                    Repositories.contatosRepositorie.contatosModel.email != ''
-                        ? Repositories.contatosRepositorie.contatosModel.email
-                        : '',
+                initialValue: Repositories.contatosRepository.email != ''
+                    ? Repositories.contatosRepository.email
+                    : '',
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque seu Email' : null,
                 onSaved: (valor) =>
-                    Repositories.contatosRepositorie.contatosEmail = valor,
+                    Controllers.contatosController.contatosEmail = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
@@ -79,14 +79,12 @@ class _CampoEmailComfirmacaoState extends State<CampoEmailComfirmacao> {
           height: widget.camposSizeConfigs.campoHeight,
           width: widget.camposSizeConfigs.campoWidth,
           child: TextFormField(
-            initialValue: Repositories
-                        .contatosRepositorie.contatosModel.confirmaEmail !=
-                    ''
-                ? Repositories.contatosRepositorie.contatosModel.confirmaEmail
+            initialValue: Repositories.contatosRepository.confirmaEmail != ''
+                ? Repositories.contatosRepository.confirmaEmail
                 : '',
             validator: (value) => value!.isEmpty ? 'Confirme seu email' : null,
             onSaved: (valor) =>
-                Repositories.contatosRepositorie.contatosConfirmaEmail = valor,
+                Controllers.contatosController.contatosConfirmaEmail = valor,
             decoration: InputDecoration(
               constraints: BoxConstraints(
                 maxHeight: 33,

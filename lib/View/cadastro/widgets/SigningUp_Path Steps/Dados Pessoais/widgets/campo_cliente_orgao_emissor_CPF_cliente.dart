@@ -32,7 +32,8 @@ class _CampoClienteOragaoEmissorCPFState
                     : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque o orgão emissor' : null,
-                onSaved: (valor) => singinUpController.cpfOrgaoEmissor = valor,
+                onSaved: (valor) =>
+                    dadosPessoaisController.cpfOrgaoEmissor = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
