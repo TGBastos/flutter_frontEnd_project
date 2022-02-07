@@ -48,8 +48,8 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
                       Padding(
                         padding: const EdgeInsets.only(left: 5),
                         child: Text(
-                          dadosPessoais.sexo != ''
-                              ? dadosPessoais.sexo
+                          dadosPessoais.tratamento != ''
+                              ? dadosPessoais.tratamento
                               : 'selecionar',
                           style: TextStyle(
                             color: Colors.grey,
@@ -64,29 +64,44 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
                 ),
                 itemBuilder: (context) => [
                   PopupMenuItem(
-                    child: Text("M"),
+                    child: Text("Nenhum"),
                     value: 1,
                   ),
                   PopupMenuItem(
                     child: Text(
-                      "F",
+                      "Sr.",
                     ),
                     value: 2,
                   ),
                   PopupMenuItem(
                     child: Text(
-                      "Outro",
+                      "Sra.",
                     ),
                     value: 2,
+                  ),
+                  PopupMenuItem(
+                    child: Text("Srta."),
+                    value: 1,
+                  ),
+                  PopupMenuItem(
+                    child: Text("V.exa."),
+                    value: 1,
                   ),
                 ],
                 onSelected: (int menu) {
                   if (menu == 1) {
-                    DadosPessoaisController().dadosPessoais.sexo = 'M';
+                    DadosPessoaisController().dadosPessoais.tratamento =
+                        'Nenhum';
                   } else if (menu == 2) {
-                    DadosPessoaisController().dadosPessoais.sexo = 'F';
-                  } else {
-                    DadosPessoaisController().dadosPessoais.sexo = 'Outro';
+                    DadosPessoaisController().dadosPessoais.tratamento = 'Sr.';
+                  } else if (menu == 3) {
+                    DadosPessoaisController().dadosPessoais.tratamento = 'Sra';
+                  } else if (menu == 4) {
+                    DadosPessoaisController().dadosPessoais.tratamento =
+                        'Srta.';
+                  } else if (menu == 5) {
+                    DadosPessoaisController().dadosPessoais.tratamento =
+                        'V.exa.';
                   }
                 },
               ),

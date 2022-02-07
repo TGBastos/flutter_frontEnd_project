@@ -7,7 +7,7 @@ class DadosPessoaisController {
 
   set clienteNome(String? valor) {
     print(valor);
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     print(valor);
     dadosPessoais.clienteNome = valor;
   }
@@ -17,7 +17,7 @@ class DadosPessoaisController {
   }
 
   set cpfOrgaoEmissor(String? valor) {
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.orgaoEmissor = valor;
   }
 
@@ -34,10 +34,10 @@ class DadosPessoaisController {
   }
 
   set dataDeNascimento(String? valor) {
-    DateFormat formatoReceber = DateFormat('dd-MM-yyyy HH:mm:ss.SSS');
-    DateFormat formatoEnviar = DateFormat('yyyy-MM-dd');
-    final DateTime showedTime = formatoReceber.parse('$valor 00:00:00.000');
-    String formatadaParaEnviar = formatoEnviar.format(showedTime);
+    DateFormat receberFormato = DateFormat('dd-MM-yyyy HH:mm:ss.SSS');
+    DateFormat enviarFormato = DateFormat('yyyy-MM-dd');
+    final DateTime showedTime = receberFormato.parse('$valor 00:00:00.000');
+    String formatadaParaEnviar = enviarFormato.format(showedTime);
     dadosPessoais.dataDeNascimento = formatadaParaEnviar;
   }
 
@@ -46,27 +46,27 @@ class DadosPessoaisController {
   }
 
   set escolaridade(String? valor) {
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.escolaridade = valor;
   }
 
   set expedidorRg(String? valor) {
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.expedidorRg = valor;
   }
 
   set nacionalidade(String? valor) {
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.nacionalidade = valor;
   }
 
   set naturalidade(String? valor) {
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.naturalidade = valor;
   }
 
   set nomeDaMae(String? valor) {
-    valor = RemoverAcentos.removeDiacritics(valor!);
+    valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.nomeDaMae = valor;
   }
 }

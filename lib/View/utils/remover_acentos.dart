@@ -1,5 +1,5 @@
 class RemoverAcentos {
-  static String removeDiacritics(String string) {
+  static String removerAcentuacao(String string) {
     var withDia =
         'ÀÁÂÃÄÅàáâãäåÒÓÔÕÕÖØòóôõöøÈÉÊËèéêëðÇçÐÌÍÎÏìíîïÙÚÛÜùúûüÑñŠšŸÿýŽž';
     var withoutDia =
