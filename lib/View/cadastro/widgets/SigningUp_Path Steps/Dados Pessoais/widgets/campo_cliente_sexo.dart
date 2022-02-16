@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
-import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
+
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
 
 class Sexo {
@@ -14,11 +13,12 @@ class CampoClienteSexo extends StatefulWidget {
   CampoClienteSexo({required this.camposSizeConfigs});
 
   @override
-  _CampoClienteSexoState createState() => _CampoClienteSexoState();
+  CampoClienteSexoState createState() => CampoClienteSexoState();
 }
 
-class _CampoClienteSexoState extends State<CampoClienteSexo> {
+class CampoClienteSexoState extends State<CampoClienteSexo> {
   Widget build(BuildContext context) {
+    String selecionado = 'selecionar';
     return Padding(
       padding: EdgeInsets.only(
         top: widget.camposSizeConfigs.spaceBetweenFieldsInTop,
@@ -33,7 +33,7 @@ class _CampoClienteSexoState extends State<CampoClienteSexo> {
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1,
-                color: Colors.grey,
+                color: dadosPessoais.sexo == '' ? Colors.red : Colors.grey,
               ),
               borderRadius: BorderRadius.circular(
                 widget.camposSizeConfigs.borderRadius,
@@ -53,9 +53,11 @@ class _CampoClienteSexoState extends State<CampoClienteSexo> {
                         child: Text(
                           dadosPessoais.sexo != ''
                               ? dadosPessoais.sexo
-                              : 'selecionar',
+                              : selecionado,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: dadosPessoais.sexo != ''
+                                ? Colors.black
+                                : Colors.grey,
                           ),
                         ),
                       ),
@@ -80,16 +82,25 @@ class _CampoClienteSexoState extends State<CampoClienteSexo> {
                     child: Text(
                       "Outro",
                     ),
-                    value: 2,
+                    value: 3,
                   ),
                 ],
                 onSelected: (int menu) {
                   if (menu == 1) {
                     dadosPessoaisController.sexo = 'M';
+                    setState(() {
+                      selecionado = 'M';
+                    });
                   } else if (menu == 2) {
                     dadosPessoaisController.sexo = 'F';
+                    setState(() {
+                      selecionado = 'F';
+                    });
                   } else {
                     dadosPessoaisController.sexo = 'Outro';
+                    setState(() {
+                      selecionado = 'Outro';
+                    });
                   }
                 },
               ),

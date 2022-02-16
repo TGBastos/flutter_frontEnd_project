@@ -20,6 +20,7 @@ class CampoClienteTratamento extends StatefulWidget {
 class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
   @override
   Widget build(BuildContext context) {
+    String selecionado = 'selecionar';
     return Padding(
       padding: EdgeInsets.only(
         top: widget.camposSizeConfigs.spaceBetweenFieldsInTop,
@@ -32,7 +33,8 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
             decoration: BoxDecoration(
                 border: Border.all(
                   width: 1,
-                  color: Colors.grey,
+                  color:
+                      dadosPessoais.tratamento == '' ? Colors.red : Colors.grey,
                 ),
                 borderRadius: BorderRadius.circular(
                     widget.camposSizeConfigs.borderRadius)),
@@ -50,9 +52,11 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
                         child: Text(
                           dadosPessoais.tratamento != ''
                               ? dadosPessoais.tratamento
-                              : 'selecionar',
+                              : selecionado,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: dadosPessoais.tratamento != ''
+                                ? Colors.black
+                                : Colors.grey,
                           ),
                         ),
                       ),
@@ -90,18 +94,30 @@ class _CampoClienteTratamentoState extends State<CampoClienteTratamento> {
                 ],
                 onSelected: (int menu) {
                   if (menu == 1) {
-                    DadosPessoaisController().dadosPessoais.tratamento =
-                        'Nenhum';
+                    dadosPessoaisController.tratamento = 'Nenhum';
+                    setState(() {
+                      selecionado = 'nenhum';
+                    });
                   } else if (menu == 2) {
-                    DadosPessoaisController().dadosPessoais.tratamento = 'Sr.';
+                    dadosPessoaisController.tratamento = 'Sr.';
+                    setState(() {
+                      selecionado = 'Sr.';
+                    });
                   } else if (menu == 3) {
-                    DadosPessoaisController().dadosPessoais.tratamento = 'Sra';
+                    dadosPessoaisController.tratamento = 'Sra';
+                    setState(() {
+                      selecionado = 'Sra.';
+                    });
                   } else if (menu == 4) {
-                    DadosPessoaisController().dadosPessoais.tratamento =
-                        'Srta.';
+                    dadosPessoaisController.tratamento = 'Srta.';
+                    setState(() {
+                      selecionado = 'Srta.';
+                    });
                   } else if (menu == 5) {
-                    DadosPessoaisController().dadosPessoais.tratamento =
-                        'V.exa.';
+                    dadosPessoaisController.tratamento = 'V.exa.';
+                    setState(() {
+                      selecionado = 'V.exa.';
+                    });
                   }
                 },
               ),

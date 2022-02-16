@@ -16,7 +16,8 @@ class CampoClienteCPF extends StatefulWidget {
 
 DadosPessoaisController dadosPessoaisController =
     Controllers.dadosPessoaisController;
-DadosPessoaisModel dadosPessoais = Repositories.dadosPessoaisRepository;
+DadosPessoaisModel dadosPessoais =
+    Controllers.dadosPessoaisController.dadosPessoais;
 
 class _CampoClienteCPFState extends State<CampoClienteCPF> {
   final controladorCPFCadastro =

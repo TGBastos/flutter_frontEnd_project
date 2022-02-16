@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 
 import '../../.././SigningUp_Path%20Steps/campos_size_configs.dart';
@@ -14,9 +15,11 @@ class CampoClienteUFNascimento extends StatefulWidget {
 }
 
 class _CampoClienteUFNascimentoState extends State<CampoClienteUFNascimento> {
+  DadosPessoaisController UFController = Controllers.dadosPessoaisController;
   @override
   Widget build(BuildContext context) {
     String selecionado = 'selecionar';
+
     return Padding(
       padding: EdgeInsets.only(
         top: widget.camposSizeConfigs.spaceBetweenFieldsInTop,
@@ -29,7 +32,9 @@ class _CampoClienteUFNascimentoState extends State<CampoClienteUFNascimento> {
             decoration: BoxDecoration(
               border: Border.all(
                 width: 1,
-                color: Colors.grey,
+                color: dadosPessoais.ufDeNascimento == ''
+                    ? Colors.red
+                    : Colors.grey,
               ),
               borderRadius:
                   BorderRadius.circular(widget.camposSizeConfigs.borderRadius),
@@ -50,7 +55,9 @@ class _CampoClienteUFNascimentoState extends State<CampoClienteUFNascimento> {
                               ? dadosPessoais.ufDeNascimento
                               : selecionado,
                           style: TextStyle(
-                            color: Colors.grey,
+                            color: dadosPessoais.ufDeNascimento != ''
+                                ? Colors.black
+                                : Colors.grey,
                           ),
                         ),
                       ),
@@ -66,231 +73,246 @@ class _CampoClienteUFNascimentoState extends State<CampoClienteUFNascimento> {
                     value: 1,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "AL",
-                    ),
+                    child: Text("AL"),
                     value: 2,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "AP",
-                    ),
-                    value: 2,
+                    child: Text("AP"),
+                    value: 3,
                   ),
                   PopupMenuItem(
                     child: Text("AM"),
-                    value: 1,
+                    value: 4,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "BA",
-                    ),
-                    value: 2,
+                    child: Text("BA"),
+                    value: 5,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "CE",
-                    ),
-                    value: 2,
+                    child: Text("CE"),
+                    value: 6,
                   ),
                   PopupMenuItem(
                     child: Text("DF"),
-                    value: 1,
+                    value: 7,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "ES",
-                    ),
-                    value: 2,
+                    child: Text("ES"),
+                    value: 8,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "GO",
-                    ),
-                    value: 2,
+                    child: Text("GO"),
+                    value: 9,
                   ),
                   PopupMenuItem(
                     child: Text("MA"),
-                    value: 1,
+                    value: 10,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "MT",
-                    ),
-                    value: 2,
+                    child: Text("MT"),
+                    value: 11,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "MS",
-                    ),
-                    value: 2,
+                    child: Text("MS"),
+                    value: 12,
                   ),
                   PopupMenuItem(
                     child: Text("MG"),
-                    value: 1,
+                    value: 13,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "PA",
-                    ),
-                    value: 2,
+                    child: Text("PA"),
+                    value: 14,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "PB",
-                    ),
-                    value: 2,
+                    child: Text("PB"),
+                    value: 15,
                   ),
                   PopupMenuItem(
                     child: Text("PR"),
-                    value: 1,
+                    value: 16,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "PE",
-                    ),
-                    value: 2,
+                    child: Text("PE"),
+                    value: 17,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "PI",
-                    ),
-                    value: 2,
+                    child: Text("PI"),
+                    value: 18,
                   ),
                   PopupMenuItem(
                     child: Text("RJ"),
-                    value: 1,
+                    value: 19,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "RN",
-                    ),
-                    value: 2,
+                    child: Text("RN"),
+                    value: 20,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "RS",
-                    ),
-                    value: 2,
+                    child: Text("RS"),
+                    value: 21,
                   ),
                   PopupMenuItem(
                     child: Text("RO"),
-                    value: 1,
+                    value: 22,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "RR",
-                    ),
-                    value: 2,
+                    child: Text("RR"),
+                    value: 23,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "SC",
-                    ),
-                    value: 2,
+                    child: Text("SC"),
+                    value: 24,
                   ),
                   PopupMenuItem(
                     child: Text("SP"),
-                    value: 1,
+                    value: 25,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "SE",
-                    ),
-                    value: 2,
+                    child: Text("SE"),
+                    value: 26,
                   ),
                   PopupMenuItem(
-                    child: Text(
-                      "TO",
-                    ),
-                    value: 2,
+                    child: Text("TO"),
+                    value: 27,
                   ),
                 ],
                 onSelected: (int menu) {
                   if (menu == 1) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'AC';
+                    UFController.ufDeNascimento = 'AC';
+                    setState(() {
+                      selecionado = 'AC';
+                    });
                   } else if (menu == 2) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'AL';
+                    UFController.ufDeNascimento = 'AL';
+                    setState(() {
+                      selecionado = 'AL';
+                    });
                   } else if (menu == 3) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'AP';
+                    UFController.ufDeNascimento = 'AP';
+                    setState(() {
+                      selecionado = 'AP';
+                    });
                   } else if (menu == 4) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'AM';
+                    UFController.ufDeNascimento = 'AM';
+                    setState(() {
+                      selecionado = 'AM';
+                    });
                   } else if (menu == 5) {
                     setState(() {
                       selecionado = 'BA';
                     });
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'BA';
+                    UFController.ufDeNascimento = 'BA';
                   } else if (menu == 6) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'CE';
+                    UFController.ufDeNascimento = 'CE';
+                    setState(() {
+                      selecionado = 'CE';
+                    });
                   } else if (menu == 7) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'DF';
+                    UFController.ufDeNascimento = 'DF';
+                    setState(() {
+                      selecionado = 'DF';
+                    });
                   } else if (menu == 8) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'ES';
+                    UFController.ufDeNascimento = 'ES';
+                    setState(() {
+                      selecionado = 'ES';
+                    });
                   } else if (menu == 9) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'GO';
+                    UFController.ufDeNascimento = 'GO';
+                    setState(() {
+                      selecionado = 'GO';
+                    });
                   } else if (menu == 10) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'MA';
+                    UFController.ufDeNascimento = 'MA';
+                    setState(() {
+                      selecionado = 'MA';
+                    });
                   } else if (menu == 11) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'MT';
+                    UFController.ufDeNascimento = 'MT';
+                    setState(() {
+                      selecionado = 'MT';
+                    });
                   } else if (menu == 12) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'MS';
+                    UFController.ufDeNascimento = 'MS';
+                    setState(() {
+                      selecionado = 'MS';
+                    });
                   } else if (menu == 13) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'MG';
+                    UFController.ufDeNascimento = 'MG';
+                    setState(() {
+                      selecionado = 'MG';
+                    });
                   } else if (menu == 14) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'PA';
+                    UFController.ufDeNascimento = 'PA';
+                    setState(() {
+                      selecionado = 'PA';
+                    });
                   } else if (menu == 15) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'PB';
+                    UFController.ufDeNascimento = 'PB';
+                    setState(() {
+                      selecionado = 'PB';
+                    });
                   } else if (menu == 16) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'PR';
+                    UFController.ufDeNascimento = 'PR';
+                    setState(() {
+                      selecionado = 'PR';
+                    });
                   } else if (menu == 17) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'PE';
+                    UFController.ufDeNascimento = 'PE';
+                    setState(() {
+                      selecionado = 'PE';
+                    });
                   } else if (menu == 18) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'PI';
+                    UFController.ufDeNascimento = 'PI';
+                    setState(() {
+                      selecionado = 'PI';
+                    });
                   } else if (menu == 19) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'RJ';
+                    UFController.ufDeNascimento = 'RJ';
+                    setState(() {
+                      selecionado = 'RJ';
+                    });
                   } else if (menu == 20) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'RN';
+                    UFController.ufDeNascimento = 'RN';
+                    setState(() {
+                      selecionado = 'RN';
+                    });
                   } else if (menu == 21) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'RS';
+                    UFController.ufDeNascimento = 'RS';
+                    setState(() {
+                      selecionado = 'RS';
+                    });
                   } else if (menu == 22) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'RO';
+                    UFController.ufDeNascimento = 'RO';
+                    setState(() {
+                      selecionado = 'RO';
+                    });
                   } else if (menu == 23) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'RR';
+                    UFController.ufDeNascimento = 'RR';
+                    setState(() {
+                      selecionado = 'RR';
+                    });
                   } else if (menu == 24) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'SC';
+                    UFController.ufDeNascimento = 'SC';
+                    setState(() {
+                      selecionado = 'SC';
+                    });
                   } else if (menu == 25) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'SP';
+                    UFController.ufDeNascimento = 'SP';
+                    setState(() {
+                      selecionado = 'SP';
+                    });
                   } else if (menu == 26) {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'SE';
+                    UFController.ufDeNascimento = 'SE';
+                    setState(() {
+                      selecionado = 'SE';
+                    });
                   } else {
-                    DadosPessoaisController().dadosPessoais.ufDeNascimento =
-                        'TO';
+                    UFController.ufDeNascimento = 'TO';
+                    setState(() {
+                      selecionado = 'TO';
+                    });
                   }
                 },
               ),

@@ -1,4 +1,6 @@
 import 'package:intl/intl.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_tratamento.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_loja_retirada_cartao.dart';
 import 'package:rio_das_pedras_front_end/View/utils/remover_acentos.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 
@@ -68,5 +70,17 @@ class DadosPessoaisController {
   set nomeDaMae(String? valor) {
     valor = RemoverAcentos.removerAcentuacao(valor!);
     dadosPessoais.nomeDaMae = valor;
+  }
+
+  set dataVencimentoFatura(String valor) {
+    dadosPessoais.vencimentoDaFatura = valor;
+  }
+
+  set lojaRetiradaCartao(String valor) {
+    dadosPessoais.lojaRetiradaCartao = valor;
+  }
+
+  set tratamento(String valor) {
+    dadosPessoais.tratamento = valor;
   }
 }

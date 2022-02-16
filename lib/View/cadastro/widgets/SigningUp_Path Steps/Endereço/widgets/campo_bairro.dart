@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
 import '../../campos_size_configs.dart';
 
@@ -10,7 +11,7 @@ class CampoBairro extends StatefulWidget {
   _CampoBairroState createState() => _CampoBairroState();
 }
 
-EnderecoController enderecoController = EnderecoController();
+EnderecoController enderecoController = Controllers.enderecoController;
 
 class _CampoBairroState extends State<CampoBairro> {
   @override

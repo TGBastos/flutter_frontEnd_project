@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
 import 'package:rio_das_pedras_front_end/controllers/signin_controller.dart';
@@ -105,6 +106,9 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
                           if (_signUpPath.currentState != null) {
                             _signUpPath.currentState!.proximoPassoCadastro();
                           }
+                          print(DadosPessoaisController()
+                              .dadosPessoais
+                              .ufDeNascimento);
                         },
                         icon: Icon(
                           Icons.arrow_forward,
@@ -114,6 +118,12 @@ class _DesktopSingUpScreenState extends State<DesktopSingUpScreen>
                     TextButton(
                       onPressed: () {
                         SigninController().signUp();
+                        print(Controllers
+                            .dadosPessoaisController.dadosPessoais.CPF);
+                        print(Controllers
+                            .dadosPessoaisController.dadosPessoais.clienteNome);
+                        print(Controllers.dadosPessoaisController.dadosPessoais
+                            .dataDeNascimento);
                       },
                       child: Text(
                         'Finalizar',

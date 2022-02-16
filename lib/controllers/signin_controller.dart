@@ -1,13 +1,20 @@
 import 'package:dio/dio.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/repositories.dart';
+import 'package:rio_das_pedras_front_end/models/cliente.dart';
+import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
+import 'package:rio_das_pedras_front_end/models/endereco_model.dart';
 import 'package:wsda/core/values/access_token.dart';
 import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
 import 'package:wsda/wsda.dart';
 
 class SigninController {
   Future<bool> signUp() async {
-    DadosPessoaisModel _dadosPessoais = Repositories.dadosPessoaisRepository;
+    DadosPessoaisModel _dadosPessoais =
+        Controllers.dadosPessoaisController.dadosPessoais;
+    EnderecoModel _enderecoModel = Controllers.enderecoController.enderecoModel;
+    ContatosModel _contatosModel = Controllers.contatosController.contatosModel;
     AccessTokenEndpoint accessTokenEndpoint = AccessTokenEndpoint(version: 1);
     Response response = await accessTokenEndpoint();
     AccessToken accessToken = AccessToken.from(response.data);
@@ -20,11 +27,11 @@ class SigninController {
         "clienteCpf": _dadosPessoais.CPF,
         "clienteNascimento": _dadosPessoais.dataDeNascimento,
         "clienteSexo": _dadosPessoais.sexo,
-        "clienteResLogradouro": "Rua Ruy Barbosa",
-        "clienteResNumero": "190",
-        "clienteResComplemento": "",
-        "clienteResBairro": "Centro",
-        "clienteRgNumero": "2070517802",
+        "clienteResLogradouro": _enderecoModel.endereco,
+        "clienteResNumero": _enderecoModel.enderecoNumero,
+        "clienteResComplemento": _enderecoModel.enderecoComplemento,
+        "clienteResBairro": _enderecoModel.enderecoBairro,
+        "clienteRgNumero": _dadosPessoais.rg,
         "clienteRgOrgaoEmissor": "SSP",
         "clienteResCidade": "Itabuna",
         "clienteResUF": "BA",
