@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_cpf.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_sexo.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
 
 import 'SigningUp_Path Steps/Contatos/formulario_contatos.dart';
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
+import 'SigningUp_Path Steps/Dados Pessoais/widgets/campo_cliente_cpf.dart';
 import 'SigningUp_Path Steps/Endereço/formulario_endereço.dart';
 import 'SigningUp_Path Steps/Etapa_signinUp_path.dart';
 import 'SigningUp_Path Steps/Profissional_e_financeira/formulario_profissional_financeira.dart';
@@ -93,20 +91,24 @@ class SingUpPathState extends State<SingUpPath>
             child: TabBar(
               controller: tabController,
               onTap: (index) {
+                print(dadosPessoais.sexo);
                 final int previousIndex = tabController.previousIndex;
                 final GlobalKey<FormState> form = myKeys[previousIndex];
                 final FormState? currentFormState = form.currentState;
                 bool? isValidated = currentFormState?.validate();
-                // if (dadosPessoais.sexo == '' ||
-                //     dadosPessoais.ufDeNascimento == '' ||
-                //     dadosPessoais.vencimentoDaFatura == '' ||
-                //     dadosPessoais.lojaRetiradaCartao == '' ||
-                //     dadosPessoais.tratamento == '') {
-                //   form.currentState!.validate() == false;
-                // }
+
                 if (isValidated != null && !isValidated) {
-                  tabController.index = previousIndex;
+                  if (dadosPessoais.sexo != '') {
+                    tabController.index > previousIndex
+                        ? tabController.index = tabController.index
+                        : tabController.index = previousIndex;
+                  }
                 }
+                // if (isValidated != null &&
+                //     !isValidated &&
+                //     previousIndex < tabController.index) {
+                //   tabController.index = previousIndex;
+                // }
                 currentFormState?.save();
               },
               unselectedLabelStyle: TextStyle(

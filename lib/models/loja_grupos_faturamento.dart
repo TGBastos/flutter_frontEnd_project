@@ -1,5 +1,5 @@
-class GruposFaturamento {
-  GruposFaturamento({
+class Organizadoras {
+  Organizadoras({
     required this.code,
     required this.message,
     required this.codigoISGA,
@@ -18,7 +18,9 @@ class GruposFaturamento {
   late final OrgLojaMatriz orgLojaMatriz;
   late final CartaoProprio cartaoProprio;
 
-  GruposFaturamento.fromJson(Map<String, dynamic> json) {
+  static Organizadoras instance = Organizadoras.fromMap({});
+
+  Organizadoras.fromMap(Map<String, dynamic> json) {
     code = json['code'];
     message = json['message'];
     codigoISGA = json['codigoISGA'];
