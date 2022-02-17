@@ -40,7 +40,7 @@ class SigninController {
         "clienteResLongitude": "",
         "clienteResFoneDDD": "",
         "clienteResFoneNumero": "",
-        "clienteCelularDDD": "73",
+        "clienteCelularDDD": _contatosModel.toMap(),
         "clienteCelularNumero": "981423700",
         "clienteEmailPrincipal": "principal@intellisys.com.br",
         "clienteEmailAlternativo": "",
