@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_sexo.dart';
 
 import 'SigningUp_Path Steps/Contatos/formulario_contatos.dart';
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
@@ -97,18 +98,10 @@ class SingUpPathState extends State<SingUpPath>
                 final FormState? currentFormState = form.currentState;
                 bool? isValidated = currentFormState?.validate();
 
-                if (isValidated != null && !isValidated) {
-                  if (dadosPessoais.sexo != '') {
-                    tabController.index > previousIndex
-                        ? tabController.index = tabController.index
-                        : tabController.index = previousIndex;
-                  }
-                }
-                // if (isValidated != null &&
-                //     !isValidated &&
-                //     previousIndex < tabController.index) {
+                // if (isValidated != null && !isValidated) {
                 //   tabController.index = previousIndex;
                 // }
+
                 currentFormState?.save();
               },
               unselectedLabelStyle: TextStyle(

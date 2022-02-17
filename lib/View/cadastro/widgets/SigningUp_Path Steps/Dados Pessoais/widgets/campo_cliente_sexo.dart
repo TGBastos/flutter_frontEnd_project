@@ -17,6 +17,7 @@ class CampoClienteSexo extends StatefulWidget {
 }
 
 class CampoClienteSexoState extends State<CampoClienteSexo> {
+  bool popUpMenuValidation = false;
   Widget build(BuildContext context) {
     String selecionado = 'selecionar';
     return Padding(
@@ -90,16 +91,19 @@ class CampoClienteSexoState extends State<CampoClienteSexo> {
                     dadosPessoaisController.sexo = 'M';
                     setState(() {
                       selecionado = 'M';
+                      popUpMenuValidation = true;
                     });
                   } else if (menu == 2) {
                     dadosPessoaisController.sexo = 'F';
                     setState(() {
                       selecionado = 'F';
+                      popUpMenuValidation = true;
                     });
                   } else {
                     dadosPessoaisController.sexo = 'Outro';
                     setState(() {
                       selecionado = 'Outro';
+                      popUpMenuValidation = true;
                     });
                   }
                 },
