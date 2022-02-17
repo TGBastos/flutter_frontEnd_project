@@ -1,13 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/repositories.dart';
-import 'package:rio_das_pedras_front_end/models/cliente.dart';
 import 'package:rio_das_pedras_front_end/models/contatos_model.dart';
 import 'package:rio_das_pedras_front_end/models/dados_pessoais_model.dart';
 import 'package:rio_das_pedras_front_end/models/endereco_model.dart';
 import 'package:wsda/core/values/access_token.dart';
 import 'package:wsda/source/common/endpoints/access_token_endpoint.dart';
-import 'package:wsda/wsda.dart';
+import 'package:wsda/source/common/endpoints/client_proposal.dart';
 
 class SigninController {
   Future<bool> signUp() async {
@@ -19,40 +17,82 @@ class SigninController {
     Response response = await accessTokenEndpoint();
     AccessToken accessToken = AccessToken.from(response.data);
 
-    SignupUser signupUser = SignupUser(
+    ClientProposal clientProposal = ClientProposal(
       accessToken: accessToken,
-      version: 2,
-      data: <String, dynamic>{
-        "clienteNome": _dadosPessoais.clienteNome,
-        "clienteCpf": _dadosPessoais.CPF,
-        "clienteNascimento": _dadosPessoais.dataDeNascimento,
-        "clienteSexo": _dadosPessoais.sexo,
-        "clienteResLogradouro": _enderecoModel.endereco,
-        "clienteResNumero": _enderecoModel.enderecoNumero,
-        "clienteResComplemento": _enderecoModel.enderecoComplemento,
-        "clienteResBairro": _enderecoModel.enderecoBairro,
-        "clienteRgNumero": _dadosPessoais.rg,
+      version: 1,
+      data: {
+        "clienteCpf": 41668761718,
+        "clienteNome": "JOSE DA SILVA PEREIRA",
+        "clienteRgNumero": "12345678-01",
         "clienteRgOrgaoEmissor": "SSP",
-        "clienteResCidade": "Itabuna",
-        "clienteResUF": "BA",
-        "clienteResCep": "45600321",
-        "clienteResLatitude": "",
-        "clienteResLongitude": "",
-        "clienteResFoneDDD": "",
-        "clienteResFoneNumero": "",
-        "clienteCelularDDD": _contatosModel.toMap(),
-        "clienteCelularNumero": "981423700",
-        "clienteEmailPrincipal": "principal@intellisys.com.br",
-        "clienteEmailAlternativo": "",
-        "clienteLojaPreferida": "1",
-        "clienteSenhaWeb": "123456",
-        "clientePermiteEnvioEmail": "1",
-        "clientePermiteEnvioSMS": "1",
-        "clienteAceiteRegulamento": "1"
+        "clienteRgUFEmissor": "BA",
+        "clienteNaturalidade": "Itabuna",
+        "clienteNacionalidade": "Brasileira",
+        "clienteSexo": "M",
+        "clienteDataNascimento": "1980-10-01",
+        "clienteNomeMae": "Mãe Pereira",
+        "clienteNomePai": "",
+        "clienteEstadoCivil": 0,
+        "clienteConjugeNome": "",
+        "clienteConjugeCpf": 0,
+        "clienteGrauEscolaridade": 0,
+        "clienteEndereco": {
+          "cep": "45600-098",
+          "logradouro": "Av. José Soares Pinheiro",
+          "numero": "396",
+          "complemento": "1 Andar",
+          "bairro": "Centro",
+          "cidade": "Itabuna",
+          "uf": "BA",
+          "coordenadas": {"latitude": 0, "longitude": 0}
+        },
+        "clienteTrabalho": {
+          "profissao": 0,
+          "razaoSocial": "",
+          "telefoneDDD": 0,
+          "telefoneNumero": 0,
+          "cargo": "",
+          "salario": 0,
+          "dataAdmissao": "",
+          "endereco": {
+            "cep": "",
+            "logradouro": "",
+            "numero": "",
+            "complemento": "",
+            "bairro": "",
+            "cidade": "",
+            "uf": ""
+          }
+        },
+        "clienteOutraRenda": {"valor": 0, "origem": ""},
+        "clienteBancos": [
+          {"numero": 0, "agencia": 0, "conta": "", "dataAbertura": ""}
+        ],
+        "clienteReferencias": [
+          {"nome": "", "celularDDD": "", "celularNumero": ""}
+        ],
+        "clienteContato": {
+          "telefoneDDD": 0,
+          "telefoneNumero": 0,
+          "celularDDD": 0,
+          "celularNumero": 0,
+          "email": "sac@intellisys.com.br"
+        },
+        "clienteLojaPreferida": 1,
+        "clienteGrupoFaturamento": 1,
+        "clientePermissoes": {
+          "envioEmail": false,
+          "envioSMS": false,
+          "envioOfertas": false
+        },
+        "clienteAceites": {
+          "regulamentoCartaoProprio": false,
+          "regulamentoFidelidade": false
+        }
       },
     );
     try {
-      final Response response = await signupUser();
+      final Response response = await clientProposal();
       if (response.data['code'] == '000') {
         print('Ta indo');
         return true;
@@ -60,11 +100,6 @@ class SigninController {
         return false;
       }
     } catch (e) {
-      print(_dadosPessoais.clienteNome);
-      print(_dadosPessoais.CPF);
-      print(_dadosPessoais.dataDeNascimento);
-      print(_dadosPessoais.sexo);
-      print('ta não');
       print(e);
       return false;
     }

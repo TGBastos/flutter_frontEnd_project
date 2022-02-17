@@ -27,14 +27,14 @@ class _CampoEmpresaEnderecoState extends State<CampoEmpresaEndereco> {
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
                 initialValue: Repositories.profissionalFinanceiraRepository
-                            .profissionalEndereco !=
+                            .profissionalEndereco['logradouro'] !=
                         ''
-                    ? Repositories
-                        .profissionalFinanceiraRepository.profissionalEndereco
+                    ? Repositories.profissionalFinanceiraRepository
+                        .profissionalEndereco['logradouro']
                     : '',
                 onSaved: (valor) => Controllers
                     .profissionalEFinanceiraController
-                    .profissionalEndereco = valor,
+                    .profissionalEndereco('logradouro', valor!),
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o endereço da empresa' : null,
                 decoration: InputDecoration(

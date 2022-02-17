@@ -27,16 +27,16 @@ class _CampoEmpresaBairroState extends State<CampoEmpresaBairro> {
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
                 initialValue: Repositories.profissionalFinanceiraRepository
-                            .profissionalBairro !=
+                            .profissionalEndereco['bairro'] !=
                         ''
-                    ? Repositories
-                        .profissionalFinanceiraRepository.profissionalBairro
+                    ? Repositories.profissionalFinanceiraRepository
+                        .profissionalEndereco['bairro']
                     : '',
                 validator: (valor) =>
                     valor!.isEmpty ? 'Coloque o bairro da empresa' : null,
                 onSaved: (valor) => Controllers
                     .profissionalEFinanceiraController
-                    .profissionalBairro = valor,
+                    .profissionalEndereco('bairro', valor!),
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,

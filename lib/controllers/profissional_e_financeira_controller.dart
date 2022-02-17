@@ -11,52 +11,25 @@ class ProfissionalEFinanceiraController {
     profissionalEFinanceiraModel.profissionalEmpresa = valor;
   }
 
-  set profissionalCEP(String? valor) {
-    profissionalEFinanceiraModel.profissionalCEP = valor ?? '';
-  }
-
-  set profissionalComplemento(String? valor) {
-    valor = RemoverAcentos.removerAcentuacao(valor!);
-    profissionalEFinanceiraModel.profissionalComplemento = valor;
-  }
-
-  set profissionalNumero(String? valor) {
-    profissionalEFinanceiraModel.profissionalNumero = valor ?? '';
-  }
-
   set profissionalCargo(String? valor) {
     valor = RemoverAcentos.removerAcentuacao(valor!);
     profissionalEFinanceiraModel.profissionalCargo = valor;
-  }
-
-  set profissionalMatricula(String? valor) {
-    valor = RemoverAcentos.removerAcentuacao(valor!);
-    profissionalEFinanceiraModel.profissionalMatricula = valor;
-  }
-
-  set profissionalEndereco(String? valor) {
-    valor = RemoverAcentos.removerAcentuacao(valor!);
-    profissionalEFinanceiraModel.profissionalEndereco = valor;
-  }
-
-  set profissionalBairro(String? valor) {
-    valor = RemoverAcentos.removerAcentuacao(valor!);
-    profissionalEFinanceiraModel.profissionalBairro = valor;
   }
 
   set profissionalTempoDeServicoAnos(String? valor) {
     profissionalEFinanceiraModel.profissionalTempoDeServicoAnos = valor ?? '';
   }
 
-  set profissionalTempoDeServicoMeses(String? valor) {
-    profissionalEFinanceiraModel.profissionalTempoDeServicoMeses = valor ?? '';
-  }
-
   set profissionalSalario(String? valor) {
     profissionalEFinanceiraModel.profissionalSalario = valor ?? '';
   }
 
-  set profissionalOutrasRendas(String? valor) {
-    profissionalEFinanceiraModel.profissionalOutrasRendas = valor ?? '';
+  void profissionalEndereco(String chave, String valor) {
+    profissionalEFinanceiraModel.profissionalEndereco[chave] = valor;
+  }
+
+  set profissionalOutrasRendas(String valor) {
+    profissionalEFinanceiraModel.profissionalOutrasRendas['renda'] =
+        int.parse(valor);
   }
 }

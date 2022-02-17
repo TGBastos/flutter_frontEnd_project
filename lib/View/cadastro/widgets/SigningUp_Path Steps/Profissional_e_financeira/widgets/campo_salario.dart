@@ -72,14 +72,16 @@ class _CampoSalarioState extends State<CampoSalario> {
                   width: widget.camposSizeConfigs.campoWidth / 2,
                   child: TextFormField(
                     initialValue: Repositories.profissionalFinanceiraRepository
-                                .profissionalOutrasRendas !=
+                                .profissionalOutrasRendas['renda']
+                                .toString() !=
                             ''
                         ? Repositories.profissionalFinanceiraRepository
-                            .profissionalOutrasRendas
+                            .profissionalOutrasRendas['renda']
+                            .toString()
                         : '',
                     onSaved: (valor) => Controllers
                         .profissionalEFinanceiraController
-                        .profissionalOutrasRendas = valor,
+                        .profissionalOutrasRendas = valor!,
                     validator: (value) => value!.isEmpty ? null : null,
                     decoration: InputDecoration(
                       constraints: BoxConstraints(

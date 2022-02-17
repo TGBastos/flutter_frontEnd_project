@@ -26,14 +26,15 @@ class _CampoEmpresaCEPState extends State<CampoEmpresaCEP> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
-                initialValue: Repositories
-                            .profissionalFinanceiraRepository.profissionalCEP !=
+                initialValue: Repositories.profissionalFinanceiraRepository
+                            .profissionalEndereco['cep'] !=
                         ''
-                    ? Repositories
-                        .profissionalFinanceiraRepository.profissionalCEP
+                    ? Repositories.profissionalFinanceiraRepository
+                        .profissionalEndereco['cep']
                     : '',
                 onSaved: (valor) => Controllers
-                    .profissionalEFinanceiraController.profissionalCEP = valor,
+                    .profissionalEFinanceiraController
+                    .profissionalEndereco('cep', valor!),
                 validator: (value) => value!.isEmpty ? 'Coloque o CEP' : null,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

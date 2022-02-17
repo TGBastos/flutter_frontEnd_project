@@ -17,6 +17,7 @@ class Repositories {
   static ProfissionalEFinanceiraModel profissionalFinanceiraRepository =
       Controllers
           .profissionalEFinanceiraController.profissionalEFinanceiraModel;
+
   static ReferenciasPessoaisModel referenciasPessoaisRepository =
       Controllers.referenciasPessoaisController.referenciasPessoaisModel;
   static ReferenciasComerciaisModel referenciasComerciaisRepository =

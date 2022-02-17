@@ -1,18 +1,25 @@
 import 'dart:convert';
 
 class ProfissionalEFinanceiraModel {
-  String profissionalEmpresa = '';
-  String profissionalCEP = '';
-  String profissionalComplemento = '';
-  String profissionalNumero = '';
   String profissionalCargo = '';
-  String profissionalMatricula = '';
-  String profissionalEndereco = '';
-  String profissionalBairro = '';
+  String profissionalEmpresa = '';
+
   String profissionalTempoDeServicoAnos = '';
-  String profissionalTempoDeServicoMeses = '';
+
   String profissionalSalario = '';
-  String profissionalOutrasRendas = '';
+  Map<String, String> profissionalEndereco = {
+    'cep': '',
+    'logradouro': '',
+    'numero': '',
+    'complemento': '',
+    'bairro': '',
+    'cidade': '',
+    'uf': '',
+  };
+  Map<String, Object> profissionalOutrasRendas = {
+    'renda': 0,
+    'origem': '',
+  };
 
   ProfissionalEFinanceiraModel({
     profissionalEmpresa,
@@ -24,22 +31,14 @@ class ProfissionalEFinanceiraModel {
     profissionalEndereco,
     profissionalBairro,
     profissionalTempoDeServicoAnos,
-    profissionalTempoDeServicoMeses,
     profissionalSalario,
     profissionalOutrasRendas,
   });
   Map<String, dynamic> toMap() {
     return {
       'profissionalEmpresa': profissionalEmpresa,
-      'profissionalCEP': profissionalCEP,
-      'profissionalComplemento': profissionalComplemento,
-      'profissionalNumero': profissionalNumero,
       'profissionalCargo': profissionalCargo,
-      'profissionalMatricula': profissionalMatricula,
-      'profissionalEndereco': profissionalEndereco,
-      'profissionalBairro': profissionalBairro,
       'profissionalTempoDeServicoAnos': profissionalTempoDeServicoAnos,
-      'profissionalTempoDeServicoMeses': profissionalTempoDeServicoMeses,
       'profissionalSalario': profissionalSalario,
       'profissionalOutrasRendas': profissionalOutrasRendas,
     };
@@ -57,8 +56,6 @@ class ProfissionalEFinanceiraModel {
       profissionalBairro: map['profissionalBairro'] ?? '',
       profissionalTempoDeServicoAnos:
           map['profissionalTempoDeServicoAnos'] ?? '',
-      profissionalTempoDeServicoMeses:
-          map['profissionalTempoDeServicoMeses'] ?? '',
       profissionalSalario: map['profissionalSalario'] ?? '',
       profissionalOutrasRendas: map['profissionalOutrasRendas'] ?? '',
     );
