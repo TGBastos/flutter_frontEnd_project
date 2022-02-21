@@ -44,7 +44,10 @@ class SigninController {
           "bairro": "Centro",
           "cidade": "Itabuna",
           "uf": "BA",
-          "coordenadas": {"latitude": 0, "longitude": 0}
+          "coordenadas": {
+            "latitude": 0,
+            "longitude": 0,
+          }
         },
         "clienteTrabalho": {
           "profissao": 0,
@@ -64,12 +67,24 @@ class SigninController {
             "uf": ""
           }
         },
-        "clienteOutraRenda": {"valor": 0, "origem": ""},
+        "clienteOutraRenda": {
+          "valor": 0,
+          "origem": "",
+        },
         "clienteBancos": [
-          {"numero": 0, "agencia": 0, "conta": "", "dataAbertura": ""}
+          {
+            "numero": 0,
+            "agencia": 0,
+            "conta": "",
+            "dataAbertura": "",
+          }
         ],
         "clienteReferencias": [
-          {"nome": "", "celularDDD": "", "celularNumero": ""}
+          {
+            "nome": "",
+            "celularDDD": "",
+            "celularNumero": "",
+          }
         ],
         "clienteContato": {
           "telefoneDDD": 0,
