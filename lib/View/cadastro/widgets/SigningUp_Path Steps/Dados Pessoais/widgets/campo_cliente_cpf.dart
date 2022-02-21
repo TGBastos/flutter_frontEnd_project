@@ -20,8 +20,11 @@ DadosPessoaisModel dadosPessoais =
     Controllers.dadosPessoaisController.dadosPessoais;
 
 class _CampoClienteCPFState extends State<CampoClienteCPF> {
-  final controladorCPFCadastro =
-      MaskedTextController(mask: '000.000.000-00', text: dadosPessoais.CPF);
+  final controladorCPFCadastro = MaskedTextController(
+      mask: '000.000.000-00',
+      text: dadosPessoais.CPF.toString() != '0'
+          ? dadosPessoais.CPF.toString()
+          : '');
   @override
   Widget build(BuildContext context) {
     return Padding(

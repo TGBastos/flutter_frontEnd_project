@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_data_nascimento.dart';
-import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_expedidor_RG.dart';
+import 'widgets/campo_cliente_uf_expedidor_RG.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_naturalidade.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_nome_mae.dart';
 

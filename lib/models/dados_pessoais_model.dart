@@ -2,7 +2,7 @@ import 'dart:convert';
 
 class DadosPessoaisModel {
   String vencimentoDaFatura = '';
-  String CPF = '';
+  int CPF = 0;
   String orgaoEmissor = '';
   String ufDeNascimento = '';
   String sexo = '';

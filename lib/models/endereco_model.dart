@@ -25,15 +25,17 @@ class EnderecoModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'enderecoCidade': enderecoCidade,
-      'enderecoCep': enderecoCep,
-      'enderecoUf': enderecoUf,
-      'enderecoComplemento': enderecoComplemento,
-      'enderecoNumero': enderecoNumero,
-      'endereco': endereco,
-      'enderecoBairro': enderecoBairro,
-      'enderecoTempoDeResidenciaAnos': enderecoTempoDeResidenciaAnos,
-      'enderecoTempoDeResidenciaMeses': enderecoTempoDeResidenciaMeses,
+      'cep': enderecoCep,
+      'logradouro': endereco,
+      'numero': enderecoNumero,
+      'complemento': enderecoComplemento,
+      'bairro': enderecoBairro,
+      'cidade': enderecoCidade,
+      'uf': enderecoUf,
+      'coordenadas': {
+        'latitude': 0,
+        'longitude': 0,
+      }
     };
   }
 

@@ -17,23 +17,20 @@ class ReferenciasPessoaisModel {
     referenciaPessoalTelefone2,
   });
 
-  Map<String, dynamic> toMap() {
+  Map<String, Object> toMap() {
     return {
-      'referenciaPessoalNome1': referenciaPessoalNome1,
-      'referenciaPessoalNome2': referenciaPessoalNome2,
-      'referenciaPessoalDDDTelefone1': referenciaPessoalDDDTelefone1,
-      'referenciaPessoalTelefone1': referenciaPessoalTelefone1,
-      'referenciaPessoalDDDTelefone2': referenciaPessoalDDDTelefone2,
-      'referenciaPessoalTelefone2': referenciaPessoalTelefone2,
+      'nome': referenciaPessoalNome1,
+      'celularDDD': int.parse(referenciaPessoalDDDTelefone1),
+      'celularNumero': int.parse(referenciaPessoalTelefone1),
     };
   }
 
   factory ReferenciasPessoaisModel.fromMap(Map<String, dynamic> map) {
     return ReferenciasPessoaisModel(
-      referenciaPessoalNome1: map['referenciaPessoalNome1'] ?? '',
+      referenciaPessoalNome1: map['nome'] ?? '',
       referenciaPessoalNome2: map['referenciaPessoalNome2'] ?? '',
-      referenciaPessoalDDDTelefone1: map['referenciaPessoalDDDTelefone1'] ?? '',
-      referenciaPessoalTelefone1: map['referenciaPessoalTelefone1'] ?? '',
+      referenciaPessoalDDDTelefone1: map['celularDDD'] ?? '',
+      referenciaPessoalTelefone1: map['celularNumero'] ?? '',
       referenciaPessoalDDDTelefone2: map['referenciaPessoalDDDTelefone2'] ?? '',
       referenciaPessoalTelefone2: map['referenciaPessoalTelefone2'] ?? '',
     );

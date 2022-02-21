@@ -20,7 +20,7 @@ class _CampoExpedidorDoRGState extends State<CampoExpedidorDoRG> {
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Exp. RG'),
+            Text('UF emissora do RG'),
             SizedBox(
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth,
@@ -29,7 +29,7 @@ class _CampoExpedidorDoRGState extends State<CampoExpedidorDoRG> {
                     ? dadosPessoais.expedidorRg
                     : '',
                 validator: (value) =>
-                    value!.isEmpty ? 'Coloque o expedidor do RG' : null,
+                    value!.isEmpty ? 'Coloque a UF emissora do RG' : null,
                 onSaved: (valor) => dadosPessoaisController.expedidorRg = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(

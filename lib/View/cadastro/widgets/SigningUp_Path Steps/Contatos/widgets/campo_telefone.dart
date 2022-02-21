@@ -27,8 +27,8 @@ class _CampoTelefoneState extends State<CampoTelefone> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth / 4,
               child: TextFormField(
-                initialValue: Repositories.contatosRepository.dddTelefone != ''
-                    ? Repositories.contatosRepository.dddTelefone
+                initialValue: Repositories.contatosRepository.celularDDD != ''
+                    ? Repositories.contatosRepository.celularDDD.toString()
                     : '',
                 validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
                 onSaved: (valor) =>
@@ -65,8 +65,8 @@ class _CampoTelefoneState extends State<CampoTelefone> {
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 1.5,
                   child: TextFormField(
-                    initialValue: Repositories.contatosRepository.telefone != ''
-                        ? Repositories.contatosRepository.telefone
+                    initialValue: Repositories.contatosRepository.celular != ''
+                        ? Repositories.contatosRepository.celular.toString()
                         : '',
                     validator: (value) =>
                         value!.isEmpty ? 'Coloque seu telefone' : null,

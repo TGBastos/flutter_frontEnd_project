@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_sexo.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_bairro.dart';
 
 import 'SigningUp_Path Steps/Contatos/formulario_contatos.dart';
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
@@ -92,17 +93,17 @@ class SingUpPathState extends State<SingUpPath>
             child: TabBar(
               controller: tabController,
               onTap: (index) {
-                print(dadosPessoais.sexo);
                 final int previousIndex = tabController.previousIndex;
                 final GlobalKey<FormState> form = myKeys[previousIndex];
                 final FormState? currentFormState = form.currentState;
                 bool? isValidated = currentFormState?.validate();
 
-                // if (isValidated != null && !isValidated) {
-                //   tabController.index = previousIndex;
-                // }
+                if (isValidated != null && !isValidated) {
+                  tabController.index = previousIndex;
+                }
 
                 currentFormState?.save();
+                print(enderecoController.enderecoModel.toMap());
               },
               unselectedLabelStyle: TextStyle(
                 fontWeight: FontWeight.w500,

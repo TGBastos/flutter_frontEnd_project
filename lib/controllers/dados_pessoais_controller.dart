@@ -15,7 +15,7 @@ class DadosPessoaisController {
   }
 
   set clienteCPF(String? valor) {
-    dadosPessoais.CPF = valor ?? '';
+    dadosPessoais.CPF = int.parse(valor!);
   }
 
   set cpfOrgaoEmissor(String? valor) {

@@ -3,21 +3,21 @@ import 'dart:convert';
 class ProfissionalEFinanceiraModel {
   String profissionalCargo = '';
   String profissionalEmpresa = '';
-
-  String profissionalTempoDeServicoAnos = '';
+  String profissonalTelefoneDDD = '';
+  String profissionalTelefoneNumero = '';
+  String profissionalDataAdmissao = '';
 
   String profissionalSalario = '';
-  Map<String, String> profissionalEndereco = {
-    'cep': '',
-    'logradouro': '',
-    'numero': '',
-    'complemento': '',
-    'bairro': '',
-    'cidade': '',
-    'uf': '',
-  };
+  String profissionalCep = '';
+  String profissionalLogradouro = '';
+  String profissionalNumero = '';
+  String profissionalComplemento = '';
+  String profissionalBairro = '';
+  String profissionalCidade = '';
+  String profissionalUF = '';
+
   Map<String, Object> profissionalOutrasRendas = {
-    'renda': 0,
+    'valor': 0,
     'origem': '',
   };
 
@@ -36,11 +36,22 @@ class ProfissionalEFinanceiraModel {
   });
   Map<String, dynamic> toMap() {
     return {
-      'profissionalEmpresa': profissionalEmpresa,
-      'profissionalCargo': profissionalCargo,
-      'profissionalTempoDeServicoAnos': profissionalTempoDeServicoAnos,
-      'profissionalSalario': profissionalSalario,
-      'profissionalOutrasRendas': profissionalOutrasRendas,
+      'profissao': 0,
+      'razaoSocial': profissionalEmpresa,
+      'telefoneDDD': profissonalTelefoneDDD,
+      'telefoneNumero': profissionalTelefoneNumero,
+      'cargo': profissionalCargo,
+      'salario': profissionalSalario,
+      'dataAdmissao': profissionalDataAdmissao,
+      'endereco': {
+        'cep': profissionalCep,
+        'logradouro': profissionalLogradouro,
+        'numero': profissionalNumero,
+        'complemento': profissionalComplemento,
+        'bairro': profissionalBairro,
+        'cidade': profissionalCidade,
+        'uf': profissionalUF,
+      }
     };
   }
 

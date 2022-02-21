@@ -23,10 +23,9 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
             height: widget.camposSizeConfigs.campoHeight,
             width: widget.camposSizeConfigs.campoWidth / 4,
             child: TextFormField(
-              initialValue:
-                  Repositories.contatosRepository.dddTelefoneFixo != ''
-                      ? Repositories.contatosRepository.dddTelefoneFixo
-                      : '',
+              initialValue: Repositories.contatosRepository.dddTelefoneFixo != 0
+                  ? Repositories.contatosRepository.dddTelefoneFixo.toString()
+                  : '',
               validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
               onSaved: (valor) =>
                   Controllers.contatosController.contatosDDDTelefone = valor,
@@ -54,40 +53,43 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
         SizedBox(
           width: widget.camposSizeConfigs.campoWidth / 32,
         ),
-        Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
-          Text('Telefone fixo'),
-          SizedBox(
-            height: widget.camposSizeConfigs.campoHeight,
-            width: widget.camposSizeConfigs.campoWidth / 1.5,
-            child: TextFormField(
-              initialValue: Repositories.contatosRepository.telefoneFixo != ''
-                  ? Repositories.contatosRepository.telefoneFixo
-                  : '',
-              validator: (value) =>
-                  value!.isEmpty ? 'Coloque seu telefone fixo' : null,
-              onSaved: (valor) =>
-                  Controllers.contatosController.contatosTelefoneFixo = valor,
-              decoration: InputDecoration(
-                constraints: BoxConstraints(
-                  maxHeight: 33,
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                //labelText: "",
-                labelStyle: TextStyle(
-                  fontSize: 20,
-                ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.blue,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text('Telefone fixo'),
+            SizedBox(
+              height: widget.camposSizeConfigs.campoHeight,
+              width: widget.camposSizeConfigs.campoWidth / 1.5,
+              child: TextFormField(
+                initialValue: Repositories.contatosRepository.telefoneFixo != ''
+                    ? Repositories.contatosRepository.telefoneFixo.toString()
+                    : '',
+                validator: (value) =>
+                    value!.isEmpty ? 'Coloque seu telefone fixo' : null,
+                onSaved: (valor) =>
+                    Controllers.contatosController.contatosTelefoneFixo = valor,
+                decoration: InputDecoration(
+                  constraints: BoxConstraints(
+                    maxHeight: 33,
                   ),
-                  borderRadius: BorderRadius.circular(
-                    widget.camposSizeConfigs.borderRadius,
+                  floatingLabelBehavior: FloatingLabelBehavior.always,
+                  //labelText: "",
+                  labelStyle: TextStyle(
+                    fontSize: 20,
+                  ),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.blue,
+                    ),
+                    borderRadius: BorderRadius.circular(
+                      widget.camposSizeConfigs.borderRadius,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ]),
+          ],
+        ),
       ],
     );
   }

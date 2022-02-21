@@ -12,7 +12,7 @@ class ContatosController {
   }
 
   set contatosDDDTelefone(String? valor) {
-    contatosModel.dddTelefone = valor ?? '';
+    contatosModel.celularDDD = valor ?? '';
   }
 
   set contatosDDDFixo(String? valor) {
@@ -20,7 +20,7 @@ class ContatosController {
   }
 
   set contatosTelefone(String? valor) {
-    contatosModel.telefone = valor ?? '';
+    contatosModel.celular = valor ?? '';
   }
 
   set contatosTelefoneFixo(String? valor) {

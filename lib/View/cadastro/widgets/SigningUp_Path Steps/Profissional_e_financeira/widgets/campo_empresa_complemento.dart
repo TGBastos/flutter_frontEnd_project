@@ -27,14 +27,14 @@ class _CampoEmpresaComplentoState extends State<CampoEmpresaComplento> {
               width: widget.camposSizeConfigs.campoWidth,
               child: TextFormField(
                 initialValue: Repositories.profissionalFinanceiraRepository
-                            .profissionalEndereco['complemento'] !=
+                            .profissionalComplemento !=
                         ''
                     ? Repositories.profissionalFinanceiraRepository
-                        .profissionalEndereco['complemento']
+                        .profissionalComplemento
                     : '',
                 onSaved: (valor) => Controllers
                     .profissionalEFinanceiraController
-                    .profissionalEndereco('complemento', valor!),
+                    .profissionalComplemento = valor!,
                 validator: (value) =>
                     value!.isEmpty ? 'Coloque o complemento' : null,
                 decoration: InputDecoration(

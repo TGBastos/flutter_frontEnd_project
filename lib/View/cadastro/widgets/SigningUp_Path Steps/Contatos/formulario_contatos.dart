@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Contatos/terceira_coluna_contato.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/terceira_coluna.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Contatos/primeira_coluna_contato.dart';
 import '../../../widgets/SigningUp_Path%20Steps/Contatos/segunda_coluna_contato.dart';
 
@@ -24,6 +26,7 @@ class _FormularioContatosState extends State<FormularioContatos> {
         children: <Widget>[
           PrimeiraColunaContato(),
           SegundaColunaContato(),
+          TerceiraColunaContato(),
         ],
       ),
     );

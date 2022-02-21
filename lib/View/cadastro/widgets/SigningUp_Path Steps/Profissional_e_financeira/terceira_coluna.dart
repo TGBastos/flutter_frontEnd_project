@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../campos_size_configs.dart';
 import 'widgets/campo_salario.dart';
-import 'widgets/campo_tempo_de_servico.dart';
+import 'widgets/campo_data_admissao.dart';
 
 class TerceiraColunaProfissional extends StatelessWidget {
   const TerceiraColunaProfissional({Key? key}) : super(key: key);
