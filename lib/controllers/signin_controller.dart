@@ -53,13 +53,7 @@ class SigninController {
       "clienteReferencias": [
         {"nome": "", "celularDDD": "", "celularNumero": ""}
       ],
-      "clienteContato": {
-        "telefoneDDD": 0,
-        "telefoneNumero": 0,
-        "celularDDD": 0,
-        "celularNumero": 0,
-        "email": "sac@intellisys.com.br"
-      },
+      "clienteContato": _contatosModel.toMap(),
       "clienteLojaPreferida": 1,
       "clienteGrupoFaturamento": 1,
       "clientePermissoes": {

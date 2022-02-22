@@ -12,18 +12,18 @@ class ContatosController {
   }
 
   set contatosDDDTelefone(String? valor) {
-    contatosModel.celularDDD = valor ?? '';
+    contatosModel.celularDDD = int.parse(valor!);
   }
 
   set contatosDDDFixo(String? valor) {
-    contatosModel.dddTelefoneFixo = valor ?? '';
+    contatosModel.dddTelefoneFixo = int.parse(valor!);
   }
 
   set contatosTelefone(String? valor) {
-    contatosModel.celular = valor ?? '';
+    contatosModel.celular = int.parse(valor!);
   }
 
   set contatosTelefoneFixo(String? valor) {
-    contatosModel.telefoneFixo = valor ?? '';
+    contatosModel.telefoneFixo = int.parse(valor!);
   }
 }

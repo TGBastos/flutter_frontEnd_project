@@ -3,10 +3,10 @@ import 'dart:convert';
 class ContatosModel {
   String email = '';
   String confirmaEmail = '';
-  String dddTelefoneFixo = '';
-  String celularDDD = '';
-  String celular = '';
-  String telefoneFixo = '';
+  int dddTelefoneFixo = 0;
+  int celularDDD = 0;
+  int celular = 0;
+  int telefoneFixo = 0;
   ContatosModel(
       {email,
       confirmaEmail,
@@ -17,10 +17,10 @@ class ContatosModel {
 
   Map<String, dynamic> toMap() {
     return {
-      'telefoneDDD': int.parse(dddTelefoneFixo),
-      'telefoneNumero': int.parse(telefoneFixo),
-      'celularDDD': int.parse(celularDDD),
-      'celularNumero': int.parse(celular),
+      'telefoneDDD': dddTelefoneFixo,
+      'telefoneNumero': telefoneFixo,
+      'celularDDD': celularDDD,
+      'celularNumero': celular,
       'email': email,
     };
   }
