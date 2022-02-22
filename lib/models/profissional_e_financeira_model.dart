@@ -16,10 +16,8 @@ class ProfissionalEFinanceiraModel {
   String profissionalCidade = '';
   String profissionalUF = '';
 
-  Map<String, Object> profissionalOutrasRendas = {
-    'valor': 0,
-    'origem': '',
-  };
+  int profissionalOutraRendaValor = 0;
+  String profissionalOutraRendaOrigem = '';
 
   ProfissionalEFinanceiraModel({
     profissionalEmpresa,

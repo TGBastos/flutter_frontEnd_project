@@ -59,7 +59,6 @@ class ProfissionalEFinanceiraController {
   }
 
   set profissionalOutrasRendas(String valor) {
-    profissionalEFinanceiraModel.profissionalOutrasRendas['renda'] =
-        int.parse(valor);
+    profissionalEFinanceiraModel.profissionalOutraRendaValor = int.parse(valor);
   }
 }

@@ -43,7 +43,10 @@ class SigninController {
       "clienteGrauEscolaridade": 0,
       "clienteEndereco": _enderecoModel.toMap(),
       "clienteTrabalho": _profissionalEFinanceiraModel.toMap(),
-      "clienteOutraRenda": {"valor": 0, "origem": ""},
+      "clienteOutraRenda": {
+        'valor': _profissionalEFinanceiraModel.profissionalOutraRendaValor,
+        'origem': '',
+      },
       "clienteBancos": [
         {"numero": 0, "agencia": 0, "conta": "", "dataAbertura": ""}
       ],
