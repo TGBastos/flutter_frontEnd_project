@@ -10,9 +10,9 @@ class ContatosModel {
   ContatosModel(
       {email,
       confirmaEmail,
-      dddTelefone,
+      celularDDD,
       dddTelefoneFixo,
-      telefone,
+      celular,
       telefoneFixo});
 
   Map<String, dynamic> toMap() {
@@ -29,9 +29,9 @@ class ContatosModel {
     return ContatosModel(
       email: map['email'] ?? '',
       confirmaEmail: map['confirmaEmail'] ?? '',
-      dddTelefone: map['dddTelefone'] ?? '',
+      celularDDD: map['dddTelefone'] ?? '',
       dddTelefoneFixo: map['dddTelefoneFixo'] ?? '',
-      telefone: map['telefone'] ?? '',
+      celular: map['telefone'] ?? '',
       telefoneFixo: map['telefoneFixo'] ?? '',
     );
   }

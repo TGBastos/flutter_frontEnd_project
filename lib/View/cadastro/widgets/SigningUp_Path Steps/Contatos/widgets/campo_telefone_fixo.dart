@@ -28,7 +28,7 @@ class _CampoTelefoneFixoState extends State<CampoTelefoneFixo> {
                   : '',
               validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
               onSaved: (valor) =>
-                  Controllers.contatosController.contatosDDDTelefone = valor,
+                  Controllers.contatosController.contatosDDDFixo = valor,
               decoration: InputDecoration(
                 constraints: BoxConstraints(
                   maxHeight: 33,

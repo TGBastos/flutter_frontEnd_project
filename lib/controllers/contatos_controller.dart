@@ -11,7 +11,7 @@ class ContatosController {
     contatosModel.confirmaEmail = valor ?? '';
   }
 
-  set contatosDDDTelefone(String? valor) {
+  set contatosDDDcelular(String? valor) {
     contatosModel.celularDDD = int.parse(valor!);
   }
 

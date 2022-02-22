@@ -50,9 +50,7 @@ class SigninController {
       "clienteBancos": [
         {"numero": 0, "agencia": 0, "conta": "", "dataAbertura": ""}
       ],
-      "clienteReferencias": [
-        {"nome": "", "celularDDD": "", "celularNumero": ""}
-      ],
+      "clienteReferencias": [_referenciasPessoaisModel.toMap()],
       "clienteContato": _contatosModel.toMap(),
       "clienteLojaPreferida": 1,
       "clienteGrupoFaturamento": 1,
@@ -75,7 +73,9 @@ class SigninController {
         return false;
       }
     } catch (e) {
+      final Response response = await clientProposal();
       print(e);
+
       return false;
     }
   }

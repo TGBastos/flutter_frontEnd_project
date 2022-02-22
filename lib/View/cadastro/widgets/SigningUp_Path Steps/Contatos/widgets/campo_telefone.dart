@@ -27,12 +27,12 @@ class _CampoTelefoneState extends State<CampoTelefone> {
               height: widget.camposSizeConfigs.campoHeight,
               width: widget.camposSizeConfigs.campoWidth / 4,
               child: TextFormField(
-                initialValue: Repositories.contatosRepository.celularDDD != ''
+                initialValue: Repositories.contatosRepository.celularDDD != 0
                     ? Repositories.contatosRepository.celularDDD.toString()
                     : '',
                 validator: (value) => value!.isEmpty ? 'Coloque seu DDD' : null,
                 onSaved: (valor) =>
-                    Controllers.contatosController.contatosDDDTelefone = valor,
+                    Controllers.contatosController.contatosDDDcelular = valor,
                 decoration: InputDecoration(
                   constraints: BoxConstraints(
                     maxHeight: 33,
@@ -60,16 +60,19 @@ class _CampoTelefoneState extends State<CampoTelefone> {
           Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Telefone'),
+                Text('Celular'),
                 SizedBox(
                   height: widget.camposSizeConfigs.campoHeight,
                   width: widget.camposSizeConfigs.campoWidth / 1.5,
                   child: TextFormField(
-                    initialValue: Repositories.contatosRepository.celular != ''
-                        ? Repositories.contatosRepository.celular.toString()
+                    initialValue: Controllers
+                                .contatosController.contatosModel.celular !=
+                            0
+                        ? Controllers.contatosController.contatosModel.celular
+                            .toString()
                         : '',
                     validator: (value) =>
-                        value!.isEmpty ? 'Coloque seu telefone' : null,
+                        value!.isEmpty ? 'Coloque seu celular' : null,
                     onSaved: (valor) =>
                         Controllers.contatosController.contatosTelefone = valor,
                     decoration: InputDecoration(
