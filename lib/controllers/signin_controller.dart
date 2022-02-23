@@ -53,7 +53,7 @@ class SigninController {
       "clienteReferencias": [_referenciasPessoaisModel.toMap()],
       "clienteContato": _contatosModel.toMap(),
       "clienteLojaPreferida": 1,
-      "clienteGrupoFaturamento": 1,
+      "clienteGrupoFaturamento": _dadosPessoais.vencimentoDaFatura,
       "clientePermissoes": {
         "envioEmail": false,
         "envioSMS": false,

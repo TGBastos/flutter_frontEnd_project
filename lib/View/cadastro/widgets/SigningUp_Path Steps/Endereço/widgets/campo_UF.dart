@@ -3,7 +3,7 @@ import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_bairro.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
 import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
-import 'package:rio_das_pedras_front_end/models/loja_grupos_faturamento.dart';
+import 'package:rio_das_pedras_front_end/models/loja_organizadora.dart';
 
 import '../../campos_size_configs.dart';
 import '../../controllers.dart';

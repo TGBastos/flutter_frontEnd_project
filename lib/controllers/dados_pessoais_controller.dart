@@ -73,7 +73,7 @@ class DadosPessoaisController {
   }
 
   set dataVencimentoFatura(String valor) {
-    dadosPessoais.vencimentoDaFatura = valor;
+    dadosPessoais.vencimentoDaFatura = int.parse(valor);
   }
 
   set lojaRetiradaCartao(String valor) {

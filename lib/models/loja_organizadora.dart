@@ -27,8 +27,10 @@ class Organizadoras {
     orgCodigo = json['orgCodigo'];
     orgNome = json['orgNome'];
     orgCnpj = json['orgCnpj'];
-    orgLojaMatriz = OrgLojaMatriz.fromJson(json['orgLojaMatriz']);
-    cartaoProprio = CartaoProprio.fromJson(json['cartaoProprio']);
+    orgLojaMatriz =
+        OrgLojaMatriz.instance = OrgLojaMatriz.fromJson(json['orgLojaMatriz']);
+    cartaoProprio =
+        CartaoProprio.instance = CartaoProprio.fromJson(json['cartaoProprio']);
   }
 
   Map<String, dynamic> toJson() {
@@ -60,7 +62,7 @@ class OrgLojaMatriz {
   late final String cnpj;
   late final Endereco endereco;
   late final Contato contato;
-
+  static OrgLojaMatriz instance = OrgLojaMatriz.fromJson({});
   OrgLojaMatriz.fromJson(Map<String, dynamic> json) {
     numero = json['numero'];
     razaoSocial = json['razaoSocial'];
@@ -178,7 +180,7 @@ class CartaoProprio {
     required this.grupoFaturamento,
   });
   late final List<GrupoFaturamento> grupoFaturamento;
-
+  static CartaoProprio instance = CartaoProprio.fromJson({});
   CartaoProprio.fromJson(Map<String, dynamic> json) {
     grupoFaturamento = List.from(json['grupoFaturamento'])
         .map((e) => GrupoFaturamento.fromJson(e))

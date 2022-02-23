@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/controllers/organizadora_controller.dart';
+import 'package:rio_das_pedras_front_end/models/loja_organizadora.dart';
 
 import '../commun/routes/routes_name.dart';
 import '../commun/widgets/Defaults/default_button.dart';
@@ -13,6 +15,7 @@ class DesktopLoginScreen extends StatefulWidget {
 }
 
 class _DesktopLoginScreenState extends State<DesktopLoginScreen> {
+  bool clickInProgress = false;
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -105,10 +108,25 @@ class _DesktopLoginScreenState extends State<DesktopLoginScreen> {
                             padding: EdgeInsets.fromLTRB(
                                 0, screenSize.height / 20, 0, 0),
                             child: new DefaultButton(
-                              btnContent: Text('Cadastrar'),
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, RoutesName.singupPage);
+                              btnContent: clickInProgress == false
+                                  ? Text('Entrar')
+                                  : Center(
+                                      child: CircularProgressIndicator(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                              onPressed: () async {
+                                setState(() => clickInProgress = true);
+
+                                if (await OrganizadoraController()
+                                        .consultaOrganizadora() ==
+                                    true) {
+                                  Navigator.pushNamed(
+                                      context, RoutesName.singupPage);
+                                  setState(() {
+                                    clickInProgress = false;
+                                  });
+                                }
                               },
                               buttonHeight: 54,
                               buttonWidth: 155,

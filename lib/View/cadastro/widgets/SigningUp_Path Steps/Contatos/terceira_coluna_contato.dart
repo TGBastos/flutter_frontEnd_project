@@ -23,6 +23,7 @@ class _TerceiraColunaContatoState extends State<TerceiraColunaContato> {
         Switch(
           value: enviarSMS,
           onChanged: (value) {
+            print(value);
             setState(() {
               enviarSMS = value;
             });
