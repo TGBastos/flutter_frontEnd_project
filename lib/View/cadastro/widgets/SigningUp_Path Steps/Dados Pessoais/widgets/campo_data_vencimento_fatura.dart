@@ -33,6 +33,35 @@ class _CampoDataVencimentoFaturaState extends State<CampoDataVencimentoFatura> {
   @override
   Widget build(BuildContext context) {
     String selecionado = 'selecionar';
+    if (dadosPessoais.vencimentoDaFatura == 1) {
+      setState(() {
+        selecionado = '26';
+      });
+    } else if (dadosPessoais.vencimentoDaFatura == 2) {
+      setState(() {
+        selecionado = '30';
+      });
+    } else if (dadosPessoais.vencimentoDaFatura == 3) {
+      setState(() {
+        selecionado = '5';
+      });
+    } else if (dadosPessoais.vencimentoDaFatura == 4) {
+      setState(() {
+        selecionado = '10';
+      });
+    } else if (dadosPessoais.vencimentoDaFatura == 5) {
+      setState(() {
+        selecionado = '15';
+      });
+    } else if (dadosPessoais.vencimentoDaFatura == 6) {
+      setState(() {
+        selecionado = '1';
+      });
+    } else {
+      setState(() {
+        selecionado = 'Selecionar';
+      });
+    }
     return Padding(
       padding: EdgeInsets.only(
         top: widget.camposSizeConfigs.spaceBetweenFieldsInTop,
@@ -96,15 +125,15 @@ class _CampoDataVencimentoFaturaState extends State<CampoDataVencimentoFatura> {
                   ),
                   PopupMenuItem(
                     child: Text(diaVencimento5),
-                    value: 3,
+                    value: 4,
                   ),
                   PopupMenuItem(
                     child: Text(diaVencimento1),
-                    value: 3,
+                    value: 5,
                   ),
                   PopupMenuItem(
                     child: Text(diaVencimento2),
-                    value: 3,
+                    value: 6,
                   ),
                 ],
                 onSelected: (int menu) {
@@ -127,7 +156,7 @@ class _CampoDataVencimentoFaturaState extends State<CampoDataVencimentoFatura> {
                       ;
                     });
                   } else if (menu == 4) {
-                    dadosPessoaisController.dataVencimentoFatura = '6';
+                    dadosPessoaisController.dataVencimentoFatura = '5';
                     setState(() {
                       selecionado = '15';
                       ;

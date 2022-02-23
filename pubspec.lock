@@ -446,7 +446,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "1051ee1dd5ef47654b19e22e104274c1ed9558c2"
+      resolved-ref: "7246f0387ea605b3d5f3af78784371e43bea943a"
       url: "https://github.com/intellisys-informatica/WSDA.git"
     source: git
     version: "0.0.1"

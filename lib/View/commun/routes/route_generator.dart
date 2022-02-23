@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rio_das_pedras_front_end/View/cadastro/widgets/concluir_cadastro.dart';
 import 'package:rio_das_pedras_front_end/View/cartao/desktop_cartao.dart';
 import 'package:rio_das_pedras_front_end/View/cliente_mensagens/descktop_mensage_screen.dart';
 import 'package:rio_das_pedras_front_end/View/commun/widgets/PageWrappers/cartao_page_wrapper.dart';
@@ -56,6 +57,9 @@ class RouteGenerator {
       case RoutesName.cartaoPage:
         return _GeneratePageRoute(
             widget: CartaoPageWrapper(), routeName: settings.name);
+      case RoutesName.concluirCadastroPage:
+        return _GeneratePageRoute(
+            widget: ConcluirCadastro(), routeName: settings.name);
       default:
         return _GeneratePageRoute(
             widget: LoginPageWrapper(), routeName: settings.name);
