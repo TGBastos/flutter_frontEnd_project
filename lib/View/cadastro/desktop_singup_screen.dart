@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
+
 import 'package:rio_das_pedras_front_end/View/commun/routes/routes_name.dart';
 import 'package:rio_das_pedras_front_end/controllers/dados_pessoais_controller.dart';
-import 'package:rio_das_pedras_front_end/controllers/endereco_controller.dart';
-import 'package:rio_das_pedras_front_end/controllers/signin_controller.dart';
 
 import '.././commun/widgets/Defaults/main_app_bar.dart';
 import 'widgets/row_meusDados.dart';

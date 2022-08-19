@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import '../models/user_model.dart';
-import 'package:rio_das_pedras_front_end/core/repositories/login_repository.dart';
 
 class LoginController {
   final formKey = GlobalKey<FormState>();
 
-  LoginRepository repository = LoginRepository();
+  // LoginRepository repository = LoginRepository();
 
   UserModel user = UserModel();
 
@@ -13,19 +12,11 @@ class LoginController {
   String userSenha(String value) => user.senha = value;
 
   Future<bool> doLogin() async {
-    if (!formKey.currentState!.validate()) {
+    if (!formKey.currentState!.validate() && user.CPF.length != 11) {
       return false;
-    }
-    formKey.currentState!.save();
-    try {
-      if (await repository.entrar(user) == true) {
-        print('loginSucces');
-        return true;
-      } else
-        return false;
-    } catch (e) {
-      print(e);
-      return false;
+    } else {
+      formKey.currentState!.save();
+      return true;
     }
   }
 }

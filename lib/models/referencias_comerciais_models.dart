@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class ReferenciasComerciaisModel {
   String referenciaComercialEmpresa1 = '';
   String referenciaComercialEmpresa2 = '';

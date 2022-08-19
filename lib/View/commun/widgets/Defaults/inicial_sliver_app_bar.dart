@@ -52,11 +52,10 @@ class InicialSliverAppBar extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsets.fromLTRB(
                           DeviceWidth / 50, 0, DeviceWidth / 50, 0),
-                      child: Image.asset(
-                        "assets/images/LogoRioDasPedras.png",
-                        fit: BoxFit.fill,
-                        alignment: Alignment.centerLeft,
-                        width: DeviceWidth,
+                      child: Center(
+                        child: Text(
+                          'Logo',
+                        ),
                       ),
                     ),
                   ),

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Dados%20Pessoais/widgets/campo_cliente_sexo.dart';
+
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/Endere%C3%A7o/widgets/campo_bairro.dart';
 import 'package:rio_das_pedras_front_end/View/cadastro/widgets/SigningUp_Path%20Steps/controllers.dart';
-import 'package:rio_das_pedras_front_end/controllers/contatos_controller.dart';
 
 import 'SigningUp_Path Steps/Contatos/formulario_contatos.dart';
 import 'SigningUp_Path Steps/Dados Pessoais/formulario_dados_pessoais.dart';
-import 'SigningUp_Path Steps/Dados Pessoais/widgets/campo_cliente_cpf.dart';
+
 import 'SigningUp_Path Steps/Endereço/formulario_endereço.dart';
 import 'SigningUp_Path Steps/Etapa_signinUp_path.dart';
 import 'SigningUp_Path Steps/Profissional_e_financeira/formulario_profissional_financeira.dart';
@@ -105,8 +104,6 @@ class SingUpPathState extends State<SingUpPath>
                 }
 
                 currentFormState?.save();
-                print(enderecoController.enderecoModel.toMap());
-                print(Controllers.contatosController.contatosModel.toMap());
               },
               unselectedLabelStyle: TextStyle(
                 fontWeight: FontWeight.w500,

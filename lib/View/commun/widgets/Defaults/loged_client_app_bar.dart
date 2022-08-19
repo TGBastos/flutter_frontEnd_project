@@ -67,7 +67,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                               ),
                               child: IconButton(
                                 color: Colors.white,
-                                onPressed: _launchFacebookURL,
+                                onPressed: () => {},
                                 icon: FaIcon(
                                   FontAwesomeIcons.facebook,
                                 ),
@@ -87,7 +87,7 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                               ),
                               child: IconButton(
                                 color: Colors.white,
-                                onPressed: _launchInstagramURL,
+                                onPressed: () => {},
                                 icon: FaIcon(
                                   FontAwesomeIcons.instagram,
                                 ),
@@ -257,11 +257,10 @@ class _LogedClientAppBarState extends State<LogedClientAppBar> {
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
-                          child: Image.asset(
-                            "assets/images/LogoRioDasPedras.png",
-                            fit: BoxFit.fill,
-                            alignment: Alignment.center,
-                            width: widget.appBarConfigs.deviceWidth,
+                          child: Center(
+                            child: Text(
+                              'Logo',
+                            ),
                           ),
                         ),
                       ),

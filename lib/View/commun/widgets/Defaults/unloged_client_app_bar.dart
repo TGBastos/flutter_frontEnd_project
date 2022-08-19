@@ -213,16 +213,15 @@ class _unlogedClientAppBarState extends State<UnlogedClientAppBar> {
                     borderRadius: BorderRadius.circular(
                       20,
                     ),
-                    child: Image.asset(
-                      "assets/images/LogoRioDasPedras.png",
-                      fit: BoxFit.fill,
-                      alignment: Alignment.center,
-                      width: widget.appBarConfigs.deviceWidth,
+                    child: Center(
+                      child: Text(
+                        'Logo',
+                      ),
                     ),
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ],

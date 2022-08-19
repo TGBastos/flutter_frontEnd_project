@@ -1,21 +1,10 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
-import 'package:wsda/wsda.dart';
 
-import 'View/commun/responsive_controller.dart';
 import 'View/commun/routes/pages_constructor.dart';
 import 'View/commun/routes/route_generator.dart';
 import 'View/commun/routes/routes_name.dart';
-import 'View/commun/widgets/PageWrappers/singingup_page_wrapper.dart';
 
 void main() {
-  WSDA.init(
-    apiAccessTokenVersion: 1,
-    apiKey: 'SU5URUxMSVNZUzEyMzQ1Njc4OTA6ZTEyMzQ1Njc4OTBm',
-    baseUrl: 'https://crm.intellisys.com.br/',
-    apiHost: 'https://crm.intellisys.com.br',
-  );
   runApp(const MyApp());
 }
 
