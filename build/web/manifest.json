@@ -1,11 +1,11 @@
 {
-    "name": "rio_das_pedras_front_end",
-    "short_name": "rio_das_pedras_front_end",
+    "name": "flutter_web_project",
+    "short_name": "flutter_web_project",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Web Client System.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
